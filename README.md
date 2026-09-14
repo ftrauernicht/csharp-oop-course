@@ -170,6 +170,15 @@ deduplicated, not just compared by which object they happen to be.
 |---|---|---|
 | 1 | [Coin Purse](courses/10-coin-purse/en/01-coin-purse.md) | Operator overloading (`==`, `<`, `>`), `Equals`/`GetHashCode`, `IComparable<T>` |
 
+### Course 11 – Playlist Queries (`courses/11-playlist-queries/`)
+
+Assumes Courses 1 and 2. Filtering, sorting, and summarizing a playlist
+declaratively, instead of a manual loop for each one.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md) | LINQ (`Where`, `Select`, `OrderBy`, `Sum`, `GroupBy`), lambda expressions |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -244,7 +253,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (CoinPurse.csproj, NaiveCoin.cs, Coin.cs, Program.cs)
-  11-.../                    future courses, same pattern
+  11-playlist-queries/       Course 11 — LINQ
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (PlaylistQueries.csproj, Song.cs, Program.cs)
+  12-.../                    future courses, same pattern
 ```
 
 ## Contributing

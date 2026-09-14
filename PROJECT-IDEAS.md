@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 10 – Coin Purse](courses/10-coin-purse/en/01-coin-purse.md)
+[← Back to repository overview](README.md) · Builds on: [Course 11 – Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md)
 
 # This repository's course roadmap
 
@@ -32,7 +32,7 @@ biggest.
 | 8 | ~~A personal library~~ -- why handing out a class's internal list breaks encapsulation, and the fix | ✅ Built -- see [Course 8 – Personal Library](courses/08-personal-library/en/01-personal-library.md) | ⭐⭐ |
 | 9 | ~~A general store~~ -- a shop simulation where running out of money is a real, named failure, not a silent bug | ✅ Built -- see [Course 9 – General Store](courses/09-general-store/en/01-general-store.md) | ⭐⭐ |
 | 10 | ~~A coin purse~~ -- coins and amounts that can genuinely be compared, sorted, and deduplicated | ✅ Built -- see [Course 10 – Coin Purse](courses/10-coin-purse/en/01-coin-purse.md) | ⭐⭐⭐ |
-| 11 | **Playlist queries** -- filter, sort, and summarize a playlist without writing a single manual loop | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), lambda expressions | ⭐⭐⭐ |
+| 11 | ~~Playlist queries~~ -- filter, sort, and summarize a playlist without writing a single manual loop | ✅ Built -- see [Course 11 – Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md) | ⭐⭐⭐ |
 | 12 | **A generic card deck** -- a `Deck<T>` you build yourself, not just consume | Generic classes and methods, type constraints (`where T : ...`) | ⭐⭐⭐⭐ |
 | 13 | **A thermostat that tells on itself** -- a device that announces its own state changes to whoever's listening, without knowing who that is | `event`, delegates, the Observer pattern | ⭐⭐⭐⭐ |
 | 14 | **Proving the bank account works** -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | xUnit, a second test project, Arrange-Act-Assert | ⭐⭐⭐⭐ |

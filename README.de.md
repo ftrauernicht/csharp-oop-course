@@ -180,6 +180,15 @@ zufällig sind.
 |---|---|---|
 | 1 | [Geldbeutel](courses/10-coin-purse/de/01-geldbeutel.md) | Operator-Overloading (`==`, `<`, `>`), `Equals`/`GetHashCode`, `IComparable<T>` |
 
+### Kurs 11 – Playlist-Abfragen (`courses/11-playlist-queries/`)
+
+Setzt Kurs 1 und 2 voraus. Eine Playlist deklarativ filtern, sortieren und
+zusammenfassen, statt für jedes eine manuelle Schleife.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Playlist-Abfragen](courses/11-playlist-queries/de/01-playlist-abfragen.md) | LINQ (`Where`, `Select`, `OrderBy`, `Sum`, `GroupBy`), Lambda-Ausdrücke |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -256,7 +265,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (CoinPurse.csproj, NaiveCoin.cs, Coin.cs, Program.cs)
-  11-.../                    zukünftige Kurse, gleiches Muster
+  11-playlist-queries/       Kurs 11 — LINQ
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (PlaylistQueries.csproj, Song.cs, Program.cs)
+  12-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken
