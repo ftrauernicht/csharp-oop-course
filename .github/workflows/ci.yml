@@ -19,19 +19,24 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - name: Build every course project
+      - name: Build and test every course project
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s nullglob
-          projects=(courses/*/code/*.csproj)
+          shopt -s nullglob globstar
+          projects=(courses/**/*.csproj)
           if [ ${#projects[@]} -eq 0 ]; then
             echo "No course projects yet."
             exit 0
           fi
           for proj in "${projects[@]}"; do
-            echo "::group::Building $proj"
-            dotnet build "$proj" --configuration Release
+            if [[ "$proj" == *.Tests.csproj ]]; then
+              echo "::group::Testing $proj"
+              dotnet test "$proj" --configuration Release
+            else
+              echo "::group::Building $proj"
+              dotnet build "$proj" --configuration Release
+            fi
             echo "::endgroup::"
           done
 

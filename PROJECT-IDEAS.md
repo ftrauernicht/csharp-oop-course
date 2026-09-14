@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 13 – Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md)
+[← Back to repository overview](README.md) · Builds on: [Course 14 – Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md)
 
 # This repository's course roadmap
 
@@ -35,7 +35,7 @@ biggest.
 | 11 | ~~Playlist queries~~ -- filter, sort, and summarize a playlist without writing a single manual loop | ✅ Built -- see [Course 11 – Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md) | ⭐⭐⭐ |
 | 12 | ~~A generic card deck~~ -- a `Deck<T>` you build yourself, not just consume | ✅ Built -- see [Course 12 – Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md) | ⭐⭐⭐⭐ |
 | 13 | ~~A thermostat that tells on itself~~ -- a device that announces its own state changes to whoever's listening, without knowing who that is | ✅ Built -- see [Course 13 – Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md) | ⭐⭐⭐⭐ |
-| 14 | **Proving the bank account works** -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | xUnit, a second test project, Arrange-Act-Assert | ⭐⭐⭐⭐ |
+| 14 | ~~Proving the bank account works~~ -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | ✅ Built -- see [Course 14 – Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md) | ⭐⭐⭐⭐ |
 | 15 | **Refactoring a pricing mess** -- turning a tangle of `if`/`else if` into swappable, testable strategies | The Strategy and Factory patterns, naming what Courses 4-13 already did unknowingly | ⭐⭐⭐⭐⭐ |
 
 A few notes on how to read this list:

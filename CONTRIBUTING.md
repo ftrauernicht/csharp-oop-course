@@ -41,6 +41,9 @@ follow them without reverse-engineering them first.
 - A course gets a `code/` folder: a finished, buildable console project
   (a `.csproj` and its `.cs` files) that serves as the answer key --
   runnable as-is, and what a learner compares their own attempt against.
+  The one exception is a course specifically about a project structure
+  itself (Course 14's class library + xUnit test project) -- there, `code/`
+  holds however many projects that structure actually needs.
 - **Screenshots are the exception here, not the rule.** Almost every course
   is a console app, so there's usually nothing to screenshot -- show a
   fenced "example output" code block in the chapter text instead. Only add

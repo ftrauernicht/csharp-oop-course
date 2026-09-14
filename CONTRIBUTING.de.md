@@ -48,7 +48,10 @@ Arbeit sie befolgen kann, ohne sie erst mühsam zu rekonstruieren.
 - Ein Kurs bekommt einen `code/`-Ordner: ein fertiges, baubares
   Konsolenprojekt (eine `.csproj` mit ihren `.cs`-Dateien) als Musterlösung
   -- unverändert lauffähig, und das, womit Lernende ihren eigenen Versuch
-  vergleichen.
+  vergleichen. Die eine Ausnahme ist ein Kurs, der ausdrücklich von einer
+  Projektstruktur selbst handelt (Kurs 14s Class Library + xUnit-
+  Testprojekt) -- dort enthält `code/` so viele Projekte, wie diese
+  Struktur tatsächlich braucht.
 - **Screenshots sind hier die Ausnahme, nicht die Regel.** Fast jeder Kurs
   ist eine Konsolenanwendung, es gibt also meist nichts zu screenshotten --
   zeig stattdessen einen Codeblock mit "Beispielausgabe" im Kapiteltext. Nur

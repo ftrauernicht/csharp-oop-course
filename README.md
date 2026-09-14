@@ -196,6 +196,15 @@ whoever's listening, without knowing who that is.
 |---|---|---|
 | 1 | [Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md) | `event`, `EventHandler<TEventArgs>`, custom `EventArgs`, the Observer pattern |
 
+### Course 14 – Bank Account Tests (`courses/14-bank-account-tests/`)
+
+Assumes Courses 1 and 2. Automated tests for a class's validation and
+exception-throwing behavior, not just eyeballing console output.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md) | xUnit, a class library + test project structure, `[Fact]`/`[Theory]`, `Assert.Throws` |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -282,7 +291,13 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (ThermostatEvents.csproj, TemperatureChangedEventArgs.cs, Thermostat.cs, Display.cs, Logger.cs, Alarm.cs, Program.cs)
-  14-.../                    future courses, same pattern
+  14-bank-account-tests/     Course 14 — automated tests (xUnit)
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      two projects, not one (see CONTRIBUTING.md)
+      BankAccount/               class library (BankAccount.cs, InsufficientFundsException.cs)
+      BankAccount.Tests/         xUnit test project (BankAccountTests.cs)
+  15-.../                    future courses, same pattern
 ```
 
 ## Contributing

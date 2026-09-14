@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 13 – Thermostat-Events](courses/13-thermostat-events/de/01-thermostat-events.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 14 – Bankkonto-Tests](courses/14-bank-account-tests/de/01-bankkonto-tests.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -36,7 +36,7 @@ sortiert vom kleinsten zum größten gedanklichen Sprung.
 | 11 | ~~Playlist-Abfragen~~ -- eine Playlist filtern, sortieren und zusammenfassen, ohne eine einzige manuelle Schleife zu schreiben | ✅ Gebaut -- siehe [Kurs 11 – Playlist-Abfragen](courses/11-playlist-queries/de/01-playlist-abfragen.md) | ⭐⭐⭐ |
 | 12 | ~~Ein generisches Kartendeck~~ -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | ✅ Gebaut -- siehe [Kurs 12 – Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md) | ⭐⭐⭐⭐ |
 | 13 | ~~Ein Thermostat, der sich selbst verrät~~ -- ein Gerät, das seine eigenen Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das ist | ✅ Gebaut -- siehe [Kurs 13 – Thermostat-Events](courses/13-thermostat-events/de/01-thermostat-events.md) | ⭐⭐⭐⭐ |
-| 14 | **Beweisen, dass das Bankkonto funktioniert** -- automatisierte Tests für die Validierungs- und Exception-Logik einer Klasse, statt die Ausgabe nur mit dem Auge zu prüfen | xUnit, ein zweites Testprojekt, Arrange-Act-Assert | ⭐⭐⭐⭐ |
+| 14 | ~~Beweisen, dass das Bankkonto funktioniert~~ -- automatisierte Tests für die Validierungs- und Exception-Logik einer Klasse, statt die Ausgabe nur mit dem Auge zu prüfen | ✅ Gebaut -- siehe [Kurs 14 – Bankkonto-Tests](courses/14-bank-account-tests/de/01-bankkonto-tests.md) | ⭐⭐⭐⭐ |
 | 15 | **Ein Preis-Wirrwarr refaktorieren** -- ein Gestrüpp aus `if`/`else if` in austauschbare, testbare Strategien verwandeln | Das Strategy- und das Factory-Pattern, benennen, was Kurs 4-13 unbewusst schon getan haben | ⭐⭐⭐⭐⭐ |
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
