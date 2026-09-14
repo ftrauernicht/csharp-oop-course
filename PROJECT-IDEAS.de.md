@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 14 – Bankkonto-Tests](courses/14-bank-account-tests/de/01-bankkonto-tests.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 15 – Rabatt-Strategien](courses/15-discount-strategies/de/01-rabatt-strategien.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -37,7 +37,7 @@ sortiert vom kleinsten zum größten gedanklichen Sprung.
 | 12 | ~~Ein generisches Kartendeck~~ -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | ✅ Gebaut -- siehe [Kurs 12 – Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md) | ⭐⭐⭐⭐ |
 | 13 | ~~Ein Thermostat, der sich selbst verrät~~ -- ein Gerät, das seine eigenen Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das ist | ✅ Gebaut -- siehe [Kurs 13 – Thermostat-Events](courses/13-thermostat-events/de/01-thermostat-events.md) | ⭐⭐⭐⭐ |
 | 14 | ~~Beweisen, dass das Bankkonto funktioniert~~ -- automatisierte Tests für die Validierungs- und Exception-Logik einer Klasse, statt die Ausgabe nur mit dem Auge zu prüfen | ✅ Gebaut -- siehe [Kurs 14 – Bankkonto-Tests](courses/14-bank-account-tests/de/01-bankkonto-tests.md) | ⭐⭐⭐⭐ |
-| 15 | **Ein Preis-Wirrwarr refaktorieren** -- ein Gestrüpp aus `if`/`else if` in austauschbare, testbare Strategien verwandeln | Das Strategy- und das Factory-Pattern, benennen, was Kurs 4-13 unbewusst schon getan haben | ⭐⭐⭐⭐⭐ |
+| 15 | ~~Ein Preis-Wirrwarr refaktorieren~~ -- ein Gestrüpp aus `if`/`else if` in austauschbare, testbare Strategien verwandeln | ✅ Gebaut -- siehe [Kurs 15 – Rabatt-Strategien](courses/15-discount-strategies/de/01-rabatt-strategien.md) | ⭐⭐⭐⭐⭐ |
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
 
@@ -76,10 +76,13 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   Kommunikation) schon absichtlich eingeübt haben, ohne es "Pattern" zu
   nennen.
 
-Kurs 1-15 sind die aktuell gebaute und geplante Roadmap dieses
-Repositories. Was danach kommt, folgt denselben Gewohnheiten: zuerst die
-Kernversion bauen, sie einfach halten, die eigentliche Entwurfsentscheidung
-als Übung zurückhalten statt sie vorzugeben, und erst dann zur optionalen,
-schwierigeren Variante eines Features greifen, wenn die einfache
-funktioniert. Der vollständige Satz an Konventionen für einen neuen Kurs
-steht in [CONTRIBUTING.de.md](CONTRIBUTING.de.md).
+Alle fünfzehn Kurse oben sind jetzt gebaut, damit sind sowohl der
+ursprüngliche Bogen dieses Repositories (1-7) als auch seine zweite,
+fortgeschrittenere Stufe (8-15) komplett. Ein Kurs 16 steht noch nicht auf
+der Roadmap — was auch immer als Nächstes kommt, folgt denselben
+Gewohnheiten: zuerst die Kernversion bauen, sie einfach halten, die
+eigentliche Entwurfsentscheidung als Übung zurückhalten statt sie
+vorzugeben, und erst dann zur optionalen, schwierigeren Variante eines
+Features greifen, wenn die einfache funktioniert. Der vollständige Satz an
+Konventionen für einen neuen Kurs steht in
+[CONTRIBUTING.de.md](CONTRIBUTING.de.md).

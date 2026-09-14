@@ -218,9 +218,20 @@ prüfen.
 |---|---|---|
 | 1 | [Bankkonto-Tests](courses/14-bank-account-tests/de/01-bankkonto-tests.md) | xUnit, eine Class-Library-plus-Testprojekt-Struktur, `[Fact]`/`[Theory]`, `Assert.Throws` |
 
-Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
-Was als Nächstes kommt, steht in
-[PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
+### Kurs 15 – Rabatt-Strategien (`courses/15-discount-strategies/`)
+
+Setzt Kurs 1 und 2 voraus. Ein Gestrüpp aus `if`/`else if` in
+austauschbare, testbare Objekte verwandeln — und benennen, was Kurs 4, 6
+und 13 schon gelehrt haben, ohne es "Pattern" zu nennen.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Rabatt-Strategien](courses/15-discount-strategies/de/01-rabatt-strategien.md) | Das Strategy- und das Factory-Pattern, `static class` |
+
+Kurs 15 schließt die zweite, fortgeschrittenere Stufe dieses Repositories
+(Kurs 8-15) oben auf dem ursprünglichen Bogen (Kurs 1-7) ab. Die
+vollständige Roadmap und was ein zukünftiger Kurs als Nächstes bringen
+könnte, steht in [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
 
 ## Projektideen
 
@@ -312,7 +323,11 @@ courses/
     code/                      zwei Projekte statt eines (siehe CONTRIBUTING.de.md)
       BankAccount/               Class Library (BankAccount.cs, InsufficientFundsException.cs)
       BankAccount.Tests/         xUnit-Testprojekt (BankAccountTests.cs)
-  15-.../                    zukünftige Kurse, gleiches Muster
+  15-discount-strategies/    Kurs 15 — das Strategy- und das Factory-Pattern
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (DiscountStrategies.csproj, MessyPriceCalculator.cs, IDiscountStrategy.cs, NoDiscount.cs, PercentageDiscount.cs, FixedAmountDiscount.cs, SeasonalDiscount.cs, PriceCalculator.cs, DiscountStrategyFactory.cs, Program.cs)
+  16-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

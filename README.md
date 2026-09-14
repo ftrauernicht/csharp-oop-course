@@ -205,8 +205,20 @@ exception-throwing behavior, not just eyeballing console output.
 |---|---|---|
 | 1 | [Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md) | xUnit, a class library + test project structure, `[Fact]`/`[Theory]`, `Assert.Throws` |
 
-More courses will be added over time; this section grows with them. See
-[PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
+### Course 15 – Discount Strategies (`courses/15-discount-strategies/`)
+
+Assumes Courses 1 and 2. Turning a tangle of `if`/`else if` into
+swappable, testable objects — and naming what Courses 4, 6, and 13 already
+taught, without calling it a "pattern" yet.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Discount Strategies](courses/15-discount-strategies/en/01-discount-strategies.md) | The Strategy and Factory patterns, `static class` |
+
+Course 15 completes this repository's second, more advanced tier
+(Courses 8-15) on top of the original arc (Courses 1-7). See
+[PROJECT-IDEAS.md](PROJECT-IDEAS.md) for the full roadmap and what a
+future course might add next.
 
 ## Project ideas
 
@@ -297,7 +309,11 @@ courses/
     code/                      two projects, not one (see CONTRIBUTING.md)
       BankAccount/               class library (BankAccount.cs, InsufficientFundsException.cs)
       BankAccount.Tests/         xUnit test project (BankAccountTests.cs)
-  15-.../                    future courses, same pattern
+  15-discount-strategies/    Course 15 — the Strategy and Factory patterns
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (DiscountStrategies.csproj, MessyPriceCalculator.cs, IDiscountStrategy.cs, NoDiscount.cs, PercentageDiscount.cs, FixedAmountDiscount.cs, SeasonalDiscount.cs, PriceCalculator.cs, DiscountStrategyFactory.cs, Program.cs)
+  16-.../                    future courses, same pattern
 ```
 
 ## Contributing

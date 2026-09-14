@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 14 – Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md)
+[← Back to repository overview](README.md) · Builds on: [Course 15 – Discount Strategies](courses/15-discount-strategies/en/01-discount-strategies.md)
 
 # This repository's course roadmap
 
@@ -36,7 +36,7 @@ biggest.
 | 12 | ~~A generic card deck~~ -- a `Deck<T>` you build yourself, not just consume | ✅ Built -- see [Course 12 – Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md) | ⭐⭐⭐⭐ |
 | 13 | ~~A thermostat that tells on itself~~ -- a device that announces its own state changes to whoever's listening, without knowing who that is | ✅ Built -- see [Course 13 – Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md) | ⭐⭐⭐⭐ |
 | 14 | ~~Proving the bank account works~~ -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | ✅ Built -- see [Course 14 – Bank Account Tests](courses/14-bank-account-tests/en/01-bank-account-tests.md) | ⭐⭐⭐⭐ |
-| 15 | **Refactoring a pricing mess** -- turning a tangle of `if`/`else if` into swappable, testable strategies | The Strategy and Factory patterns, naming what Courses 4-13 already did unknowingly | ⭐⭐⭐⭐⭐ |
+| 15 | ~~Refactoring a pricing mess~~ -- turning a tangle of `if`/`else if` into swappable, testable strategies | ✅ Built -- see [Course 15 – Discount Strategies](courses/15-discount-strategies/en/01-discount-strategies.md) | ⭐⭐⭐⭐⭐ |
 
 A few notes on how to read this list:
 
@@ -72,10 +72,11 @@ A few notes on how to read this list:
   (composing capabilities), and 13 (decoupled communication) already built,
   on purpose, without calling it a "pattern" yet.
 
-Courses 1-15 are this repository's currently built and planned roadmap.
-Whatever comes after follows the same habits: build the core version
-first, keep it simple, hold back the actual design decision as an exercise
-rather than handing it over, and only reach for the optional, harder
-variant of a feature once the simple one works. See
-[CONTRIBUTING.md](CONTRIBUTING.md) for the full set of conventions a new
-course needs to follow.
+All fifteen courses above are now built, completing both this
+repository's original arc (1-7) and its second, more advanced tier (8-15).
+There's no Course 16 on the roadmap yet -- whatever comes next follows the
+same habits: build the core version first, keep it simple, hold back the
+actual design decision as an exercise rather than handing it over, and
+only reach for the optional, harder variant of a feature once the simple
+one works. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full set of
+conventions a new course needs to follow.
