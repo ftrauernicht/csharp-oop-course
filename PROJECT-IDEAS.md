@@ -1,19 +1,19 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 6 – Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md)
+[← Back to repository overview](README.md) · Builds on: [Course 7 – Reading List](courses/07-reading-list/en/01-reading-list.md)
 
 # This repository's course roadmap
 
 Unlike a list of side-project suggestions for after you've finished a
-course, every entry below is a course this repository plans to have. Courses
-1 and 2 cover plain, procedural C# and your first class -- the shared
-foundation. Everything from here on is about earning one object-oriented
-idea at a time, each through a small, complete project, instead of
-front-loading a wall of vocabulary before any of it means anything. Courses
-3 and up don't depend on each other, but every single one of them depends
-on Courses 1 and 2 -- see [CONTRIBUTING.md](CONTRIBUTING.md) for why this
-repository's dependency model differs slightly from a course that only
-needs "some C#".
+course, every entry below is a course this repository has built (or, for a
+future addition, plans to). Courses 1 and 2 cover plain, procedural C# and
+your first class -- the shared foundation. Everything from here on is
+about earning one object-oriented idea at a time, each through a small,
+complete project, instead of front-loading a wall of vocabulary before any
+of it means anything. Courses 3 and up don't depend on each other, but
+every single one of them depends on Courses 1 and 2 -- see
+[CONTRIBUTING.md](CONTRIBUTING.md) for why this repository's dependency
+model differs slightly from a course that only needs "some C#".
 
 | # | Course | New skills, on top of what you already have | Difficulty |
 |---|---|---|---|
@@ -23,7 +23,7 @@ needs "some C#".
 | 4 | ~~Machine hunter, part 1~~ -- a `Machine` base class and a few concrete machine types, each with their own attack | ✅ Built -- see [Course 4 – Machine Hunter](courses/04-machine-hunter/en/01-machine-hunter.md) | ⭐⭐⭐ |
 | 5 | ~~Machine hunter, part 2~~ -- the same machines, fought one by one from a single list | ✅ Built -- see [Course 5 – Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md) | ⭐⭐⭐ |
 | 6 | ~~A crafting bench~~ -- items that can be collected, and some of those can also be sold | ✅ Built -- see [Course 6 – Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md) | ⭐⭐⭐⭐ |
-| 7 | **Save your progress** -- write a collection to a file and read it back | `System.Text.Json`, serializing and deserializing objects | ⭐⭐⭐ |
+| 7 | ~~Save your progress~~ -- write a collection to a file and read it back | ✅ Built -- see [Course 7 – Reading List](courses/07-reading-list/en/01-reading-list.md) | ⭐⭐⭐ |
 
 A few notes on how to read this list:
 
@@ -52,6 +52,11 @@ A few notes on how to read this list:
   thing actually worth practicing is the OOP design decision itself, not
   retyping someone else's.
 
-Whichever gets built next, the same habits from Courses 1-2 keep applying:
-build the core version first, keep it simple, and only reach for the
-optional, harder variant of a feature once the simple one works.
+All seven courses above are now built, completing this repository's
+originally planned arc. There's no Course 8 on the roadmap yet -- when one
+gets added, it follows the same habits Courses 1-7 already established:
+build the core version first, keep it simple, hold back the actual OOP
+design decision as an exercise rather than handing it over, and only reach
+for the optional, harder variant of a feature once the simple one works.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full set of conventions a
+new course needs to follow.

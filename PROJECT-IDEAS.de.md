@@ -1,12 +1,13 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
 Anders als eine Liste von Nebenprojekt-Vorschlägen für nach einem Kurs ist
-jeder Eintrag unten ein Kurs, den dieses Repository plant zu haben. Kurs 1
-und 2 decken einfaches, prozedurales C# und deine erste Klasse ab -- die
+jeder Eintrag unten ein Kurs, den dieses Repository gebaut hat (oder, für
+eine zukünftige Ergänzung, plant zu bauen). Kurs 1 und 2 decken einfaches,
+prozedurales C# und deine erste Klasse ab -- die
 geteilte Grundlage. Alles danach handelt davon, sich eine
 objektorientierte Idee nach der anderen zu erarbeiten, jede an einem
 kleinen, vollständigen Projekt, statt vorab eine Begriffswand aufzubauen,
@@ -24,7 +25,7 @@ einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
 | 4 | ~~Maschinenjäger, Teil 1~~ -- eine `Machine`-Basisklasse und ein paar konkrete Maschinentypen, jede mit eigenem Angriff | ✅ Gebaut -- siehe [Kurs 4 – Maschinenjäger](courses/04-machine-hunter/de/01-maschinenjaeger.md) | ⭐⭐⭐ |
 | 5 | ~~Maschinenjäger, Teil 2~~ -- dieselben Maschinen, aus einer einzigen Liste heraus einzeln bekämpft | ✅ Gebaut -- siehe [Kurs 5 – Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md) | ⭐⭐⭐ |
 | 6 | ~~Eine Werkbank zum Craften~~ -- Items, die sich sammeln lassen, manche davon auch verkaufen | ✅ Gebaut -- siehe [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | ⭐⭐⭐⭐ |
-| 7 | **Spielstand speichern** -- eine Sammlung in eine Datei schreiben und wieder einlesen | `System.Text.Json`, Objekte serialisieren und deserialisieren | ⭐⭐⭐ |
+| 7 | ~~Spielstand speichern~~ -- eine Sammlung in eine Datei schreiben und wieder einlesen | ✅ Gebaut -- siehe [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md) | ⭐⭐⭐ |
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
 
@@ -55,7 +56,12 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   haben, ist das, was wirklich Übung braucht, die OOP-Entwurfsentscheidung
   selbst -- nicht das Abtippen von jemand anderes Entscheidung.
 
-Egal was als Nächstes gebaut wird: Dieselben Gewohnheiten aus Kurs 1-2
-gelten weiter -- zuerst die Kernversion bauen, sie einfach halten, und erst
-dann zur optionalen, schwierigeren Variante eines Features greifen, wenn
-die einfache funktioniert.
+Alle sieben Kurse oben sind jetzt gebaut, damit ist der ursprünglich
+geplante Bogen dieses Repositories komplett. Ein Kurs 8 steht noch nicht
+auf der Roadmap -- kommt einer dazu, folgt er denselben Gewohnheiten, die
+Kurs 1-7 schon etabliert haben: zuerst die Kernversion bauen, sie einfach
+halten, die eigentliche OOP-Entwurfsentscheidung als Übung zurückhalten
+statt sie vorzugeben, und erst dann zur optionalen, schwierigeren Variante
+eines Features greifen, wenn die einfache funktioniert. Der vollständige
+Satz an Konventionen für einen neuen Kurs steht in
+[CONTRIBUTING.de.md](CONTRIBUTING.de.md).

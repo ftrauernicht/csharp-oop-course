@@ -128,16 +128,28 @@ also be sold — two independent capabilities via interfaces.
 |---|---|---|
 | 1 | [Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md) | Interfaces, composition over inheritance, implementing more than one interface, `is Type variableName` pattern matching |
 
-More courses will be added over time; this section grows with them. See
-[PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
+### Course 7 – Reading List (`courses/07-reading-list/`)
+
+Assumes Courses 1 and 2. A `List<Book>` that survives closing and
+reopening the program, saved to a real JSON file on disk.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Reading List](courses/07-reading-list/en/01-reading-list.md) | `System.Text.Json`, serializing and deserializing objects, basic file I/O |
+
+This completes this repository's originally planned arc, from plain
+procedural C# through your first class, encapsulation, inheritance,
+polymorphism, interfaces, and persistence. More courses may be added over
+time; this section grows with them. See [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+for details.
 
 ## Project ideas
 
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
-repository plans to have, in the order it plans to build them, starting
-with Course 7. It lives at the repository root, not
-inside a single course, so the whole arc is visible from one file.
+repository has built, in the order it built them. It lives at the
+repository root, not inside a single course, so the whole arc is visible
+from one file.
 
 ## How to use this course
 
@@ -186,7 +198,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (CraftingBench.csproj, ICollectible.cs, ISellable.cs, Herb.cs, RareGem.cs, Firewood.cs, TreasureMap.cs, Program.cs)
-  07-.../                    future courses, same pattern
+  07-reading-list/           Course 7 — persistence (JSON)
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (ReadingList.csproj, Book.cs, Program.cs)
+  08-.../                    future courses, same pattern
 ```
 
 ## Contributing

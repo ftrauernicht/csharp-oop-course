@@ -136,18 +136,29 @@ auch verkaufen — zwei unabhängige Fähigkeiten über Interfaces.
 |---|---|---|
 | 1 | [Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | Interfaces, Komposition statt Vererbung, mehr als ein Interface implementieren, `is Typ Variablenname`-Pattern-Matching |
 
-Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
-Was als Nächstes kommt, steht in
+### Kurs 7 – Leseliste (`courses/07-reading-list/`)
+
+Setzt Kurs 1 und 2 voraus. Eine `List<Book>`, die das Schließen und
+Neustarten des Programms übersteht, gespeichert in einer echten
+JSON-Datei.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Leseliste](courses/07-reading-list/de/01-leseliste.md) | `System.Text.Json`, Objekte serialisieren und deserialisieren, grundlegende Datei-I/O |
+
+Damit ist der ursprünglich geplante Bogen dieses Repositories komplett, von
+einfachem prozeduralem C# über deine erste Klasse, Kapselung, Vererbung,
+Polymorphie, Interfaces bis zur Persistenz. Mit der Zeit können weitere
+Kurse dazukommen; dieser Abschnitt wächst mit ihnen. Details stehen in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
 
 ## Projektideen
 
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
-ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 7. Die Datei liegt im Repository-Root und
-nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
-sichtbar ist.
+ist ein Kurs, den dieses Repository gebaut hat, in der Reihenfolge, in der
+er gebaut wurde. Die Datei liegt im Repository-Root und nicht in einem
+einzelnen Kurs, damit der ganze Bogen aus einer Datei sichtbar ist.
 
 ## Wie du diesen Kurs benutzt
 
@@ -197,7 +208,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (CraftingBench.csproj, ICollectible.cs, ISellable.cs, Herb.cs, RareGem.cs, Firewood.cs, TreasureMap.cs, Program.cs)
-  07-.../                    zukünftige Kurse, gleiches Muster
+  07-reading-list/           Kurs 7 — Persistenz (JSON)
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (ReadingList.csproj, Book.cs, Program.cs)
+  08-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken
