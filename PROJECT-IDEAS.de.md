@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 8 – Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 9 – Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -31,7 +31,7 @@ sortiert vom kleinsten zum größten gedanklichen Sprung.
 | 6 | ~~Eine Werkbank zum Craften~~ -- Items, die sich sammeln lassen, manche davon auch verkaufen | ✅ Gebaut -- siehe [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | ⭐⭐⭐⭐ |
 | 7 | ~~Spielstand speichern~~ -- eine Sammlung in eine Datei schreiben und wieder einlesen | ✅ Gebaut -- siehe [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md) | ⭐⭐⭐ |
 | 8 | ~~Eine persönliche Bibliothek~~ -- warum die interne Liste einer Klasse herauszugeben Kapselung bricht, und die Lösung | ✅ Gebaut -- siehe [Kurs 8 – Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md) | ⭐⭐ |
-| 9 | **Ein Gemischtwarenladen** -- eine Shop-Simulation, in der kein Geld mehr zu haben ein echter, benannter Fehlerfall ist, kein stiller Bug | Eigene Exception-Klassen, `try`/`catch`/`finally` | ⭐⭐ |
+| 9 | ~~Ein Gemischtwarenladen~~ -- eine Shop-Simulation, in der kein Geld mehr zu haben ein echter, benannter Fehlerfall ist, kein stiller Bug | ✅ Gebaut -- siehe [Kurs 9 – Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md) | ⭐⭐ |
 | 10 | **Ein Geldbeutel** -- Münzen und Beträge, die sich wirklich vergleichen, sortieren und entdoppeln lassen | Operator-Overloading (`==`), `Equals`/`GetHashCode`, `IComparable<T>` | ⭐⭐⭐ |
 | 11 | **Playlist-Abfragen** -- eine Playlist filtern, sortieren und zusammenfassen, ohne eine einzige manuelle Schleife zu schreiben | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), Lambda-Ausdrücke | ⭐⭐⭐ |
 | 12 | **Ein generisches Kartendeck** -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | Generische Klassen und Methoden, Type Constraints (`where T : ...`) | ⭐⭐⭐⭐ |

@@ -161,6 +161,15 @@ herauszugeben Kapselung bricht, und die Lösung dafür.
 |---|---|---|
 | 1 | [Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md) | `IReadOnlyList<T>`, `.AsReadOnly()` vs. einfaches Hochcasten, eine Sammlung kapseln |
 
+### Kurs 9 – Gemischtwarenladen (`courses/09-general-store/`)
+
+Setzt Kurs 1 und 2 voraus. Kein Geld mehr zu haben ist ein echter,
+benannter Fehlerfall, kein stiller Bug.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md) | Eigene Exception-Klassen, `try`/`catch`/`finally`, mehrere `catch`-Blöcke |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -229,7 +238,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (PersonalLibrary.csproj, Book.cs, BadLibrary.cs, Library.cs, Program.cs)
-  09-.../                    zukünftige Kurse, gleiches Muster
+  09-general-store/          Kurs 9 — Exceptions
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (GeneralStore.csproj, InsufficientFundsException.cs, BankAccount.cs, Store.cs, Program.cs)
+  10-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

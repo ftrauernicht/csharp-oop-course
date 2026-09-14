@@ -152,6 +152,15 @@ breaks encapsulation, and the fix.
 |---|---|---|
 | 1 | [Personal Library](courses/08-personal-library/en/01-personal-library.md) | `IReadOnlyList<T>`, `.AsReadOnly()` vs. a plain upcast, encapsulating a collection |
 
+### Course 9 – General Store (`courses/09-general-store/`)
+
+Assumes Courses 1 and 2. Running out of money is a real, named failure,
+not a silent bug.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [General Store](courses/09-general-store/en/01-general-store.md) | Custom exception classes, `try`/`catch`/`finally`, multiple `catch` blocks |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -218,7 +227,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (PersonalLibrary.csproj, Book.cs, BadLibrary.cs, Library.cs, Program.cs)
-  09-.../                    future courses, same pattern
+  09-general-store/          Course 9 — exceptions
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (GeneralStore.csproj, InsufficientFundsException.cs, BankAccount.cs, Store.cs, Program.cs)
+  10-.../                    future courses, same pattern
 ```
 
 ## Contributing

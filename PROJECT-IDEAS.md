@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 8 – Personal Library](courses/08-personal-library/en/01-personal-library.md)
+[← Back to repository overview](README.md) · Builds on: [Course 9 – General Store](courses/09-general-store/en/01-general-store.md)
 
 # This repository's course roadmap
 
@@ -30,7 +30,7 @@ biggest.
 | 6 | ~~A crafting bench~~ -- items that can be collected, and some of those can also be sold | ✅ Built -- see [Course 6 – Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md) | ⭐⭐⭐⭐ |
 | 7 | ~~Save your progress~~ -- write a collection to a file and read it back | ✅ Built -- see [Course 7 – Reading List](courses/07-reading-list/en/01-reading-list.md) | ⭐⭐⭐ |
 | 8 | ~~A personal library~~ -- why handing out a class's internal list breaks encapsulation, and the fix | ✅ Built -- see [Course 8 – Personal Library](courses/08-personal-library/en/01-personal-library.md) | ⭐⭐ |
-| 9 | **A general store** -- a shop simulation where running out of money is a real, named failure, not a silent bug | Custom exception classes, `try`/`catch`/`finally` | ⭐⭐ |
+| 9 | ~~A general store~~ -- a shop simulation where running out of money is a real, named failure, not a silent bug | ✅ Built -- see [Course 9 – General Store](courses/09-general-store/en/01-general-store.md) | ⭐⭐ |
 | 10 | **A coin purse** -- coins and amounts that can genuinely be compared, sorted, and deduplicated | Operator overloading (`==`), `Equals`/`GetHashCode`, `IComparable<T>` | ⭐⭐⭐ |
 | 11 | **Playlist queries** -- filter, sort, and summarize a playlist without writing a single manual loop | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), lambda expressions | ⭐⭐⭐ |
 | 12 | **A generic card deck** -- a `Deck<T>` you build yourself, not just consume | Generic classes and methods, type constraints (`where T : ...`) | ⭐⭐⭐⭐ |
