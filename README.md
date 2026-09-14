@@ -100,6 +100,15 @@ enforcing its own rules about how much it can be watered.
 |---|---|---|
 | 1 | [Homestead Inventory](courses/03-homestead-inventory/en/01-homestead-inventory.md) | `List<T>`, `foreach`, private fields, get-only and privately-settable properties, encapsulation via real validation logic |
 
+### Course 4 – Machine Hunter (`courses/04-machine-hunter/`)
+
+Assumes Courses 1 and 2. A `Machine` base class and a handful of concrete
+machine types that each attack in their own way.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Machine Hunter](courses/04-machine-hunter/en/01-machine-hunter.md) | Inheritance, `virtual`/`override`, `base(...)`, `protected` |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -108,7 +117,7 @@ More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
 repository plans to have, in the order it plans to build them, starting
-with Course 4. It lives at the repository root, not
+with Course 5. It lives at the repository root, not
 inside a single course, so the whole arc is visible from one file.
 
 ## How to use this course
@@ -146,7 +155,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (HomesteadInventory.csproj, Crop.cs, Animal.cs, Program.cs)
-  04-.../                    future courses, same pattern
+  04-machine-hunter/         Course 4 — inheritance
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (MachineHunter.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Grazer.cs, Strider.cs, Program.cs)
+  05-.../                    future courses, same pattern
 ```
 
 ## Contributing

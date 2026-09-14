@@ -108,6 +108,15 @@ kann.
 |---|---|---|
 | 1 | [Hof-Inventar](courses/03-homestead-inventory/de/01-hof-inventar.md) | `List<T>`, `foreach`, private Felder, nur-lesbare und privat setzbare Properties, Kapselung über echte Validierungslogik |
 
+### Kurs 4 – Maschinenjäger (`courses/04-machine-hunter/`)
+
+Setzt Kurs 1 und 2 voraus. Eine `Machine`-Basisklasse und eine Handvoll
+konkreter Maschinentypen, die jeweils auf ihre eigene Art angreifen.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Maschinenjäger](courses/04-machine-hunter/de/01-maschinenjaeger.md) | Vererbung, `virtual`/`override`, `base(...)`, `protected` |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -117,7 +126,7 @@ Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
 ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 4. Die Datei liegt im Repository-Root und
+Reihenfolge, beginnend mit Kurs 5. Die Datei liegt im Repository-Root und
 nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
 sichtbar ist.
 
@@ -157,7 +166,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (HomesteadInventory.csproj, Crop.cs, Animal.cs, Program.cs)
-  04-.../                    zukünftige Kurse, gleiches Muster
+  04-machine-hunter/         Kurs 4 — Vererbung
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (MachineHunter.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Grazer.cs, Strider.cs, Program.cs)
+  05-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken
