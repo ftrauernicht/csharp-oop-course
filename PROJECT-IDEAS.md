@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 4 – Machine Hunter](courses/04-machine-hunter/en/01-machine-hunter.md)
+[← Back to repository overview](README.md) · Builds on: [Course 5 – Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md)
 
 # This repository's course roadmap
 
@@ -21,7 +21,7 @@ needs "some C#".
 | 2 | ~~Your first class~~ -- a handful of `Cat` objects that introduce themselves | ✅ Built -- see [Course 2 – Cat Roster](courses/02-cat-roster/en/01-cat-roster.md) | ⭐ |
 | 3 | ~~A homestead inventory~~ -- water, harvest, and count a small farm's crops and animals | ✅ Built -- see [Course 3 – Homestead Inventory](courses/03-homestead-inventory/en/01-homestead-inventory.md) | ⭐⭐ |
 | 4 | ~~Machine hunter, part 1~~ -- a `Machine` base class and a few concrete machine types, each with their own attack | ✅ Built -- see [Course 4 – Machine Hunter](courses/04-machine-hunter/en/01-machine-hunter.md) | ⭐⭐⭐ |
-| 5 | **Machine hunter, part 2** -- the same machines, fought one by one from a single list | Abstract classes, polymorphism -- the payoff for what Course 4 quietly set up | ⭐⭐⭐ |
+| 5 | ~~Machine hunter, part 2~~ -- the same machines, fought one by one from a single list | ✅ Built -- see [Course 5 – Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md) | ⭐⭐⭐ |
 | 6 | **A crafting bench** -- items that can be collected, and some of those can also be sold | Interfaces, composition vs. inheritance, implementing more than one interface on a class | ⭐⭐⭐⭐ |
 | 7 | **Save your progress** -- write a collection to a file and read it back | `System.Text.Json`, serializing and deserializing objects | ⭐⭐⭐ |
 

@@ -109,6 +109,16 @@ machine types that each attack in their own way.
 |---|---|---|
 | 1 | [Machine Hunter](courses/04-machine-hunter/en/01-machine-hunter.md) | Inheritance, `virtual`/`override`, `base(...)`, `protected` |
 
+### Course 5 – Machine Showdown (`courses/05-machine-showdown/`)
+
+Assumes Courses 1 and 2 (shares a domain with, but doesn't require,
+Course 4). Every machine type in a single list, one loop, each still
+attacking its own way.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md) | Abstract classes and methods, polymorphism, the `is` type-testing operator |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -117,7 +127,7 @@ More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
 repository plans to have, in the order it plans to build them, starting
-with Course 5. It lives at the repository root, not
+with Course 6. It lives at the repository root, not
 inside a single course, so the whole arc is visible from one file.
 
 ## How to use this course
@@ -159,7 +169,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (MachineHunter.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Grazer.cs, Strider.cs, Program.cs)
-  05-.../                    future courses, same pattern
+  05-machine-showdown/       Course 5 — abstract classes and polymorphism
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (MachineShowdown.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Strider.cs, Program.cs)
+  06-.../                    future courses, same pattern
 ```
 
 ## Contributing

@@ -117,6 +117,16 @@ konkreter Maschinentypen, die jeweils auf ihre eigene Art angreifen.
 |---|---|---|
 | 1 | [Maschinenjäger](courses/04-machine-hunter/de/01-maschinenjaeger.md) | Vererbung, `virtual`/`override`, `base(...)`, `protected` |
 
+### Kurs 5 – Maschinen-Showdown (`courses/05-machine-showdown/`)
+
+Setzt Kurs 1 und 2 voraus (teilt sich eine Domäne mit Kurs 4, setzt ihn
+aber nicht voraus). Jeder Maschinentyp in einer einzigen Liste, eine
+Schleife, jede greift trotzdem auf ihre eigene Art an.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md) | Abstrakte Klassen und Methoden, Polymorphie, der `is`-Typtest-Operator |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -126,7 +136,7 @@ Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
 ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 5. Die Datei liegt im Repository-Root und
+Reihenfolge, beginnend mit Kurs 6. Die Datei liegt im Repository-Root und
 nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
 sichtbar ist.
 
@@ -170,7 +180,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (MachineHunter.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Grazer.cs, Strider.cs, Program.cs)
-  05-.../                    zukünftige Kurse, gleiches Muster
+  05-machine-showdown/       Kurs 5 — abstrakte Klassen und Polymorphie
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (MachineShowdown.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Strider.cs, Program.cs)
+  06-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken
