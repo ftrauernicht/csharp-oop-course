@@ -127,6 +127,15 @@ Schleife, jede greift trotzdem auf ihre eigene Art an.
 |---|---|---|
 | 1 | [Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md) | Abstrakte Klassen und Methoden, Polymorphie, der `is`-Typtest-Operator |
 
+### Kurs 6 – Werkbank (`courses/06-crafting-bench/`)
+
+Setzt Kurs 1 und 2 voraus. Items, die sich sammeln lassen, manche davon
+auch verkaufen — zwei unabhängige Fähigkeiten über Interfaces.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | Interfaces, Komposition statt Vererbung, mehr als ein Interface implementieren, `is Typ Variablenname`-Pattern-Matching |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -136,7 +145,7 @@ Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
 ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 6. Die Datei liegt im Repository-Root und
+Reihenfolge, beginnend mit Kurs 7. Die Datei liegt im Repository-Root und
 nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
 sichtbar ist.
 
@@ -184,7 +193,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (MachineShowdown.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Strider.cs, Program.cs)
-  06-.../                    zukünftige Kurse, gleiches Muster
+  06-crafting-bench/         Kurs 6 — Interfaces
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (CraftingBench.csproj, ICollectible.cs, ISellable.cs, Herb.cs, RareGem.cs, Firewood.cs, TreasureMap.cs, Program.cs)
+  07-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

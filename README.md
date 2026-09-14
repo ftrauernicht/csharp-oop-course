@@ -119,6 +119,15 @@ attacking its own way.
 |---|---|---|
 | 1 | [Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md) | Abstract classes and methods, polymorphism, the `is` type-testing operator |
 
+### Course 6 – Crafting Bench (`courses/06-crafting-bench/`)
+
+Assumes Courses 1 and 2. Items that can be collected, some of which can
+also be sold — two independent capabilities via interfaces.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md) | Interfaces, composition over inheritance, implementing more than one interface, `is Type variableName` pattern matching |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -127,7 +136,7 @@ More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
 repository plans to have, in the order it plans to build them, starting
-with Course 6. It lives at the repository root, not
+with Course 7. It lives at the repository root, not
 inside a single course, so the whole arc is visible from one file.
 
 ## How to use this course
@@ -173,7 +182,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (MachineShowdown.csproj, Machine.cs, Watcher.cs, Thunderjaw.cs, Strider.cs, Program.cs)
-  06-.../                    future courses, same pattern
+  06-crafting-bench/         Course 6 — interfaces
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (CraftingBench.csproj, ICollectible.cs, ISellable.cs, Herb.cs, RareGem.cs, Firewood.cs, TreasureMap.cs, Program.cs)
+  07-.../                    future courses, same pattern
 ```
 
 ## Contributing

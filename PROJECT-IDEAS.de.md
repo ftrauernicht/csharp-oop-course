@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 5 – Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -23,7 +23,7 @@ einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
 | 3 | ~~Ein Hof-Inventar~~ -- die Pflanzen und Tiere eines kleinen Hofs gießen, ernten und zählen | ✅ Gebaut -- siehe [Kurs 3 – Hof-Inventar](courses/03-homestead-inventory/de/01-hof-inventar.md) | ⭐⭐ |
 | 4 | ~~Maschinenjäger, Teil 1~~ -- eine `Machine`-Basisklasse und ein paar konkrete Maschinentypen, jede mit eigenem Angriff | ✅ Gebaut -- siehe [Kurs 4 – Maschinenjäger](courses/04-machine-hunter/de/01-maschinenjaeger.md) | ⭐⭐⭐ |
 | 5 | ~~Maschinenjäger, Teil 2~~ -- dieselben Maschinen, aus einer einzigen Liste heraus einzeln bekämpft | ✅ Gebaut -- siehe [Kurs 5 – Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md) | ⭐⭐⭐ |
-| 6 | **Eine Werkbank zum Craften** -- Items, die sich sammeln lassen, manche davon auch verkaufen | Interfaces, Komposition vs. Vererbung, mehr als ein Interface auf einer Klasse implementieren | ⭐⭐⭐⭐ |
+| 6 | ~~Eine Werkbank zum Craften~~ -- Items, die sich sammeln lassen, manche davon auch verkaufen | ✅ Gebaut -- siehe [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | ⭐⭐⭐⭐ |
 | 7 | **Spielstand speichern** -- eine Sammlung in eine Datei schreiben und wieder einlesen | `System.Text.Json`, Objekte serialisieren und deserialisieren | ⭐⭐⭐ |
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
