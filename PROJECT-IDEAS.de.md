@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 11 – Playlist-Abfragen](courses/11-playlist-queries/de/01-playlist-abfragen.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 12 – Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -34,7 +34,7 @@ sortiert vom kleinsten zum größten gedanklichen Sprung.
 | 9 | ~~Ein Gemischtwarenladen~~ -- eine Shop-Simulation, in der kein Geld mehr zu haben ein echter, benannter Fehlerfall ist, kein stiller Bug | ✅ Gebaut -- siehe [Kurs 9 – Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md) | ⭐⭐ |
 | 10 | ~~Ein Geldbeutel~~ -- Münzen und Beträge, die sich wirklich vergleichen, sortieren und entdoppeln lassen | ✅ Gebaut -- siehe [Kurs 10 – Geldbeutel](courses/10-coin-purse/de/01-geldbeutel.md) | ⭐⭐⭐ |
 | 11 | ~~Playlist-Abfragen~~ -- eine Playlist filtern, sortieren und zusammenfassen, ohne eine einzige manuelle Schleife zu schreiben | ✅ Gebaut -- siehe [Kurs 11 – Playlist-Abfragen](courses/11-playlist-queries/de/01-playlist-abfragen.md) | ⭐⭐⭐ |
-| 12 | **Ein generisches Kartendeck** -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | Generische Klassen und Methoden, Type Constraints (`where T : ...`) | ⭐⭐⭐⭐ |
+| 12 | ~~Ein generisches Kartendeck~~ -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | ✅ Gebaut -- siehe [Kurs 12 – Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md) | ⭐⭐⭐⭐ |
 | 13 | **Ein Thermostat, der sich selbst verrät** -- ein Gerät, das seine eigenen Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das ist | `event`, Delegates, das Observer-Pattern | ⭐⭐⭐⭐ |
 | 14 | **Beweisen, dass das Bankkonto funktioniert** -- automatisierte Tests für die Validierungs- und Exception-Logik einer Klasse, statt die Ausgabe nur mit dem Auge zu prüfen | xUnit, ein zweites Testprojekt, Arrange-Act-Assert | ⭐⭐⭐⭐ |
 | 15 | **Ein Preis-Wirrwarr refaktorieren** -- ein Gestrüpp aus `if`/`else if` in austauschbare, testbare Strategien verwandeln | Das Strategy- und das Factory-Pattern, benennen, was Kurs 4-13 unbewusst schon getan haben | ⭐⭐⭐⭐⭐ |

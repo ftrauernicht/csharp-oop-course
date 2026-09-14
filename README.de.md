@@ -189,6 +189,15 @@ zusammenfassen, statt für jedes eine manuelle Schleife.
 |---|---|---|
 | 1 | [Playlist-Abfragen](courses/11-playlist-queries/de/01-playlist-abfragen.md) | LINQ (`Where`, `Select`, `OrderBy`, `Sum`, `GroupBy`), Lambda-Ausdrücke |
 
+### Kurs 12 – Generisches Kartendeck (`courses/12-generic-card-deck/`)
+
+Setzt Kurs 1 und 2 voraus. Ein `Deck<T>`, das du selbst baust, nicht nur
+benutzt.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md) | Generische Klassen und Methoden, Type Constraints (`where T : IComparable<T>`, `where T : new()`) |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -269,7 +278,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (PlaylistQueries.csproj, Song.cs, Program.cs)
-  12-.../                    zukünftige Kurse, gleiches Muster
+  12-generic-card-deck/      Kurs 12 — Generics
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (GenericCardDeck.csproj, Card.cs, Deck.cs, Program.cs)
+  13-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

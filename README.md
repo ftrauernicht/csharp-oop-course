@@ -179,6 +179,14 @@ declaratively, instead of a manual loop for each one.
 |---|---|---|
 | 1 | [Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md) | LINQ (`Where`, `Select`, `OrderBy`, `Sum`, `GroupBy`), lambda expressions |
 
+### Course 12 – Generic Card Deck (`courses/12-generic-card-deck/`)
+
+Assumes Courses 1 and 2. A `Deck<T>` you build yourself, not just consume.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md) | Generic classes and methods, type constraints (`where T : IComparable<T>`, `where T : new()`) |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -257,7 +265,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (PlaylistQueries.csproj, Song.cs, Program.cs)
-  12-.../                    future courses, same pattern
+  12-generic-card-deck/      Course 12 — generics
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (GenericCardDeck.csproj, Card.cs, Deck.cs, Program.cs)
+  13-.../                    future courses, same pattern
 ```
 
 ## Contributing
