@@ -161,6 +161,15 @@ not a silent bug.
 |---|---|---|
 | 1 | [General Store](courses/09-general-store/en/01-general-store.md) | Custom exception classes, `try`/`catch`/`finally`, multiple `catch` blocks |
 
+### Course 10 – Coin Purse (`courses/10-coin-purse/`)
+
+Assumes Courses 1 and 2. Coins that can genuinely be compared, sorted, and
+deduplicated, not just compared by which object they happen to be.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Coin Purse](courses/10-coin-purse/en/01-coin-purse.md) | Operator overloading (`==`, `<`, `>`), `Equals`/`GetHashCode`, `IComparable<T>` |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -231,7 +240,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (GeneralStore.csproj, InsufficientFundsException.cs, BankAccount.cs, Store.cs, Program.cs)
-  10-.../                    future courses, same pattern
+  10-coin-purse/             Course 10 — equality, comparison, and sorting
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (CoinPurse.csproj, NaiveCoin.cs, Coin.cs, Program.cs)
+  11-.../                    future courses, same pattern
 ```
 
 ## Contributing

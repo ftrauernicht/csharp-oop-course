@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 9 – Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 10 – Geldbeutel](courses/10-coin-purse/de/01-geldbeutel.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -32,7 +32,7 @@ sortiert vom kleinsten zum größten gedanklichen Sprung.
 | 7 | ~~Spielstand speichern~~ -- eine Sammlung in eine Datei schreiben und wieder einlesen | ✅ Gebaut -- siehe [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md) | ⭐⭐⭐ |
 | 8 | ~~Eine persönliche Bibliothek~~ -- warum die interne Liste einer Klasse herauszugeben Kapselung bricht, und die Lösung | ✅ Gebaut -- siehe [Kurs 8 – Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md) | ⭐⭐ |
 | 9 | ~~Ein Gemischtwarenladen~~ -- eine Shop-Simulation, in der kein Geld mehr zu haben ein echter, benannter Fehlerfall ist, kein stiller Bug | ✅ Gebaut -- siehe [Kurs 9 – Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md) | ⭐⭐ |
-| 10 | **Ein Geldbeutel** -- Münzen und Beträge, die sich wirklich vergleichen, sortieren und entdoppeln lassen | Operator-Overloading (`==`), `Equals`/`GetHashCode`, `IComparable<T>` | ⭐⭐⭐ |
+| 10 | ~~Ein Geldbeutel~~ -- Münzen und Beträge, die sich wirklich vergleichen, sortieren und entdoppeln lassen | ✅ Gebaut -- siehe [Kurs 10 – Geldbeutel](courses/10-coin-purse/de/01-geldbeutel.md) | ⭐⭐⭐ |
 | 11 | **Playlist-Abfragen** -- eine Playlist filtern, sortieren und zusammenfassen, ohne eine einzige manuelle Schleife zu schreiben | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), Lambda-Ausdrücke | ⭐⭐⭐ |
 | 12 | **Ein generisches Kartendeck** -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | Generische Klassen und Methoden, Type Constraints (`where T : ...`) | ⭐⭐⭐⭐ |
 | 13 | **Ein Thermostat, der sich selbst verrät** -- ein Gerät, das seine eigenen Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das ist | `event`, Delegates, das Observer-Pattern | ⭐⭐⭐⭐ |

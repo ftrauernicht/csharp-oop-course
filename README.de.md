@@ -170,6 +170,16 @@ benannter Fehlerfall, kein stiller Bug.
 |---|---|---|
 | 1 | [Gemischtwarenladen](courses/09-general-store/de/01-gemischtwarenladen.md) | Eigene Exception-Klassen, `try`/`catch`/`finally`, mehrere `catch`-Blöcke |
 
+### Kurs 10 – Geldbeutel (`courses/10-coin-purse/`)
+
+Setzt Kurs 1 und 2 voraus. Münzen, die sich wirklich vergleichen,
+sortieren und entdoppeln lassen, nicht nur danach, welches Objekt sie
+zufällig sind.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Geldbeutel](courses/10-coin-purse/de/01-geldbeutel.md) | Operator-Overloading (`==`, `<`, `>`), `Equals`/`GetHashCode`, `IComparable<T>` |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -242,7 +252,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (GeneralStore.csproj, InsufficientFundsException.cs, BankAccount.cs, Store.cs, Program.cs)
-  10-.../                    zukünftige Kurse, gleiches Muster
+  10-coin-purse/             Kurs 10 — Gleichheit, Vergleich und Sortierung
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (CoinPurse.csproj, NaiveCoin.cs, Coin.cs, Program.cs)
+  11-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken
