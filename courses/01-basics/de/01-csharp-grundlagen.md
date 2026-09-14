@@ -312,9 +312,8 @@ prüfst, sonst kommt der speziellere Fall nie zum Zug.
 
 ## Weiter
 
-Das war das letzte Kapitel von Kurs 1. Kurs 2 knüpft unmittelbar hier an: Du
-nimmst genau diese Bausteine und gruppierst sie zum ersten Mal in eine
-Klasse — dein erster echter Schritt in die objektorientierte Programmierung.
-Er ist noch nicht veröffentlicht; schau in der
-[Repository-Übersicht](../../../README.de.md) nach, was aktuell verfügbar
-ist.
+Das war das letzte Kapitel von Kurs 1. Weiter geht's mit
+[Kurs 2 – Katzenkartei](../../02-cat-roster/de/01-katzenkartei.md), der
+unmittelbar hier anknüpft: Du nimmst genau diese Bausteine und gruppierst
+sie zum ersten Mal in eine Klasse — dein erster echter Schritt in die
+objektorientierte Programmierung.

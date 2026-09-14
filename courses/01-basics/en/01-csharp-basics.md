@@ -301,8 +301,8 @@ gets a chance to run.
 
 ## Next
 
-This was Course 1's last chapter. Course 2 picks up immediately from here:
-you'll take these exact building blocks and group them, for the first time,
-into a class — your first real step into object-oriented programming. It
-isn't published yet; check the [repository overview](../../../README.md)
-for what's currently available.
+This was Course 1's last chapter. Continue to
+[Course 2 – Cat Roster](../../02-cat-roster/en/01-cat-roster.md), which
+picks up immediately from here: you'll take these exact building blocks and
+group them, for the first time, into a class — your first real step into
+object-oriented programming.

@@ -1,24 +1,25 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 1 – Basics](courses/01-basics/de/01-csharp-grundlagen.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 2 – Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
 Anders als eine Liste von Nebenprojekt-Vorschlägen für nach einem Kurs ist
 jeder Eintrag unten ein Kurs, den dieses Repository plant zu haben. Kurs 1
-deckt einfaches, prozedurales C# ab -- noch keine Klassen. Alles danach
-handelt davon, sich eine objektorientierte Idee nach der anderen zu
-erarbeiten, jede an einem kleinen, vollständigen Projekt, statt vorab eine
-Begriffswand aufzubauen, bevor irgendetwas davon Bedeutung hat. Kurs 3 und
-alle weiteren hängen nicht voneinander ab, aber jeder einzelne von ihnen
-hängt von Kurs 1 und 2 ab -- warum das Abhängigkeitsmodell dieses
-Repositories sich leicht von einem Kurs unterscheidet, der nur "irgendein
-C#-Können" braucht, steht in [CONTRIBUTING.de.md](CONTRIBUTING.de.md).
+und 2 decken einfaches, prozedurales C# und deine erste Klasse ab -- die
+geteilte Grundlage. Alles danach handelt davon, sich eine
+objektorientierte Idee nach der anderen zu erarbeiten, jede an einem
+kleinen, vollständigen Projekt, statt vorab eine Begriffswand aufzubauen,
+bevor irgendetwas davon Bedeutung hat. Kurs 3 und alle weiteren hängen
+nicht voneinander ab, aber jeder einzelne von ihnen hängt von Kurs 1 und 2
+ab -- warum das Abhängigkeitsmodell dieses Repositories sich leicht von
+einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
+[CONTRIBUTING.de.md](CONTRIBUTING.de.md).
 
 | # | Kurs | Neue Fähigkeiten, zusätzlich zu dem, was du schon kannst | Schwierigkeit |
 |---|---|---|---|
 | 1 | ~~Basics~~ -- Werte, Variablen, Operatoren, Methoden, Bedingungen, Schleifen | ✅ Gebaut -- siehe [Kurs 1 – Basics](courses/01-basics/de/01-csharp-grundlagen.md) | ⭐ |
-| 2 | **Deine erste Klasse** -- eine Handvoll `Cat`-Objekte, die sich selbst vorstellen | Klasse vs. Objekt, Felder, Konstruktor, Methoden, `this` -- "Kapselung" wird erst benannt, nachdem du die Form schon gespürt hast | ⭐ |
+| 2 | ~~Deine erste Klasse~~ -- eine Handvoll `Cat`-Objekte, die sich selbst vorstellen | ✅ Gebaut -- siehe [Kurs 2 – Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md) | ⭐ |
 | 3 | **Ein Hof-Inventar** -- die Pflanzen und Tiere eines kleinen Hofs gießen, ernten und zählen | `List<T>`, `foreach`, private Felder mit validierten öffentlichen Properties -- Kapselung, diesmal benannt und bewusst eingesetzt | ⭐⭐ |
 | 4 | **Maschinenjäger, Teil 1** -- eine `Machine`-Basisklasse und ein paar konkrete Maschinentypen, jede mit eigenem Angriff | Vererbung, `virtual`/`override`, `base(...)`, `protected` | ⭐⭐⭐ |
 | 5 | **Maschinenjäger, Teil 2** -- dieselben Maschinen, aus einer einzigen Liste heraus einzeln bekämpft | Abstrakte Klassen, Polymorphie -- die Auszahlung für das, was Kurs 4 im Stillen vorbereitet hat | ⭐⭐⭐ |

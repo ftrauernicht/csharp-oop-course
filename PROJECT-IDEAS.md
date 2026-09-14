@@ -1,23 +1,24 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 1 – Basics](courses/01-basics/en/01-csharp-basics.md)
+[← Back to repository overview](README.md) · Builds on: [Course 2 – Cat Roster](courses/02-cat-roster/en/01-cat-roster.md)
 
 # This repository's course roadmap
 
 Unlike a list of side-project suggestions for after you've finished a
-course, every entry below is a course this repository plans to have. Course
-1 covers plain, procedural C# -- no classes yet. Everything from here on is
-about earning one object-oriented idea at a time, each through a small,
-complete project, instead of front-loading a wall of vocabulary before any
-of it means anything. Courses 3 and up don't depend on each other, but
-every single one of them depends on Courses 1 and 2 -- see
-[CONTRIBUTING.md](CONTRIBUTING.md) for why this repository's dependency
-model differs slightly from a course that only needs "some C#".
+course, every entry below is a course this repository plans to have. Courses
+1 and 2 cover plain, procedural C# and your first class -- the shared
+foundation. Everything from here on is about earning one object-oriented
+idea at a time, each through a small, complete project, instead of
+front-loading a wall of vocabulary before any of it means anything. Courses
+3 and up don't depend on each other, but every single one of them depends
+on Courses 1 and 2 -- see [CONTRIBUTING.md](CONTRIBUTING.md) for why this
+repository's dependency model differs slightly from a course that only
+needs "some C#".
 
 | # | Course | New skills, on top of what you already have | Difficulty |
 |---|---|---|---|
 | 1 | ~~Basics~~ -- values, variables, operators, methods, conditionals, loops | ✅ Built -- see [Course 1 – Basics](courses/01-basics/en/01-csharp-basics.md) | ⭐ |
-| 2 | **Your first class** -- a handful of `Cat` objects that introduce themselves | Classes vs. objects, fields, constructors, methods, `this` -- "encapsulation" gets named only once you've already felt the shape of it | ⭐ |
+| 2 | ~~Your first class~~ -- a handful of `Cat` objects that introduce themselves | ✅ Built -- see [Course 2 – Cat Roster](courses/02-cat-roster/en/01-cat-roster.md) | ⭐ |
 | 3 | **A homestead inventory** -- water, harvest, and count a small farm's crops and animals | `List<T>`, `foreach`, private fields with validated public properties -- encapsulation, this time named and used on purpose | ⭐⭐ |
 | 4 | **Machine hunter, part 1** -- a `Machine` base class and a few concrete machine types, each with their own attack | Inheritance, `virtual`/`override`, `base(...)`, `protected` | ⭐⭐⭐ |
 | 5 | **Machine hunter, part 2** -- the same machines, fought one by one from a single list | Abstract classes, polymorphism -- the payoff for what Course 4 quietly set up | ⭐⭐⭐ |

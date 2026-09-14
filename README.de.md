@@ -74,9 +74,10 @@ Kurs 1 und Kurs 2 bilden zusammen die geteilte Grundlage, die jeder spätere
 Kurs voraussetzt — objektorientierte Ideen bauen direkter aufeinander auf
 als etwa "wie hole ich Daten von einer API", deshalb bleiben genau diese
 beiden Kurse Pflicht, statt jeden einzelnen Kurs komplett unabhängig zu
-machen. Sobald Kurs 2 existiert, sind Kurs 3 und alle weiteren jeweils
-unabhängige, eigenständige Projekte, die nur Kurs 1 und 2 voraussetzen —
-wähl, was dich mehr interessiert, in beliebiger Reihenfolge.
+machen. Kurs 3 und alle weiteren sind dann jeweils unabhängige,
+eigenständige Projekte, die nur Kurs 1 und 2 voraussetzen (noch keiner
+veröffentlicht — siehe [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md)) — wähl,
+was dich mehr interessiert, in beliebiger Reihenfolge.
 
 ### Kurs 1 – Basics (`courses/01-basics/`)
 
@@ -89,6 +90,15 @@ danach voraussetzt.
 | 0 | [Einführung & Werkzeuge](courses/01-basics/de/00-einfuehrung.md) | Visual Studio installieren, ein Konsolenprojekt anlegen und ausführen, warum C# einen Compiler braucht |
 | 1 | [C#-Grundlagen](courses/01-basics/de/01-csharp-grundlagen.md) | Werte, statische Typisierung, Variablen, Operatoren, String-Interpolation, Methoden, Bedingungen, Schleifen |
 
+### Kurs 2 – Katzenkartei (`courses/02-cat-roster/`)
+
+Setzt Kurs 1 voraus. Dein erster echter Schritt in die OOP — eine Handvoll
+unabhängiger `Cat`-Objekte, die sich selbst vorstellen.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md) | Klasse vs. Objekt, Properties, Konstruktoren, `this`, Instanzmethoden, die den Zustand eines Objekts lesen oder ändern |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -98,9 +108,9 @@ Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
 ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 2 — deiner ersten Klasse. Die Datei liegt
-im Repository-Root und nicht in einem einzelnen Kurs, damit der ganze Bogen
-aus einer Datei sichtbar ist.
+Reihenfolge, beginnend mit Kurs 3. Die Datei liegt im Repository-Root und
+nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
+sichtbar ist.
 
 ## Wie du diesen Kurs benutzt
 
@@ -130,7 +140,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (Basics.csproj, Program.cs)
-  02-.../                    zukünftige Kurse, gleiches Muster
+  02-cat-roster/             Kurs 2 — deine erste Klasse
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (CatRoster.csproj, Cat.cs, Program.cs)
+  03-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

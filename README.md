@@ -68,10 +68,10 @@ gets its own number under `courses/`, in the order it was written.
 Courses 1 and 2 together are the shared foundation every later course
 assumes — object-oriented ideas build on each other more directly than,
 say, "how do I fetch data", so this repository keeps those two required
-instead of making every single course independent. Once Course 2 exists,
-Course 3 onward will each be independent, standalone projects that only
-assume Courses 1 and 2 — pick whichever sounds more interesting, in
-whatever order you like.
+instead of making every single course independent. Course 3 onward will
+each be independent, standalone projects that only assume Courses 1 and 2
+(none published yet — see [PROJECT-IDEAS.md](PROJECT-IDEAS.md)) — pick
+whichever sounds more interesting, in whatever order you like.
 
 ### Course 1 – Basics (`courses/01-basics/`)
 
@@ -83,6 +83,15 @@ purpose. The shared vocabulary Course 2 and everything after it assumes.
 | 0 | [Introduction & Tools](courses/01-basics/en/00-introduction.md) | Installing Visual Studio, creating and running a console project, why C# needs a compiler |
 | 1 | [C# Basics](courses/01-basics/en/01-csharp-basics.md) | Values, static typing, variables, operators, string interpolation, methods, conditionals, loops |
 
+### Course 2 – Cat Roster (`courses/02-cat-roster/`)
+
+Assumes Course 1. Your first real step into OOP — a handful of independent
+`Cat` objects that introduce themselves.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Cat Roster](courses/02-cat-roster/en/01-cat-roster.md) | Classes vs. objects, properties, constructors, `this`, instance methods that read or change an object's own state |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -91,7 +100,7 @@ More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
 repository plans to have, in the order it plans to build them, starting
-with Course 2 — your first class. It lives at the repository root, not
+with Course 3. It lives at the repository root, not
 inside a single course, so the whole arc is visible from one file.
 
 ## How to use this course
@@ -121,7 +130,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German (Kapiteltexte, Deutsch)
     code/                      reference solution (Basics.csproj, Program.cs)
-  02-.../                    future courses, same pattern
+  02-cat-roster/             Course 2 — your first class
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (CatRoster.csproj, Cat.cs, Program.cs)
+  03-.../                    future courses, same pattern
 ```
 
 ## Contributing
