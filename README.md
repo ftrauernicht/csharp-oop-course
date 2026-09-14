@@ -137,11 +137,23 @@ reopening the program, saved to a real JSON file on disk.
 |---|---|---|
 | 1 | [Reading List](courses/07-reading-list/en/01-reading-list.md) | `System.Text.Json`, serializing and deserializing objects, basic file I/O |
 
-This completes this repository's originally planned arc, from plain
+Course 7 completed this repository's originally planned arc, from plain
 procedural C# through your first class, encapsulation, inheritance,
-polymorphism, interfaces, and persistence. More courses may be added over
-time; this section grows with them. See [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
-for details.
+polymorphism, interfaces, and persistence. Courses 8 and up extend it with
+more advanced, sharply-focused topics — see
+[PROJECT-IDEAS.md](PROJECT-IDEAS.md) for the full list.
+
+### Course 8 – Personal Library (`courses/08-personal-library/`)
+
+Assumes Courses 1 and 2. Why handing out a class's internal list directly
+breaks encapsulation, and the fix.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Personal Library](courses/08-personal-library/en/01-personal-library.md) | `IReadOnlyList<T>`, `.AsReadOnly()` vs. a plain upcast, encapsulating a collection |
+
+More courses will be added over time; this section grows with them. See
+[PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
 ## Project ideas
 
@@ -202,7 +214,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (ReadingList.csproj, Book.cs, Program.cs)
-  08-.../                    future courses, same pattern
+  08-personal-library/       Course 8 — encapsulating a collection
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (PersonalLibrary.csproj, Book.cs, BadLibrary.cs, Library.cs, Program.cs)
+  09-.../                    future courses, same pattern
 ```
 
 ## Contributing

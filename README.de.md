@@ -146,10 +146,23 @@ JSON-Datei.
 |---|---|---|
 | 1 | [Leseliste](courses/07-reading-list/de/01-leseliste.md) | `System.Text.Json`, Objekte serialisieren und deserialisieren, grundlegende Datei-I/O |
 
-Damit ist der ursprünglich geplante Bogen dieses Repositories komplett, von
-einfachem prozeduralem C# über deine erste Klasse, Kapselung, Vererbung,
-Polymorphie, Interfaces bis zur Persistenz. Mit der Zeit können weitere
-Kurse dazukommen; dieser Abschnitt wächst mit ihnen. Details stehen in
+Mit Kurs 7 war der ursprünglich geplante Bogen dieses Repositories komplett,
+von einfachem prozeduralem C# über deine erste Klasse, Kapselung,
+Vererbung, Polymorphie, Interfaces bis zur Persistenz. Kurs 8 und weitere
+erweitern ihn um fortgeschrittenere, scharf abgegrenzte Themen — die
+vollständige Liste steht in [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
+
+### Kurs 8 – Persönliche Bibliothek (`courses/08-personal-library/`)
+
+Setzt Kurs 1 und 2 voraus. Warum die interne Liste einer Klasse direkt
+herauszugeben Kapselung bricht, und die Lösung dafür.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md) | `IReadOnlyList<T>`, `.AsReadOnly()` vs. einfaches Hochcasten, eine Sammlung kapseln |
+
+Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
+Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
 
 ## Projektideen
@@ -212,7 +225,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (ReadingList.csproj, Book.cs, Program.cs)
-  08-.../                    zukünftige Kurse, gleiches Muster
+  08-personal-library/       Kurs 8 — eine Sammlung kapseln
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (PersonalLibrary.csproj, Book.cs, BadLibrary.cs, Library.cs, Program.cs)
+  09-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

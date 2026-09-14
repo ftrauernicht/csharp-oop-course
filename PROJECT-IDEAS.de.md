@@ -1,21 +1,25 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 8 – Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
 Anders als eine Liste von Nebenprojekt-Vorschlägen für nach einem Kurs ist
 jeder Eintrag unten ein Kurs, den dieses Repository gebaut hat (oder, für
 eine zukünftige Ergänzung, plant zu bauen). Kurs 1 und 2 decken einfaches,
-prozedurales C# und deine erste Klasse ab -- die
-geteilte Grundlage. Alles danach handelt davon, sich eine
-objektorientierte Idee nach der anderen zu erarbeiten, jede an einem
-kleinen, vollständigen Projekt, statt vorab eine Begriffswand aufzubauen,
-bevor irgendetwas davon Bedeutung hat. Kurs 3 und alle weiteren hängen
-nicht voneinander ab, aber jeder einzelne von ihnen hängt von Kurs 1 und 2
-ab -- warum das Abhängigkeitsmodell dieses Repositories sich leicht von
-einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
-[CONTRIBUTING.de.md](CONTRIBUTING.de.md).
+prozedurales C# und deine erste Klasse ab -- die geteilte Grundlage. Alles
+danach handelt davon, sich eine objektorientierte Idee nach der anderen zu
+erarbeiten, jede an einem kleinen, vollständigen Projekt, statt vorab eine
+Begriffswand aufzubauen, bevor irgendetwas davon Bedeutung hat. Kurs 3 und
+alle weiteren hängen nicht voneinander ab, aber jeder einzelne von ihnen
+hängt von Kurs 1 und 2 ab -- warum das Abhängigkeitsmodell dieses
+Repositories sich leicht von einem Kurs unterscheidet, der nur "irgendein
+C#-Können" braucht, steht in [CONTRIBUTING.de.md](CONTRIBUTING.de.md).
+
+Kurs 1-7 sind der ursprüngliche Bogen dieses Repositories. Kurs 8-15 sind
+eine zweite, fortgeschrittenere Stufe -- jeder scharf auf ein einzelnes
+Thema fokussiert, auf das sich echte C#-Codebasen ständig verlassen,
+sortiert vom kleinsten zum größten gedanklichen Sprung.
 
 | # | Kurs | Neue Fähigkeiten, zusätzlich zu dem, was du schon kannst | Schwierigkeit |
 |---|---|---|---|
@@ -26,6 +30,14 @@ einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
 | 5 | ~~Maschinenjäger, Teil 2~~ -- dieselben Maschinen, aus einer einzigen Liste heraus einzeln bekämpft | ✅ Gebaut -- siehe [Kurs 5 – Maschinen-Showdown](courses/05-machine-showdown/de/01-maschinen-showdown.md) | ⭐⭐⭐ |
 | 6 | ~~Eine Werkbank zum Craften~~ -- Items, die sich sammeln lassen, manche davon auch verkaufen | ✅ Gebaut -- siehe [Kurs 6 – Werkbank](courses/06-crafting-bench/de/01-werkbank.md) | ⭐⭐⭐⭐ |
 | 7 | ~~Spielstand speichern~~ -- eine Sammlung in eine Datei schreiben und wieder einlesen | ✅ Gebaut -- siehe [Kurs 7 – Leseliste](courses/07-reading-list/de/01-leseliste.md) | ⭐⭐⭐ |
+| 8 | ~~Eine persönliche Bibliothek~~ -- warum die interne Liste einer Klasse herauszugeben Kapselung bricht, und die Lösung | ✅ Gebaut -- siehe [Kurs 8 – Persönliche Bibliothek](courses/08-personal-library/de/01-persoenliche-bibliothek.md) | ⭐⭐ |
+| 9 | **Ein Gemischtwarenladen** -- eine Shop-Simulation, in der kein Geld mehr zu haben ein echter, benannter Fehlerfall ist, kein stiller Bug | Eigene Exception-Klassen, `try`/`catch`/`finally` | ⭐⭐ |
+| 10 | **Ein Geldbeutel** -- Münzen und Beträge, die sich wirklich vergleichen, sortieren und entdoppeln lassen | Operator-Overloading (`==`), `Equals`/`GetHashCode`, `IComparable<T>` | ⭐⭐⭐ |
+| 11 | **Playlist-Abfragen** -- eine Playlist filtern, sortieren und zusammenfassen, ohne eine einzige manuelle Schleife zu schreiben | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), Lambda-Ausdrücke | ⭐⭐⭐ |
+| 12 | **Ein generisches Kartendeck** -- ein `Deck<T>`, das du selbst baust, nicht nur benutzt | Generische Klassen und Methoden, Type Constraints (`where T : ...`) | ⭐⭐⭐⭐ |
+| 13 | **Ein Thermostat, der sich selbst verrät** -- ein Gerät, das seine eigenen Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das ist | `event`, Delegates, das Observer-Pattern | ⭐⭐⭐⭐ |
+| 14 | **Beweisen, dass das Bankkonto funktioniert** -- automatisierte Tests für die Validierungs- und Exception-Logik einer Klasse, statt die Ausgabe nur mit dem Auge zu prüfen | xUnit, ein zweites Testprojekt, Arrange-Act-Assert | ⭐⭐⭐⭐ |
+| 15 | **Ein Preis-Wirrwarr refaktorieren** -- ein Gestrüpp aus `if`/`else if` in austauschbare, testbare Strategien verwandeln | Das Strategy- und das Factory-Pattern, benennen, was Kurs 4-13 unbewusst schon getan haben | ⭐⭐⭐⭐⭐ |
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
 
@@ -39,7 +51,9 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   eigenständige Projekte: Kurs 5 baut seine eigene, kleine Version der
   Kurs-4-Hierarchie in ein paar Zeilen selbst wieder auf, bevor es zum
   eigentlichen Punkt kommt -- Kurs 5 ohne je Kurs 4 gemacht zu haben,
-  funktioniert also genauso gut.
+  funktioniert also genauso gut. Kurs 9 und 14 teilen sich eine Domäne auf
+  dieselbe Art -- Kurs 14 schreibt Tests gegen seine eigene kleine
+  Neuauflage von Kurs 9s `BankAccount`.
 - Ein paar dieser Ideen greifen bewusst, an bestimmten Stellen statt
   durchgängig, Hobbys der Person auf, für die dieser Kurs zuerst geschrieben
   wurde: Katzen für die erste, kleinste Klasse (Kurs 2); ein
@@ -49,19 +63,23 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   mechanischer Kreaturen für Vererbung und Polymorphie (Kurs 4-5), weil
   "verschiedene Maschinentypen, die sich eine Form teilen, sich aber
   unterschiedlich verhalten" wortwörtlich die Prämisse dieses Spiels ist.
-  Kurs 1, 6 und 7 bleiben bewusst neutral.
+  Kurs 1, 6, 7 und die ganze Stufe 8-15 bleiben bewusst neutral.
 - "Weniger Code, mehr Nachdenken" beginnt hier schon ab Kurs 3 -- zwei Kurse
   früher als der entsprechende Punkt im Geschwister-Repo für JavaScript.
   Sobald Kurs 1-2 die Form der Sprache und einer Klasse überhaupt vermittelt
   haben, ist das, was wirklich Übung braucht, die OOP-Entwurfsentscheidung
-  selbst -- nicht das Abtippen von jemand anderes Entscheidung.
+  selbst -- nicht das Abtippen von jemand anderes Entscheidung. Kurs 8-15
+  halten die Kernübung auf dieselbe Art zurück.
+- Kurs 15 kommt bewusst zuletzt: Er lehrt weniger neue Syntax, sondern gibt
+  einer Gewohnheit einen Namen, die Kurs 4 (austauschbares
+  `Attack()`-Verhalten), 6 (Fähigkeiten zusammensetzen) und 13 (entkoppelte
+  Kommunikation) schon absichtlich eingeübt haben, ohne es "Pattern" zu
+  nennen.
 
-Alle sieben Kurse oben sind jetzt gebaut, damit ist der ursprünglich
-geplante Bogen dieses Repositories komplett. Ein Kurs 8 steht noch nicht
-auf der Roadmap -- kommt einer dazu, folgt er denselben Gewohnheiten, die
-Kurs 1-7 schon etabliert haben: zuerst die Kernversion bauen, sie einfach
-halten, die eigentliche OOP-Entwurfsentscheidung als Übung zurückhalten
-statt sie vorzugeben, und erst dann zur optionalen, schwierigeren Variante
-eines Features greifen, wenn die einfache funktioniert. Der vollständige
-Satz an Konventionen für einen neuen Kurs steht in
-[CONTRIBUTING.de.md](CONTRIBUTING.de.md).
+Kurs 1-15 sind die aktuell gebaute und geplante Roadmap dieses
+Repositories. Was danach kommt, folgt denselben Gewohnheiten: zuerst die
+Kernversion bauen, sie einfach halten, die eigentliche Entwurfsentscheidung
+als Übung zurückhalten statt sie vorzugeben, und erst dann zur optionalen,
+schwierigeren Variante eines Features greifen, wenn die einfache
+funktioniert. Der vollständige Satz an Konventionen für einen neuen Kurs
+steht in [CONTRIBUTING.de.md](CONTRIBUTING.de.md).

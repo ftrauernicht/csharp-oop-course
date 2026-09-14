@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 7 – Reading List](courses/07-reading-list/en/01-reading-list.md)
+[← Back to repository overview](README.md) · Builds on: [Course 8 – Personal Library](courses/08-personal-library/en/01-personal-library.md)
 
 # This repository's course roadmap
 
@@ -15,6 +15,11 @@ every single one of them depends on Courses 1 and 2 -- see
 [CONTRIBUTING.md](CONTRIBUTING.md) for why this repository's dependency
 model differs slightly from a course that only needs "some C#".
 
+Courses 1-7 are this repository's original arc. Courses 8-15 are a second,
+more advanced tier -- each one sharply focused on a single topic real C#
+codebases lean on constantly, ordered from smallest conceptual jump to
+biggest.
+
 | # | Course | New skills, on top of what you already have | Difficulty |
 |---|---|---|---|
 | 1 | ~~Basics~~ -- values, variables, operators, methods, conditionals, loops | ✅ Built -- see [Course 1 – Basics](courses/01-basics/en/01-csharp-basics.md) | ⭐ |
@@ -24,6 +29,14 @@ model differs slightly from a course that only needs "some C#".
 | 5 | ~~Machine hunter, part 2~~ -- the same machines, fought one by one from a single list | ✅ Built -- see [Course 5 – Machine Showdown](courses/05-machine-showdown/en/01-machine-showdown.md) | ⭐⭐⭐ |
 | 6 | ~~A crafting bench~~ -- items that can be collected, and some of those can also be sold | ✅ Built -- see [Course 6 – Crafting Bench](courses/06-crafting-bench/en/01-crafting-bench.md) | ⭐⭐⭐⭐ |
 | 7 | ~~Save your progress~~ -- write a collection to a file and read it back | ✅ Built -- see [Course 7 – Reading List](courses/07-reading-list/en/01-reading-list.md) | ⭐⭐⭐ |
+| 8 | ~~A personal library~~ -- why handing out a class's internal list breaks encapsulation, and the fix | ✅ Built -- see [Course 8 – Personal Library](courses/08-personal-library/en/01-personal-library.md) | ⭐⭐ |
+| 9 | **A general store** -- a shop simulation where running out of money is a real, named failure, not a silent bug | Custom exception classes, `try`/`catch`/`finally` | ⭐⭐ |
+| 10 | **A coin purse** -- coins and amounts that can genuinely be compared, sorted, and deduplicated | Operator overloading (`==`), `Equals`/`GetHashCode`, `IComparable<T>` | ⭐⭐⭐ |
+| 11 | **Playlist queries** -- filter, sort, and summarize a playlist without writing a single manual loop | LINQ (`Where`, `Select`, `OrderBy`, `Sum`), lambda expressions | ⭐⭐⭐ |
+| 12 | **A generic card deck** -- a `Deck<T>` you build yourself, not just consume | Generic classes and methods, type constraints (`where T : ...`) | ⭐⭐⭐⭐ |
+| 13 | **A thermostat that tells on itself** -- a device that announces its own state changes to whoever's listening, without knowing who that is | `event`, delegates, the Observer pattern | ⭐⭐⭐⭐ |
+| 14 | **Proving the bank account works** -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | xUnit, a second test project, Arrange-Act-Assert | ⭐⭐⭐⭐ |
+| 15 | **Refactoring a pricing mess** -- turning a tangle of `if`/`else if` into swappable, testable strategies | The Strategy and Factory patterns, naming what Courses 4-13 already did unknowingly | ⭐⭐⭐⭐⭐ |
 
 A few notes on how to read this list:
 
@@ -36,7 +49,8 @@ A few notes on how to read this list:
   still two independent, standalone projects: Course 5 rebuilds its own
   small version of the Course 4 hierarchy in a few lines before it gets to
   the actual point, so doing Course 5 without ever having done Course 4
-  works just fine.
+  works just fine. Courses 9 and 14 share a domain the same way -- Course 14
+  writes tests against its own small rebuild of Course 9's `BankAccount`.
 - A few of these lean on hobbies of the person this course was first
   written for, on purpose, in specific spots rather than throughout: cats
   for the first, smallest class (Course 2); a cozy farming-sim flavor —
@@ -45,18 +59,23 @@ A few notes on how to read this list:
   Horizon-Zero-Dawn-style world of mechanical creatures for inheritance and
   polymorphism (Courses 4-5), because "different machine types that share
   a shape but behave differently" is quite literally that game's own
-  premise. Courses 1, 6, and 7 stay deliberately neutral.
+  premise. Courses 1, 6, 7, and the whole 8-15 tier stay deliberately
+  neutral.
 - "Less code, more thinking" starts at Course 3 here -- two courses earlier
   than the equivalent point in the sibling JavaScript course. Once Courses
   1-2 have taught the shape of the language and of a class at all, the
   thing actually worth practicing is the OOP design decision itself, not
-  retyping someone else's.
+  retyping someone else's. Courses 8-15 keep holding back the core
+  exercise the same way.
+- Course 15 is deliberately last: it doesn't teach new syntax so much as
+  give a name to a habit Courses 4 (swappable `Attack()` behavior), 6
+  (composing capabilities), and 13 (decoupled communication) already built,
+  on purpose, without calling it a "pattern" yet.
 
-All seven courses above are now built, completing this repository's
-originally planned arc. There's no Course 8 on the roadmap yet -- when one
-gets added, it follows the same habits Courses 1-7 already established:
-build the core version first, keep it simple, hold back the actual OOP
-design decision as an exercise rather than handing it over, and only reach
-for the optional, harder variant of a feature once the simple one works.
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full set of conventions a
-new course needs to follow.
+Courses 1-15 are this repository's currently built and planned roadmap.
+Whatever comes after follows the same habits: build the core version
+first, keep it simple, hold back the actual design decision as an exercise
+rather than handing it over, and only reach for the optional, harder
+variant of a feature once the simple one works. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the full set of conventions a new
+course needs to follow.
