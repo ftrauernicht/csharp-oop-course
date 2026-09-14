@@ -198,6 +198,16 @@ benutzt.
 |---|---|---|
 | 1 | [Generisches Kartendeck](courses/12-generic-card-deck/de/01-generisches-kartendeck.md) | Generische Klassen und Methoden, Type Constraints (`where T : IComparable<T>`, `where T : new()`) |
 
+### Kurs 13 – Thermostat-Events (`courses/13-thermostat-events/`)
+
+Setzt Kurs 1 und 2 voraus. Ein Gerät, das seine eigenen
+Zustandsänderungen an alle meldet, die zuhören, ohne zu wissen, wer das
+ist.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Thermostat-Events](courses/13-thermostat-events/de/01-thermostat-events.md) | `event`, `EventHandler<TEventArgs>`, eigene `EventArgs`, das Observer-Pattern |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -282,7 +292,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (GenericCardDeck.csproj, Card.cs, Deck.cs, Program.cs)
-  13-.../                    zukünftige Kurse, gleiches Muster
+  13-thermostat-events/      Kurs 13 — Events und das Observer-Pattern
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (ThermostatEvents.csproj, TemperatureChangedEventArgs.cs, Thermostat.cs, Display.cs, Logger.cs, Alarm.cs, Program.cs)
+  14-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

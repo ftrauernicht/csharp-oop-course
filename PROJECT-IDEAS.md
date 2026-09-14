@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 12 – Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md)
+[← Back to repository overview](README.md) · Builds on: [Course 13 – Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md)
 
 # This repository's course roadmap
 
@@ -34,7 +34,7 @@ biggest.
 | 10 | ~~A coin purse~~ -- coins and amounts that can genuinely be compared, sorted, and deduplicated | ✅ Built -- see [Course 10 – Coin Purse](courses/10-coin-purse/en/01-coin-purse.md) | ⭐⭐⭐ |
 | 11 | ~~Playlist queries~~ -- filter, sort, and summarize a playlist without writing a single manual loop | ✅ Built -- see [Course 11 – Playlist Queries](courses/11-playlist-queries/en/01-playlist-queries.md) | ⭐⭐⭐ |
 | 12 | ~~A generic card deck~~ -- a `Deck<T>` you build yourself, not just consume | ✅ Built -- see [Course 12 – Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md) | ⭐⭐⭐⭐ |
-| 13 | **A thermostat that tells on itself** -- a device that announces its own state changes to whoever's listening, without knowing who that is | `event`, delegates, the Observer pattern | ⭐⭐⭐⭐ |
+| 13 | ~~A thermostat that tells on itself~~ -- a device that announces its own state changes to whoever's listening, without knowing who that is | ✅ Built -- see [Course 13 – Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md) | ⭐⭐⭐⭐ |
 | 14 | **Proving the bank account works** -- automated tests for a class's validation and exception-throwing behavior, not just eyeballing the output | xUnit, a second test project, Arrange-Act-Assert | ⭐⭐⭐⭐ |
 | 15 | **Refactoring a pricing mess** -- turning a tangle of `if`/`else if` into swappable, testable strategies | The Strategy and Factory patterns, naming what Courses 4-13 already did unknowingly | ⭐⭐⭐⭐⭐ |
 

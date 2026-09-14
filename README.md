@@ -187,6 +187,15 @@ Assumes Courses 1 and 2. A `Deck<T>` you build yourself, not just consume.
 |---|---|---|
 | 1 | [Generic Card Deck](courses/12-generic-card-deck/en/01-generic-card-deck.md) | Generic classes and methods, type constraints (`where T : IComparable<T>`, `where T : new()`) |
 
+### Course 13 – Thermostat Events (`courses/13-thermostat-events/`)
+
+Assumes Courses 1 and 2. A device that announces its own state changes to
+whoever's listening, without knowing who that is.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Thermostat Events](courses/13-thermostat-events/en/01-thermostat-events.md) | `event`, `EventHandler<TEventArgs>`, custom `EventArgs`, the Observer pattern |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -269,7 +278,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (GenericCardDeck.csproj, Card.cs, Deck.cs, Program.cs)
-  13-.../                    future courses, same pattern
+  13-thermostat-events/      Course 13 — events and the Observer pattern
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (ThermostatEvents.csproj, TemperatureChangedEventArgs.cs, Thermostat.cs, Display.cs, Logger.cs, Alarm.cs, Program.cs)
+  14-.../                    future courses, same pattern
 ```
 
 ## Contributing
