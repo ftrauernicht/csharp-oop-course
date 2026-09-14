@@ -1,4 +1,4 @@
-# chsarp-oop-course
+# csharp-oop-course
 
 A personal project. This folder is the entire project -- there is no separate
 documentation folder. See `README.md` for what it does and `CONTRIBUTING.md`

@@ -1,4 +1,4 @@
-# Contributing to chsarp-oop-course
+# Contributing to csharp-oop-course
 
 This is a personal, solo-maintained project.
 
