@@ -75,9 +75,8 @@ Kurs voraussetzt — objektorientierte Ideen bauen direkter aufeinander auf
 als etwa "wie hole ich Daten von einer API", deshalb bleiben genau diese
 beiden Kurse Pflicht, statt jeden einzelnen Kurs komplett unabhängig zu
 machen. Kurs 3 und alle weiteren sind dann jeweils unabhängige,
-eigenständige Projekte, die nur Kurs 1 und 2 voraussetzen (noch keiner
-veröffentlicht — siehe [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md)) — wähl,
-was dich mehr interessiert, in beliebiger Reihenfolge.
+eigenständige Projekte, die nur Kurs 1 und 2 voraussetzen — wähl, was dich
+mehr interessiert, in beliebiger Reihenfolge.
 
 ### Kurs 1 – Basics (`courses/01-basics/`)
 
@@ -99,6 +98,16 @@ unabhängiger `Cat`-Objekte, die sich selbst vorstellen.
 |---|---|---|
 | 1 | [Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md) | Klasse vs. Objekt, Properties, Konstruktoren, `this`, Instanzmethoden, die den Zustand eines Objekts lesen oder ändern |
 
+### Kurs 3 – Hof-Inventar (`courses/03-homestead-inventory/`)
+
+Setzt Kurs 1 und 2 voraus. Ein kleiner Hof, der beliebig viele Pflanzen
+verfolgt, von denen jede selbst durchsetzt, wie viel sie gegossen werden
+kann.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Hof-Inventar](courses/03-homestead-inventory/de/01-hof-inventar.md) | `List<T>`, `foreach`, private Felder, nur-lesbare und privat setzbare Properties, Kapselung über echte Validierungslogik |
+
 Mit der Zeit kommen weitere Kurse dazu; dieser Abschnitt wächst mit ihnen.
 Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md).
@@ -108,7 +117,7 @@ Was als Nächstes kommt, steht in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) ist die eigene Roadmap dieses
 Repositories, keine Liste von Nebenprojekt-Vorschlägen: Jeder Eintrag dort
 ist ein Kurs, den dieses Repository plant zu bauen, in der geplanten
-Reihenfolge, beginnend mit Kurs 3. Die Datei liegt im Repository-Root und
+Reihenfolge, beginnend mit Kurs 4. Die Datei liegt im Repository-Root und
 nicht in einem einzelnen Kurs, damit der ganze Bogen aus einer Datei
 sichtbar ist.
 
@@ -144,7 +153,11 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      Musterlösung (CatRoster.csproj, Cat.cs, Program.cs)
-  03-.../                    zukünftige Kurse, gleiches Muster
+  03-homestead-inventory/    Kurs 3 — Sammlungen und echte Kapselung
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      Musterlösung (HomesteadInventory.csproj, Crop.cs, Animal.cs, Program.cs)
+  04-.../                    zukünftige Kurse, gleiches Muster
 ```
 
 ## Mitwirken

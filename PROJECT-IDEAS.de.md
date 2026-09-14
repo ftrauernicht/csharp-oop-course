@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 2 – Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Baut auf: [Kurs 3 – Hof-Inventar](courses/03-homestead-inventory/de/01-hof-inventar.md)
 
 # Die Kurs-Roadmap dieses Repositories
 
@@ -20,7 +20,7 @@ einem Kurs unterscheidet, der nur "irgendein C#-Können" braucht, steht in
 |---|---|---|---|
 | 1 | ~~Basics~~ -- Werte, Variablen, Operatoren, Methoden, Bedingungen, Schleifen | ✅ Gebaut -- siehe [Kurs 1 – Basics](courses/01-basics/de/01-csharp-grundlagen.md) | ⭐ |
 | 2 | ~~Deine erste Klasse~~ -- eine Handvoll `Cat`-Objekte, die sich selbst vorstellen | ✅ Gebaut -- siehe [Kurs 2 – Katzenkartei](courses/02-cat-roster/de/01-katzenkartei.md) | ⭐ |
-| 3 | **Ein Hof-Inventar** -- die Pflanzen und Tiere eines kleinen Hofs gießen, ernten und zählen | `List<T>`, `foreach`, private Felder mit validierten öffentlichen Properties -- Kapselung, diesmal benannt und bewusst eingesetzt | ⭐⭐ |
+| 3 | ~~Ein Hof-Inventar~~ -- die Pflanzen und Tiere eines kleinen Hofs gießen, ernten und zählen | ✅ Gebaut -- siehe [Kurs 3 – Hof-Inventar](courses/03-homestead-inventory/de/01-hof-inventar.md) | ⭐⭐ |
 | 4 | **Maschinenjäger, Teil 1** -- eine `Machine`-Basisklasse und ein paar konkrete Maschinentypen, jede mit eigenem Angriff | Vererbung, `virtual`/`override`, `base(...)`, `protected` | ⭐⭐⭐ |
 | 5 | **Maschinenjäger, Teil 2** -- dieselben Maschinen, aus einer einzigen Liste heraus einzeln bekämpft | Abstrakte Klassen, Polymorphie -- die Auszahlung für das, was Kurs 4 im Stillen vorbereitet hat | ⭐⭐⭐ |
 | 6 | **Eine Werkbank zum Craften** -- Items, die sich sammeln lassen, manche davon auch verkaufen | Interfaces, Komposition vs. Vererbung, mehr als ein Interface auf einer Klasse implementieren | ⭐⭐⭐⭐ |

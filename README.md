@@ -68,9 +68,8 @@ gets its own number under `courses/`, in the order it was written.
 Courses 1 and 2 together are the shared foundation every later course
 assumes — object-oriented ideas build on each other more directly than,
 say, "how do I fetch data", so this repository keeps those two required
-instead of making every single course independent. Course 3 onward will
-each be independent, standalone projects that only assume Courses 1 and 2
-(none published yet — see [PROJECT-IDEAS.md](PROJECT-IDEAS.md)) — pick
+instead of making every single course independent. Course 3 onward are each
+independent, standalone projects that only assume Courses 1 and 2 — pick
 whichever sounds more interesting, in whatever order you like.
 
 ### Course 1 – Basics (`courses/01-basics/`)
@@ -92,6 +91,15 @@ Assumes Course 1. Your first real step into OOP — a handful of independent
 |---|---|---|
 | 1 | [Cat Roster](courses/02-cat-roster/en/01-cat-roster.md) | Classes vs. objects, properties, constructors, `this`, instance methods that read or change an object's own state |
 
+### Course 3 – Homestead Inventory (`courses/03-homestead-inventory/`)
+
+Assumes Courses 1 and 2. A small farm tracking any number of crops, each
+enforcing its own rules about how much it can be watered.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Homestead Inventory](courses/03-homestead-inventory/en/01-homestead-inventory.md) | `List<T>`, `foreach`, private fields, get-only and privately-settable properties, encapsulation via real validation logic |
+
 More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) for what's coming next.
 
@@ -100,7 +108,7 @@ More courses will be added over time; this section grows with them. See
 [PROJECT-IDEAS.md](PROJECT-IDEAS.md) is this repository's own roadmap, not a
 list of side-project suggestions: every entry there is a course this
 repository plans to have, in the order it plans to build them, starting
-with Course 3. It lives at the repository root, not
+with Course 4. It lives at the repository root, not
 inside a single course, so the whole arc is visible from one file.
 
 ## How to use this course
@@ -134,7 +142,11 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      reference solution (CatRoster.csproj, Cat.cs, Program.cs)
-  03-.../                    future courses, same pattern
+  03-homestead-inventory/    Course 3 — collections and real encapsulation
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      reference solution (HomesteadInventory.csproj, Crop.cs, Animal.cs, Program.cs)
+  04-.../                    future courses, same pattern
 ```
 
 ## Contributing

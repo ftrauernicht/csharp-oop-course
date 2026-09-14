@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Builds on: [Course 2 – Cat Roster](courses/02-cat-roster/en/01-cat-roster.md)
+[← Back to repository overview](README.md) · Builds on: [Course 3 – Homestead Inventory](courses/03-homestead-inventory/en/01-homestead-inventory.md)
 
 # This repository's course roadmap
 
@@ -19,7 +19,7 @@ needs "some C#".
 |---|---|---|---|
 | 1 | ~~Basics~~ -- values, variables, operators, methods, conditionals, loops | ✅ Built -- see [Course 1 – Basics](courses/01-basics/en/01-csharp-basics.md) | ⭐ |
 | 2 | ~~Your first class~~ -- a handful of `Cat` objects that introduce themselves | ✅ Built -- see [Course 2 – Cat Roster](courses/02-cat-roster/en/01-cat-roster.md) | ⭐ |
-| 3 | **A homestead inventory** -- water, harvest, and count a small farm's crops and animals | `List<T>`, `foreach`, private fields with validated public properties -- encapsulation, this time named and used on purpose | ⭐⭐ |
+| 3 | ~~A homestead inventory~~ -- water, harvest, and count a small farm's crops and animals | ✅ Built -- see [Course 3 – Homestead Inventory](courses/03-homestead-inventory/en/01-homestead-inventory.md) | ⭐⭐ |
 | 4 | **Machine hunter, part 1** -- a `Machine` base class and a few concrete machine types, each with their own attack | Inheritance, `virtual`/`override`, `base(...)`, `protected` | ⭐⭐⭐ |
 | 5 | **Machine hunter, part 2** -- the same machines, fought one by one from a single list | Abstract classes, polymorphism -- the payoff for what Course 4 quietly set up | ⭐⭐⭐ |
 | 6 | **A crafting bench** -- items that can be collected, and some of those can also be sold | Interfaces, composition vs. inheritance, implementing more than one interface on a class | ⭐⭐⭐⭐ |
