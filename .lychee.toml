@@ -1,0 +1,22 @@
+# lychee link checker config -- https://lychee.cli.rs
+#
+# Only markdown files are scanned. Anchors/fragments on external pages (e.g.
+# Microsoft Learn headings) are not verified -- only that each URL and each
+# relative file link (chapter cross-links, images) resolves.
+
+extensions = ["md"]
+max_retries = 3
+retry_wait_time = 5
+timeout = 20
+
+# Treat rate-limited responses as passing rather than failing CI -- a 429
+# means the host is alive and throttling us, not that the link is dead.
+accept = ["200..=299", "429"]
+
+# bin/ and obj/ are gitignored .NET build output -- not this repo's content
+# to check, and lychee shouldn't need to walk them even if they exist
+# locally.
+exclude_path = [
+  "bin",
+  "obj",
+]
