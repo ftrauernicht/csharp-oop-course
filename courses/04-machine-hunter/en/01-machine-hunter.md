@@ -5,7 +5,7 @@
 # Course 4 – Machine Hunter
 
 **Goal:** several different machine types that all share a name, health,
-and the ability to take damage, but each attacks in its own way — without
+and the ability to take damage, but each attacks in its own way, without
 copy-pasting `Name`, `Health`, and `TakeDamage` into every single one. By
 the end, you'll know what a base class and a subclass actually are, and
 what `virtual`, `override`, `base`, and `protected` each do.
@@ -48,7 +48,7 @@ public class Thunderjaw
 Everything except `Attack()` is identical, and it'll only get worse with a
 third or fourth machine type. **Inheritance** lets you write the shared
 part exactly once, in a **base class**, and have every specific machine
-type — a **subclass** — build on top of it, adding or changing only what's
+type (a **subclass**) build on top of it, adding or changing only what's
 actually different about it.
 
 ## 🟢 Core — The base class
@@ -97,7 +97,7 @@ public class Machine
 Two things here are new, and both matter a lot:
 
 - The constructor is `protected`, not `public`. **`protected`** means "only
-  this class and its subclasses can use this" — one notch more open than
+  this class and its subclasses can use this": one notch more open than
   `private` (this class only), one notch more closed than `public`
   (anyone). A plain, type-less `Machine` shouldn't exist on its own; only a
   specific machine type should. Try `new Machine("Test", 10)` from
@@ -105,7 +105,7 @@ Two things here are new, and both matter a lot:
   refuses: `error CS0122: 'Machine.Machine(string, int)' is inaccessible
   due to its protection level`. Course 5 gives this idea a proper name and
   a dedicated keyword.
-- `LogAttack` is also `protected` — a shared helper subclasses can call
+- `LogAttack` is also `protected`: a shared helper subclasses can call
   from their own `Attack()`, but that outside code (like `Program.cs`)
   can't reach at all. `public` members are your class's interface to the
   world; `protected` members are shared tools for the *family* of classes
@@ -127,14 +127,14 @@ public class Watcher : Machine
 }
 ```
 
-`: Machine` after the class name means "`Watcher` *is a* `Machine`" — it
+`: Machine` after the class name means "`Watcher` *is a* `Machine`." It
 automatically gets `Name`, `Health`, `TakeDamage`, and everything else
 `Machine` defines, for free. Three pieces make this work:
 
 - `: base("Watcher", 30)` on the constructor calls `Machine`'s own
   (`protected`) constructor with `Watcher`'s specific name and health,
   *before* `Watcher`'s own constructor body runs. Every subclass's
-  constructor has to reach its base class's constructor somehow — this is
+  constructor has to reach its base class's constructor somehow. This is
   how.
 - `public virtual void Attack()` on `Machine` marked that method as
   **allowed to be overridden** by a subclass. Without `virtual`, `override`
@@ -151,7 +151,7 @@ watcher.Attack();          // Watcher shrieks and lunges for 8 damage!
 watcher.TakeDamage(15);    // Watcher takes 15 damage. Health: 15/30
 ```
 
-`TakeDamage` wasn't written anywhere on `Watcher` — it's inherited from
+`TakeDamage` wasn't written anywhere on `Watcher`: it's inherited from
 `Machine`, unchanged, and it just works.
 
 ## 🟢 Core exercise — Write Thunderjaw yourself
@@ -183,7 +183,7 @@ working version.
 
 ## 🟡 Optional — Overriding is optional, not mandatory
 
-`virtual` means a method *can* be overridden — nothing forces every
+`virtual` means a method *can* be overridden. Nothing forces every
 subclass to actually do it:
 
 ```csharp
@@ -196,15 +196,15 @@ public class Grazer : Machine
 ```
 
 `Grazer` has no `Attack()` override at all. Calling `grazer.Attack()` still
-works — it runs `Machine`'s own generic version unchanged, printing
+works: it runs `Machine`'s own generic version unchanged, printing
 `"Grazer attacks!"`. An override that wants to *extend* the base behavior
 instead of fully replacing it can also call it explicitly with
-`base.Attack();` as its first line, then add more after — worth knowing,
-even though none of this chapter's machines need it.
+`base.Attack();` as its first line, then add more after that, though none
+of this chapter's machines need it.
 
 ## 🔴 Optional, genuine challenge — A machine with something extra
 
-A subclass isn't limited to overriding what it inherits — it can add
+A subclass isn't limited to overriding what it inherits. It can add
 entirely new members that don't exist on the base class at all. Write a
 `Strider` class (name `"Strider"`, max health `80`, `Attack()` logging
 `"kicks"` for `12` damage) with one more method that only `Strider` has:
@@ -216,7 +216,7 @@ public void Ride()
 }
 ```
 
-`watcher.Ride()` shouldn't compile — only a `Strider` can be ridden.
+`watcher.Ride()` shouldn't compile. Only a `Strider` can be ridden.
 Compare against [`code/Strider.cs`](../code/Strider.cs) once it works.
 
 ## What you learned
@@ -235,6 +235,6 @@ Compare against [`code/Strider.cs`](../code/Strider.cs) once it works.
 ## Next
 
 Course 4 stands on its own, needing only Courses 1 and 2. For the rest of
-this repository's roadmap — including Course 5, which puts every one of
-these machines into a single list and fights them one by one — see
+this repository's roadmap (including Course 5, which puts every one of
+these machines into a single list and fights them one by one), see
 [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md).

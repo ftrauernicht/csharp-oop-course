@@ -6,7 +6,7 @@
 
 **Ziel:** mehrere verschiedene Maschinentypen, die sich alle einen Namen,
 Gesundheit und die Fähigkeit, Schaden zu nehmen, teilen, aber jeweils
-unterschiedlich angreifen — ohne `Name`, `Health` und `TakeDamage` in jede
+unterschiedlich angreifen, ohne `Name`, `Health` und `TakeDamage` in jede
 einzelne hineinzukopieren. Am Ende weißt du, was eine Basisklasse und eine
 abgeleitete Klasse wirklich sind, und was `virtual`, `override`, `base` und
 `protected` jeweils tun.
@@ -49,8 +49,8 @@ public class Thunderjaw
 Alles außer `Attack()` ist identisch, und mit einem dritten oder vierten
 Maschinentyp wird es nur schlimmer. **Vererbung** lässt dich den geteilten
 Teil genau einmal schreiben, in einer **Basisklasse**, und jeder konkrete
-Maschinentyp — eine **abgeleitete Klasse** (Subklasse) — baut darauf auf und
-fügt nur hinzu oder ändert, was an ihr tatsächlich anders ist.
+Maschinentyp (eine **abgeleitete Klasse**, auch Subklasse genannt) baut
+darauf auf und fügt nur hinzu oder ändert, was an ihr tatsächlich anders ist.
 
 ## 🟢 Kern — Die Basisklasse
 
@@ -98,7 +98,7 @@ public class Machine
 Zwei Dinge sind hier neu, und beide zählen viel:
 
 - Der Konstruktor ist `protected`, nicht `public`. **`protected`** bedeutet
-  "nur diese Klasse und ihre abgeleiteten Klassen dürfen das benutzen" —
+  "nur diese Klasse und ihre abgeleiteten Klassen dürfen das benutzen":
   eine Stufe offener als `private` (nur diese Klasse), eine Stufe
   geschlossener als `public` (jeder). Eine reine, typlose `Machine` sollte
   gar nicht für sich allein existieren; nur ein konkreter Maschinentyp
@@ -107,7 +107,7 @@ Zwei Dinge sind hier neu, und beide zählen viel:
   `error CS0122: 'Machine.Machine(string, int)' is inaccessible due to its
   protection level`. Kurs 5 gibt dieser Idee einen richtigen Namen und ein
   eigenes Schlüsselwort.
-- `LogAttack` ist ebenfalls `protected` — ein geteilter Helfer, den
+- `LogAttack` ist ebenfalls `protected`: ein geteilter Helfer, den
   abgeleitete Klassen aus ihrem eigenen `Attack()` heraus aufrufen können,
   den aber Code von außen (wie `Program.cs`) gar nicht erreicht. `public`-
   Member sind die Schnittstelle deiner Klasse nach außen; `protected`-
@@ -131,7 +131,7 @@ public class Watcher : Machine
 ```
 
 `: Machine` hinter dem Klassennamen bedeutet "`Watcher` *ist eine*
-`Machine`" — sie bekommt automatisch `Name`, `Health`, `TakeDamage` und
+`Machine`." Sie bekommt automatisch `Name`, `Health`, `TakeDamage` und
 alles andere, was `Machine` definiert, geschenkt. Drei Teile machen das
 möglich:
 
@@ -139,7 +139,7 @@ möglich:
   (`protected`en) Konstruktor mit `Watcher`s konkretem Namen und
   Gesundheit auf, *bevor* der eigene Konstruktor-Rumpf von `Watcher` läuft.
   Jeder Konstruktor einer abgeleiteten Klasse muss den Konstruktor der
-  Basisklasse irgendwie erreichen — so geht's.
+  Basisklasse irgendwie erreichen. So geht's.
 - `public virtual void Attack()` auf `Machine` markiert diese Methode als
   **überschreibbar erlaubt** für eine abgeleitete Klasse. Ohne `virtual`
   würde das `override` unten gar nicht kompilieren.
@@ -156,7 +156,7 @@ watcher.Attack();          // Watcher shrieks and lunges for 8 damage!
 watcher.TakeDamage(15);    // Watcher takes 15 damage. Health: 15/30
 ```
 
-`TakeDamage` wurde auf `Watcher` nirgends geschrieben — es wird
+`TakeDamage` wurde auf `Watcher` nirgends geschrieben: es wird
 unverändert von `Machine` geerbt und funktioniert einfach.
 
 ## 🟢 Kernübung — Schreib Thunderjaw selbst
@@ -188,7 +188,7 @@ eine funktionierende Version.
 
 ## 🟡 Optional — Überschreiben ist optional, nicht Pflicht
 
-`virtual` bedeutet, dass eine Methode überschrieben werden *kann* — nichts
+`virtual` bedeutet, dass eine Methode überschrieben werden *kann*. Nichts
 zwingt jede abgeleitete Klasse dazu, das tatsächlich zu tun:
 
 ```csharp
@@ -201,17 +201,16 @@ public class Grazer : Machine
 ```
 
 `Grazer` hat gar kein `Attack()`-Override. `grazer.Attack()` aufzurufen
-funktioniert trotzdem — es läuft `Machine`s eigene generische Version
+funktioniert trotzdem: es läuft `Machine`s eigene generische Version
 unverändert und gibt `"Grazer attacks!"` aus. Ein Override, das das
 Verhalten der Basisklasse *erweitern* statt komplett ersetzen will, kann
 sie auch explizit als erste Zeile mit `base.Attack();` aufrufen und danach
-mehr ergänzen — gut zu wissen, auch wenn keine der Maschinen in diesem
-Kapitel es braucht.
+mehr ergänzen, auch wenn keine der Maschinen in diesem Kapitel es braucht.
 
 ## 🔴 Optional, echte Herausforderung — Eine Maschine mit Extra
 
 Eine abgeleitete Klasse ist nicht darauf beschränkt, zu überschreiben, was
-sie erbt — sie kann völlig neue Member hinzufügen, die auf der Basisklasse
+sie erbt. Sie kann völlig neue Member hinzufügen, die auf der Basisklasse
 gar nicht existieren. Schreib eine `Strider`-Klasse (Name `"Strider"`,
 maximale Gesundheit `80`, `Attack()` loggt `"kicks"` mit `12` Schaden) mit
 einer weiteren Methode, die nur `Strider` hat:
@@ -223,7 +222,7 @@ public void Ride()
 }
 ```
 
-`watcher.Ride()` sollte nicht kompilieren — nur ein `Strider` lässt sich
+`watcher.Ride()` sollte nicht kompilieren. Nur ein `Strider` lässt sich
 reiten. Vergleich mit [`code/Strider.cs`](../code/Strider.cs), sobald es
 funktioniert.
 
@@ -244,6 +243,6 @@ funktioniert.
 ## Weiter
 
 Kurs 4 steht für sich allein und braucht nur Kurs 1 und 2. Für den Rest der
-Roadmap dieses Repositories — inklusive Kurs 5, der alle diese Maschinen
-in eine einzige Liste steckt und sie nacheinander bekämpft — siehe
+Roadmap dieses Repositories (inklusive Kurs 5, der alle diese Maschinen in
+eine einzige Liste steckt und sie nacheinander bekämpft) siehe
 [PROJECT-IDEAS.de.md](../../../PROJECT-IDEAS.de.md).
