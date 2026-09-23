@@ -6,9 +6,9 @@
 
 **Ziel:** eine `List<Song>` filtern, sortieren und zusammenfassen, ohne
 eine einzige manuelle `foreach` + `if`-Kombination zu schreiben. Am Ende
-liest und schreibst du LINQ — eines der häufigsten Dinge, die dir in
-echtem C#-Code begegnen — und weißt, wann es Code klarer macht als eine
-Schleife, und wann eine Schleife immer noch die ehrlichere Wahl ist.
+liest und schreibst du LINQ, eines der häufigsten Dinge, die dir in
+echtem C#-Code begegnen, und weißt, wann es Code klarer macht als eine
+Schleife und wann eine Schleife immer noch die ehrlichere Wahl ist.
 
 Wie in Kurs 3, 4, 6, 8, 9 und 10 steht die Kernübung unten in Schritten
 beschrieben, die du selbst schreibst. Die fertige Version, inklusive der
@@ -27,7 +27,7 @@ foreach (var song in songs)
 }
 ```
 
-Filtern, sammeln, wiederholen — genau diese Form hast du seit Kurs 3
+Filtern, sammeln, wiederholen: genau diese Form hast du seit Kurs 3
 geschrieben. Es funktioniert, aber die eigentliche *Absicht* ("gib mir die
 Rock-Songs") steckt versteckt in vier Zeilen *Mechanik* (eine neue Liste,
 eine Schleife, ein `if`, ein `Add`).
@@ -42,15 +42,16 @@ Eine Zeile, dasselbe Ergebnis.
 [`Where`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/filtering-data)
 ist eine Methode, die [`List<T>`](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1)
 gratis dazubekommt, sobald [LINQ](https://learn.microsoft.com/de-de/dotnet/csharp/linq/)
-im Spiel ist — dank der `ImplicitUsings` dieses Projekts schon ohne
-zusätzliches `using` verfügbar. `s => s.Genre == "Rock"` ist ein
-**Lambda-Ausdruck**: eine kleine, unbenannte Funktion, inline geschrieben.
-Lies `s => ...` als "gegeben ein Song, hier `s` genannt, ..." — `s` ist der
-Parameter (sein Typ, `Song`, wird aus dem Kontext hergeleitet), und alles
-nach `=>` wird für jeden ausgewertet. `Where` ruft diese Lambda einmal pro
-Element auf und behält nur die, für die sie `true` zurückgibt.
-`.ToList()` am Ende verwandelt das Ergebnis zurück in eine echte
-`List<Song>`, die du genau wie jede andere benutzen kannst.
+im Spiel ist. Dank der `ImplicitUsings` dieses Projekts steht sie sogar
+schon ohne zusätzliches `using` zur Verfügung. `s => s.Genre == "Rock"`
+ist ein **Lambda-Ausdruck**: eine kleine, unbenannte Funktion, inline
+geschrieben. Lies `s => ...` als "gegeben ein Song, hier `s` genannt,
+...". `s` ist der Parameter (sein Typ, `Song`, wird aus dem Kontext
+hergeleitet), und alles nach `=>` wird für jeden ausgewertet. `Where`
+ruft diese Lambda einmal pro Element auf und behält nur die, für die
+sie `true` zurückgibt. `.ToList()` am Ende verwandelt das Ergebnis
+zurück in eine echte `List<Song>`, die du genau wie jede andere
+benutzen kannst.
 
 ## 🟢 Kern — Select: umformen, nicht nur filtern
 
@@ -60,7 +61,7 @@ var titles = songs.Select(s => s.Title).ToList();
 
 [`Select`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/projection-operations)
 führt seine Lambda ebenfalls einmal pro Element aus, behält aber *das, was
-die Lambda zurückgibt*, statt der ursprünglichen Elemente — hier eine
+die Lambda zurückgibt*, statt der ursprünglichen Elemente: hier eine
 `List<string>` (nur Titel), keine `List<Song>` mehr. `Where` wählt eine
 Teilmenge von dem aus, was du hast; `Select` verwandelt jedes Element in
 etwas komplett anderes.
@@ -72,8 +73,8 @@ var byDuration = songs.OrderBy(s => s.DurationSeconds).ToList();
 ```
 
 [`OrderBy`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/sorting-data)
-sortiert nach dem, was die Lambda für jedes Element zurückgibt — kein
-`IComparable<T>` nötig, wie es Kurs 10s `List<T>.Sort()` gebraucht hat. Das
+sortiert nach dem, was die Lambda für jedes Element zurückgibt. Anders als
+bei Kurs 10s `List<T>.Sort()` ist dafür kein `IComparable<T>` nötig. Das
 ist der Tausch: `Sort()` braucht, dass der Typ selbst weiß, wie er seine
 eigenen Instanzen vergleicht; `OrderBy` braucht nur, dass du genau dort, wo
 du es benutzt, auf die Property zeigst, nach der sortiert werden soll.
@@ -88,7 +89,7 @@ int totalDuration = songs.Sum(s => s.DurationSeconds);
 
 [`Sum`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/aggregation-operations)
 addiert das, was die Lambda für jedes Element zurückgibt. `Count()`,
-`Average()`, `Max()` und `Min()` folgen alle derselben Form — keine
+`Average()`, `Max()` und `Min()` folgen alle derselben Form: keine
 Schleife, keine Laufsumme-Variable, die du selbst verwalten musst.
 
 ## 🟢 Kernübung — Where und OrderByDescending verketten
@@ -101,7 +102,7 @@ var longSongsDescending = songs
     // dann .OrderByDescending(...) nach Dauer, dann .ToList()
 ```
 
-LINQ-Methoden verketten sich auf natürliche Weise — jede gibt etwas
+LINQ-Methoden verketten sich auf natürliche Weise. Jede gibt etwas
 zurück, auf dem du die nächste Methode aufrufen kannst, also liest sich
 `songs.Where(...).OrderByDescending(...).ToList()` fast wie ein Satz:
 "nimm die Songs, behalt die langen, sortier sie nach Dauer absteigend, und
@@ -124,9 +125,9 @@ foreach (var group in byGenre)
 
 [`GroupBy`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/grouping-data)
 ist die einzige LINQ-Methode hier, die kein einfaches manuelles
-Schleifen-Äquivalent hat, das sich lohnt von Hand zu schreiben — jede
+Schleifen-Äquivalent hat, das sich lohnt von Hand zu schreiben. Jede
 `group`, die du zurückbekommst, verhält sich wie eine kleine Liste nur der
-Songs dieses Genres (mit `.Key`, das dir sagt, welches Genre es ist), du
+Songs dieses Genres (mit `.Key`, das dir sagt, welches Genre es ist); du
 kannst also `foreach`, `Count()` oder jede andere LINQ-Methode auch darauf
 anwenden. Probier es selbst, bevor du in
 [`code/Program.cs`](../code/Program.cs) reinschaust.

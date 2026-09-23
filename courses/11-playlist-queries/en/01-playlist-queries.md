@@ -5,9 +5,9 @@
 # Course 11 – Playlist Queries
 
 **Goal:** filter, sort, and summarize a `List<Song>` without writing a
-single manual `foreach` + `if`. By the end, you'll read and write LINQ —
-one of the most common things you'll see in real C# code — and know when
-it makes code clearer than a loop, and when a loop is still the more
+single manual `foreach` + `if`. By the end, you'll read and write LINQ,
+one of the most common things you'll see in real C# code, and know when
+it makes code clearer than a loop and when a loop is still the more
 honest choice.
 
 As in Courses 3, 4, 6, 8, 9, and 10, the core exercise below is described
@@ -27,7 +27,7 @@ foreach (var song in songs)
 }
 ```
 
-Filter, collect, repeat — you've written this exact shape since Course 3.
+Filter, collect, repeat: you've written this exact shape since Course 3.
 It works, but the actual *intent* ("give me the rock songs") is buried
 inside four lines of *mechanism* (a new list, a loop, an `if`, an `Add`).
 
@@ -40,11 +40,11 @@ var rockSongs = songs.Where(s => s.Genre == "Rock").ToList();
 One line, same result.
 [`Where`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/filtering-data)
 is a method [`List<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1)
-gets for free once [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/) —
-already available without any extra `using`, thanks to this project's
-`ImplicitUsings` — is involved. `s => s.Genre == "Rock"` is a **lambda
+gets for free once [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/)
+is involved, already available without any extra `using` thanks to this
+project's `ImplicitUsings`. `s => s.Genre == "Rock"` is a **lambda
 expression**: a small, unnamed function written inline. Read `s => ...` as
-"given a song, called `s` here, ..." — `s` is the parameter (its type,
+"given a song, called `s` here, ...". `s` is the parameter (its type,
 `Song`, is inferred from context), and everything after `=>` is what gets
 evaluated for each one. `Where` calls this lambda once per item and keeps
 only the ones it returns `true` for. `.ToList()` at the end turns the
@@ -58,7 +58,7 @@ var titles = songs.Select(s => s.Title).ToList();
 
 [`Select`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/projection-operations)
 runs its lambda once per item too, but keeps *what the lambda returns*
-instead of the original items — here, a `List<string>` (just titles), not
+instead of the original items: here, a `List<string>` (just titles), not
 a `List<Song>` anymore. `Where` picks a subset of what you have; `Select`
 transforms every item into something else entirely.
 
@@ -69,8 +69,8 @@ var byDuration = songs.OrderBy(s => s.DurationSeconds).ToList();
 ```
 
 [`OrderBy`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/sorting-data)
-sorts by whatever the lambda returns for each item — no `IComparable<T>`
-required the way Course 10's `List<T>.Sort()` needed. That's the tradeoff:
+sorts by whatever the lambda returns for each item. Unlike Course 10's
+`List<T>.Sort()`, no `IComparable<T>` is required. That's the tradeoff:
 `Sort()` needs the type itself to know how to compare its own instances;
 `OrderBy` just needs you to point at the property to sort by, right where
 you're using it.
@@ -85,7 +85,7 @@ int totalDuration = songs.Sum(s => s.DurationSeconds);
 
 [`Sum`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/aggregation-operations)
 adds up whatever the lambda returns for every item. `Count()`, `Average()`,
-`Max()`, and `Min()` all follow the same shape — no loop, no running total
+`Max()`, and `Min()` all follow the same shape: no loop, no running total
 variable to manage yourself.
 
 ## 🟢 Core exercise — Chain Where and OrderByDescending
@@ -98,7 +98,7 @@ var longSongsDescending = songs
     // then .OrderByDescending(...) by duration, then .ToList()
 ```
 
-LINQ methods chain naturally — each one returns something you can call the
+LINQ methods chain naturally. Each one returns something you can call the
 next method on, so `songs.Where(...).OrderByDescending(...).ToList()` reads
 almost like a sentence: "take the songs, keep the long ones, sort them by
 duration descending, and give me a list." If you get stuck,
@@ -119,7 +119,7 @@ foreach (var group in byGenre)
 
 [`GroupBy`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/grouping-data)
 is the one LINQ method here that doesn't have a simple manual-loop
-equivalent worth writing by hand — each `group` you get back acts like a
+equivalent worth writing by hand. Each `group` you get back acts like a
 small list of just that genre's songs (with `.Key` telling you which genre
 it is), so you can `foreach`, `Count()`, or run any other LINQ method on it
 too. Try it yourself before peeking at
