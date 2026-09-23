@@ -5,7 +5,7 @@
 # Course 13 – Thermostat Events
 
 **Goal:** a `Thermostat` that announces its own temperature changes to
-whoever wants to know — a `Display`, a `Logger`, maybe more later — without
+whoever wants to know (a `Display`, a `Logger`, maybe more later), without
 `Thermostat` ever having to know any of them exist. By the end, you'll know
 what a C# `event` actually is, and why this kind of decoupling is worth
 the extra ceremony.
@@ -42,7 +42,7 @@ public class TightlyCoupledThermostat
 This works, but `Thermostat` now has a hard dependency on `Display`
 specifically. Want a `Logger` to react too? Edit `Thermostat` again, add
 another field, another call. Every new kind of subscriber means going back
-and changing the class being subscribed to — exactly backwards from
+and changing the class being subscribed to. That's exactly backwards from
 Course 5's polymorphism lesson, where adding a new `Machine` type needed
 zero changes to the code using it.
 
@@ -70,14 +70,14 @@ public class Thermostat
 ```
 
 `TemperatureChangedEventArgs` bundles up everything worth knowing about
-the change — here, just the new temperature — the same idea as Course 9's
+the change (here, just the new temperature), the same idea as Course 9's
 custom exceptions carrying their own data, applied to a different purpose.
 `EventHandler<TEventArgs>` is a **delegate** built into .NET: a type that
 represents "a method with this specific shape" (here: takes a sender and a
 `TemperatureChangedEventArgs`, returns nothing). The `event` keyword turns
 `TemperatureChanged` into something other classes can subscribe to (`+=`)
-or unsubscribe from (`-=`), but never call directly or replace outright —
-only `Thermostat` itself can do that. The `?` makes it nullable: if nobody
+or unsubscribe from (`-=`), but never call directly or replace outright.
+Only `Thermostat` itself can do that. The `?` makes it nullable: if nobody
 has subscribed yet, it's `null`. More:
 [Microsoft Learn – Events](https://learn.microsoft.com/en-us/dotnet/csharp/events-overview).
 
@@ -99,7 +99,7 @@ public int Temperature
 
 `TemperatureChanged?.Invoke(sender, args)` is the pattern: `?.` (Course
 6's null-conditional-adjacent operator, here on a delegate) means "only
-call `Invoke` if `TemperatureChanged` isn't `null`" — skipping it safely
+call `Invoke` if `TemperatureChanged` isn't `null`." That skips it safely
 when nobody's subscribed, instead of throwing a
 `NullReferenceException`. Write the full `set` block. If you get stuck,
 [`code/Thermostat.cs`](../code/Thermostat.cs) has a working version.
@@ -125,11 +125,11 @@ thermostat.TemperatureChanged += display.ShowTemperature;
 thermostat.Temperature = 20; // Display: it's now 20 degrees.
 ```
 
-`ShowTemperature`'s signature — `(object? sender, TemperatureChangedEventArgs e)`
-— has to match `EventHandler<TemperatureChangedEventArgs>` exactly, which
-is exactly what lets `+=` accept it. `Thermostat` never imported `Display`,
-never called `ShowTemperature` by name, never knew a `Display` would ever
-exist — `Display` did all the work of connecting itself.
+`ShowTemperature`'s signature, `(object? sender, TemperatureChangedEventArgs e)`,
+has to match `EventHandler<TemperatureChangedEventArgs>` exactly, which
+is what lets `+=` accept it. `Thermostat` never imported `Display`,
+never called `ShowTemperature` by name, and had no idea a `Display` would
+ever exist. `Display` did all the work of connecting itself.
 
 Add a second, independent subscriber, with zero changes to `Thermostat`:
 
@@ -148,8 +148,8 @@ thermostat.TemperatureChanged -= logger.LogChange;
 thermostat.Temperature = 30; // only Display reacts now
 ```
 
-`-=` removes exactly the method that was added with `+=` earlier — useful
-for something that should only listen temporarily (a screen that's
+`-=` removes exactly the method that was added with `+=` earlier. That's
+useful for something that should only listen temporarily (a screen that's
 currently visible, a connection that might close).
 
 ## 🔴 Optional, genuine challenge — A third subscriber
@@ -182,7 +182,7 @@ working version.
 - Subscribing (`+=`) and unsubscribing (`-=`), and that a subscriber's
   method must match the event's delegate signature exactly
 - That adding a new subscriber type needs zero changes to the class
-  raising the event — the same "extend without modifying" payoff Course 5
+  raising the event: the same "extend without modifying" payoff Course 5
   showed for polymorphism, here for decoupled communication instead
 
 ## Next

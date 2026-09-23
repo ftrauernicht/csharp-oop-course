@@ -5,8 +5,8 @@
 # Kurs 13 – Thermostat-Events
 
 **Ziel:** ein `Thermostat`, der seine eigenen Temperaturänderungen an alle
-meldet, die es wissen wollen — ein `Display`, ein `Logger`, vielleicht
-später mehr —, ohne dass `Thermostat` je wissen muss, dass einer von ihnen
+meldet, die es wissen wollen (ein `Display`, ein `Logger`, vielleicht
+später mehr), ohne dass `Thermostat` je wissen muss, dass einer von ihnen
 überhaupt existiert. Am Ende weißt du, was ein C#-`event` wirklich ist,
 und warum sich diese Art der Entkopplung den zusätzlichen Aufwand lohnt.
 
@@ -44,8 +44,8 @@ Das funktioniert, aber `Thermostat` hat jetzt eine feste Abhängigkeit
 speziell zu `Display`. Soll auch ein `Logger` reagieren? `Thermostat`
 nochmal bearbeiten, ein weiteres Feld, ein weiterer Aufruf. Jede neue Art
 von Abonnent bedeutet, zurückzugehen und die Klasse zu ändern, die
-abonniert wird — genau umgekehrt zu Kurs 5s Polymorphie-Lektion, wo ein
-neuer `Machine`-Typ null Änderungen am Code brauchte, der ihn benutzt.
+abonniert wird. Das ist genau umgekehrt zu Kurs 5s Polymorphie-Lektion, wo
+ein neuer `Machine`-Typ null Änderungen am Code brauchte, der ihn benutzt.
 
 ## 🟢 Kern — Ein Event deklarieren
 
@@ -71,14 +71,14 @@ public class Thermostat
 ```
 
 `TemperatureChangedEventArgs` bündelt alles, was über die Änderung wissenswert
-ist — hier nur die neue Temperatur —, dieselbe Idee wie Kurs 9s eigene
+ist (hier nur die neue Temperatur), dieselbe Idee wie Kurs 9s eigene
 Exceptions, die ihre eigenen Daten tragen, nur für einen anderen Zweck.
 `EventHandler<TEventArgs>` ist ein in .NET eingebauter **Delegate**: ein
 Typ, der "eine Methode mit dieser bestimmten Form" repräsentiert (hier:
 nimmt einen Sender und eine `TemperatureChangedEventArgs`, gibt nichts
 zurück). Das Schlüsselwort `event` macht `TemperatureChanged` zu etwas,
 das andere Klassen abonnieren (`+=`) oder abbestellen können (`-=`), aber
-nie direkt aufrufen oder komplett ersetzen — das kann nur `Thermostat`
+nie direkt aufrufen oder komplett ersetzen. Das kann nur `Thermostat`
 selbst. Das `?` macht es nullable: Hat noch niemand abonniert, ist es
 `null`. Mehr:
 [Microsoft Learn – Events](https://learn.microsoft.com/de-de/dotnet/csharp/events-overview).
@@ -101,7 +101,7 @@ public int Temperature
 
 `TemperatureChanged?.Invoke(sender, args)` ist das Muster: `?.` (Kurs 6s
 Null-conditional-verwandter Operator, hier auf einem Delegate) bedeutet
-"ruf `Invoke` nur auf, falls `TemperatureChanged` nicht `null` ist" —
+"ruf `Invoke` nur auf, falls `TemperatureChanged` nicht `null` ist." Das
 überspringt es sicher, wenn niemand abonniert hat, statt eine
 `NullReferenceException` zu werfen. Schreib den ganzen `set`-Block. Falls
 du feststeckst, hat [`code/Thermostat.cs`](../code/Thermostat.cs) eine
@@ -128,12 +128,12 @@ thermostat.TemperatureChanged += display.ShowTemperature;
 thermostat.Temperature = 20; // Display: it's now 20 degrees.
 ```
 
-`ShowTemperature`s Signatur — `(object? sender, TemperatureChangedEventArgs e)`
-— muss exakt zu `EventHandler<TemperatureChangedEventArgs>` passen, genau
+`ShowTemperature`s Signatur, `(object? sender, TemperatureChangedEventArgs e)`,
+muss exakt zu `EventHandler<TemperatureChangedEventArgs>` passen, genau
 das lässt `+=` sie überhaupt akzeptieren. `Thermostat` hat nie `Display`
-importiert, nie `ShowTemperature` beim Namen aufgerufen, nie gewusst, dass
-je ein `Display` existieren würde — `Display` hat die ganze Arbeit
-erledigt, sich selbst zu verbinden.
+importiert, nie `ShowTemperature` beim Namen aufgerufen und hatte keine
+Ahnung, dass je ein `Display` existieren würde. `Display` hat die ganze
+Arbeit erledigt, sich selbst zu verbinden.
 
 Füg einen zweiten, unabhängigen Abonnenten hinzu, ohne `Thermostat` zu
 ändern:
@@ -153,9 +153,10 @@ thermostat.TemperatureChanged -= logger.LogChange;
 thermostat.Temperature = 30; // nur Display reagiert jetzt noch
 ```
 
-`-=` entfernt genau die Methode, die vorher mit `+=` hinzugefügt wurde —
-nützlich für etwas, das nur vorübergehend zuhören soll (ein Bildschirm,
-der gerade sichtbar ist, eine Verbindung, die sich schließen könnte).
+`-=` entfernt genau die Methode, die vorher mit `+=` hinzugefügt wurde.
+Das ist nützlich für etwas, das nur vorübergehend zuhören soll (ein
+Bildschirm, der gerade sichtbar ist, eine Verbindung, die sich schließen
+könnte).
 
 ## 🔴 Optional, echte Herausforderung — Ein dritter Abonnent
 
@@ -188,7 +189,7 @@ hat eine funktionierende Version.
 - Abonnieren (`+=`) und Abbestellen (`-=`), und dass die Methode eines
   Abonnenten exakt zur Delegate-Signatur des Events passen muss
 - Dass ein neuer Abonnenten-Typ null Änderungen an der Klasse braucht, die
-  das Event auslöst — dieselbe "erweitern ohne zu ändern"-Auszahlung, die
+  das Event auslöst: dieselbe "erweitern ohne zu ändern"-Auszahlung, die
   Kurs 5 für Polymorphie gezeigt hat, hier für entkoppelte Kommunikation
 
 ## Weiter
