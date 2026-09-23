@@ -5,7 +5,7 @@
 # Course 14 – Bank Account Tests
 
 **Goal:** prove a class's validation and exception-throwing behavior
-actually works — automatically, every time, without you re-reading
+actually works, automatically, every time, without you re-reading
 `Console.WriteLine` output with your own eyes. By the end, you'll know how
 a test project is structured, differently from every course before this
 one, and how to write and run real xUnit tests.
@@ -27,14 +27,14 @@ not run standalone printing things for you to eyeball. This course's
 
 - `BankAccount/` — a **class library** (`dotnet new classlib`), just
   `BankAccount.cs` and `InsufficientFundsException.cs`, no `Program.cs` at
-  all — a class library has no entry point, because nothing runs it
+  all. A class library has no entry point, because nothing runs it
   directly.
 - `BankAccount.Tests/` — an **xUnit test project** (`dotnet new xunit`),
   referencing the class library (`dotnet add reference ../BankAccount/BankAccount.csproj`)
   so its tests can actually see `BankAccount` and `InsufficientFundsException`.
 
 You don't need to memorize those two `dotnet new`/`dotnet add` commands
-right now — they only run once, when a test project is first set up; from
+right now. They only run once, when a test project is first set up; from
 here on, everything happens inside the files they created.
 
 ## 🟢 Core — Your first test
@@ -65,7 +65,7 @@ fails the test (with a clear message showing both values) if they don't
 match. The three comments — **Arrange** (set up what you need), **Act**
 (do the one thing you're testing), **Assert** (check the result) — are a
 convention worth keeping even once you stop writing the comments
-themselves; it keeps a test's three separate jobs from blurring together.
+themselves. It keeps a test's three separate jobs from blurring together.
 
 Run every test in a project from a terminal, inside
 `BankAccount.Tests/`:

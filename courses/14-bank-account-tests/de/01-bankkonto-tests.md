@@ -5,7 +5,7 @@
 # Kurs 14 – Bankkonto-Tests
 
 **Ziel:** beweisen, dass die Validierungs- und Exception-Logik einer
-Klasse tatsächlich funktioniert — automatisch, jedes Mal, ohne dass du
+Klasse tatsächlich funktioniert, automatisch, jedes Mal, ohne dass du
 `Console.WriteLine`-Ausgaben selbst mit den Augen nachprüfst. Am Ende
 weißt du, wie ein Testprojekt aufgebaut ist, anders als jeder Kurs vorher,
 und wie man echte xUnit-Tests schreibt und ausführt.
@@ -28,7 +28,7 @@ mit dem Auge prüfst. Der [`code/`](../code/)-Ordner dieses Kurses enthält
 
 - `BankAccount/` — eine **Class Library** (`dotnet new classlib`), nur
   `BankAccount.cs` und `InsufficientFundsException.cs`, gar kein
-  `Program.cs` — eine Class Library hat keinen Einstiegspunkt, weil nichts
+  `Program.cs`. Eine Class Library hat keinen Einstiegspunkt, weil nichts
   sie direkt ausführt.
 - `BankAccount.Tests/` — ein **xUnit-Testprojekt** (`dotnet new xunit`),
   das auf die Class Library verweist
@@ -37,7 +37,7 @@ mit dem Auge prüfst. Der [`code/`](../code/)-Ordner dieses Kurses enthält
   können.
 
 Du musst dir diese beiden `dotnet new`/`dotnet add`-Befehle jetzt nicht
-merken — sie laufen nur einmal, wenn ein Testprojekt zuerst aufgesetzt
+merken. Sie laufen nur einmal, wenn ein Testprojekt zuerst aufgesetzt
 wird; von hier an passiert alles innerhalb der Dateien, die sie angelegt
 haben.
 
@@ -70,7 +70,7 @@ zeigt), falls sie nicht übereinstimmen. Die drei Kommentare — **Arrange**
 (aufsetzen, was du brauchst), **Act** (die eine Sache tun, die du testest),
 **Assert** (das Ergebnis prüfen) — sind eine Konvention, die sich lohnt
 beizubehalten, selbst wenn du irgendwann aufhörst, die Kommentare selbst zu
-schreiben; sie verhindert, dass die drei getrennten Aufgaben eines Tests
+schreiben. Sie verhindert, dass die drei getrennten Aufgaben eines Tests
 ineinander verschwimmen.
 
 Führ alle Tests eines Projekts aus einem Terminal aus, innerhalb von
