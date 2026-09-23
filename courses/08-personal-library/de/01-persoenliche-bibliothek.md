@@ -7,7 +7,7 @@
 **Ziel:** eine *Sammlung* kapseln, nicht nur einen einzelnen Wert wie Kurs 3s
 `WaterLevel`. Am Ende weißt du, warum die interne Liste einer Klasse direkt
 herauszugeben ein häufiger, leicht zu übersehender Weg ist, Kapselung
-komplett zu brechen — und die Standardlösung dafür.
+komplett zu brechen, und wie die Standardlösung dafür aussieht.
 
 Wie in Kurs 3-7 steht die Kernübung unten in Schritten beschrieben, die du
 selbst schreibst. Die fertige Version, inklusive der Herausforderung, liegt
@@ -22,7 +22,7 @@ public class BadLibrary
 }
 ```
 
-Das sieht harmlos aus — `Books` ist eine nur-lesbare Property, also kann
+Das sieht harmlos aus. `Books` ist eine nur-lesbare Property, also kann
 niemand sie durch eine andere Liste *ersetzen*. Aber `List<T>` selbst ist
 veränderbar, und eine Referenz darauf herauszugeben gibt volle Kontrolle
 über ihren Inhalt:
@@ -33,7 +33,7 @@ badLibrary.Books.Add(new Book("Dune", "Frank Herbert"));
 badLibrary.Books.Clear(); // nichts hindert das -- die ganze Bibliothek, weg
 ```
 
-`Clear()` ist kein Tippfehler oder Sonderfall — es ist eine ganz normale
+`Clear()` ist kein Tippfehler oder Sonderfall, sondern eine ganz normale
 `List<T>`-Methode, verfügbar für *jeden*, der eine Referenz auf diese Liste
 hält, ganz ohne Beteiligung von `BadLibrary` selbst. Eine nur-lesbare
 Property schützt die Referenz; sie schützt überhaupt nicht, worauf diese
@@ -61,10 +61,10 @@ public class Library
 
 Zwei Änderungen beheben das Problem:
 
-- Die eigentliche Liste ist jetzt ein `private readonly`-Feld, `_books` —
+- Die eigentliche Liste ist jetzt ein `private readonly`-Feld, `_books`:
   nichts außerhalb von `Library` kann sie überhaupt direkt erreichen.
 - `Books` gibt [`IReadOnlyList<Book>`](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.ireadonlylist-1)
-  statt `List<Book>` zurück — ein Interface ganz ohne `Add`, `Remove` oder
+  statt `List<Book>` zurück, ein Interface ganz ohne `Add`, `Remove` oder
   `Clear`. `library.Books.Add(...)` verhält sich nicht nur falsch, es
   **kompiliert gar nicht erst**: `error CS1061: 'IReadOnlyList<Book>' does
   not contain a definition for 'Add'`.
@@ -72,12 +72,12 @@ Zwei Änderungen beheben das Problem:
 Eine Feinheit, die man kennen sollte, weil man sie leicht fast richtig
 macht: `return _books;` (ein einfaches Hochcasten zu `IReadOnlyList<Book>`)
 blockiert das nur zur *Kompilierzeit*. Das Objekt dahinter ist immer noch
-exakt dieselbe `List<Book>` — entschlossener Code könnte sie zurückcasten
+exakt dieselbe `List<Book>`. Entschlossener Code könnte sie zurückcasten
 (`(List<Book>)library.Books`) und trotzdem verändern.
 [`_books.AsReadOnly()`](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1.asreadonly)
 ist stärker: Es umhüllt `_books` in einem echten, eigenständigen
 `ReadOnlyCollection<T>`-Objekt. *Das* zurück zu `List<Book>` zu casten
-verhält sich auch nicht nur falsch — es wirft zur Laufzeit eine
+verhält sich auch nicht nur falsch. Es wirft zur Laufzeit eine
 `InvalidCastException`, weil es darunter wirklich keine `List<Book>` ist.
 Bevorzug `AsReadOnly()` genau deswegen.
 
@@ -102,7 +102,7 @@ hinzugefügten Büchern. Falls du feststeckst, hat
 ## Was du gelernt hast
 
 - Warum eine nur-lesbare Property ein *veränderbares* Objekt, auf das sie
-  eine Referenz zurückgibt, nicht schützt — nur die Referenz selbst
+  eine Referenz zurückgibt, nicht schützt, sondern nur die Referenz selbst
 - `IReadOnlyList<T>`, und der Unterschied zwischen einem einfachen
   Hochcasten (blockiert Missbrauch nur zur Kompilierzeit) und
   `.AsReadOnly()` (blockiert ihn auch zur Laufzeit, indem es die Liste in
