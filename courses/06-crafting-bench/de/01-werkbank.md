@@ -5,7 +5,7 @@
 # Kurs 6 – Werkbank
 
 **Ziel:** zwei Fähigkeiten modellieren, die manche Items haben und andere
-nicht — sammelbar sein, verkaufbar sein —, ohne jedes Item in eine starre
+nicht (sammelbar sein, verkaufbar sein), ohne jedes Item in eine starre
 Klassenhierarchie zu zwingen. Am Ende weißt du, was ein Interface ist,
 warum eine Klasse mehrere davon gleichzeitig implementieren kann (anders
 als von mehr als einer Basisklasse zu erben, was C# überhaupt nicht
@@ -178,7 +178,7 @@ einer Liste, die jede Art von Item gleichzeitig enthält.
 
 ## 🔴 Optional, echte Herausforderung — Ein Typ, der nur Sellable ist
 
-Beweis, dass die beiden Interfaces wirklich unabhängig sind, nicht heimlich
+Beweis, dass die beiden Interfaces unabhängig sind, nicht heimlich
 eine Hierarchie: Schreib eine `TreasureMap`-Klasse, die **nur**
 `ISellable` implementiert (einen `Price`, ein `Sell()`) — kein
 `ICollectible`, kein `Name`, kein `Collect()`.
@@ -194,7 +194,7 @@ Bestätige zwei Dinge: Eine `TreasureMap` funktioniert einwandfrei in einer
 eigenen `List<ISellable>`, und `inventory.Add(new TreasureMap(30))` —
 der Versuch, sie in die `List<ICollectible>` von oben zu stecken — weigert
 sich zu kompilieren: `error CS1503: Argument 1: cannot convert from
-'TreasureMap' to 'ICollectible'`, weil eine `TreasureMap` das wirklich
+'TreasureMap' to 'ICollectible'`, weil eine `TreasureMap` das
 nicht ist. Vergleich mit [`code/TreasureMap.cs`](../code/TreasureMap.cs).
 
 ## Was du gelernt hast

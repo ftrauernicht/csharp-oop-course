@@ -98,7 +98,7 @@ public class RareGem : ICollectible, ISellable
 ```
 
 `: ICollectible, ISellable` — a comma-separated list. This is exactly what
-inheritance couldn't do: `RareGem` now has two, entirely independent
+inheritance couldn't do: `RareGem` now has two entirely independent
 promises fulfilled at once, and you could add a third or fourth interface
 the same way. This is **composition over inheritance** in its simplest
 form: instead of forcing every type into one "is-a" tree, you assemble a
@@ -170,7 +170,7 @@ once.
 
 ## 🔴 Optional, genuine challenge — A type that's only Sellable
 
-Prove the two interfaces are genuinely independent, not secretly a
+Prove the two interfaces are independent, not secretly a
 hierarchy: write a `TreasureMap` class that implements `ISellable` **only**
 (a `Price`, a `Sell()`) — no `ICollectible`, no `Name`, no `Collect()`.
 
@@ -185,7 +185,7 @@ Confirm two things: a `TreasureMap` works fine in a `List<ISellable>` of
 its own, and `inventory.Add(new TreasureMap(30))` — trying to put it into
 the `List<ICollectible>` from above — refuses to compile:
 `error CS1503: Argument 1: cannot convert from 'TreasureMap' to
-'ICollectible'`, because a `TreasureMap` genuinely isn't one. Compare
+'ICollectible'`, because a `TreasureMap` isn't one. Compare
 against [`code/TreasureMap.cs`](../code/TreasureMap.cs).
 
 ## What you learned
