@@ -8,19 +8,19 @@
 benannter, und einer Klasse echte Kontrolle über ihre eigenen Daten geben,
 statt sie offen für jeden zugänglich zu lassen. Am Ende hast du einen
 kleinen Hof, der beliebig viele Pflanzen verfolgt, von denen jede selbst
-durchsetzt, wie viel sie gegossen werden kann — egal, wer gerade gießt.
+durchsetzt, wie viel sie gegossen werden kann. Egal, wer gerade gießt.
 
 Dieses Kapitel gibt dir merklich weniger fertigen Code als Kurs 1 und 2, mit
 Absicht: Die Kernübung unten ist der eigentliche Punkt dieses Kapitels,
 deshalb steht sie in Schritten beschrieben, die du selbst schreibst, statt
 fertig vorgegeben zu sein. Die fertige Version, inklusive der optionalen
-Teile und der Herausforderung, liegt in [`code/`](../code/) —
-`Crop.cs`, `Animal.cs` und `Program.cs` — falls du feststeckst oder
+Teile und der Herausforderung, liegt in [`code/`](../code/)
+(`Crop.cs`, `Animal.cs` und `Program.cs`), falls du feststeckst oder
 vergleichen willst, sobald du fertig bist.
 
 ## 🟢 Kern — Eine Variable pro Objekt skaliert nicht
 
-Kurs 2 hat Katzen jeweils in einer einzeln benannten Variable erzeugt —
+Kurs 2 hat Katzen jeweils in einer einzeln benannten Variable erzeugt:
 `var whiskers = new Cat(...)`, `var mochi = new Cat(...)`. Das geht für
 zwei oder drei, aber ein Hof hat vielleicht ein Dutzend Pflanzen, und die
 genaue Anzahl kennst du vorher nicht. Du brauchst eine Möglichkeit, *viele*
@@ -37,7 +37,7 @@ Console.WriteLine(crops.Count); // 2
 ```
 
 [`List<T>`](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1)
-ist eine wachsende, geordnete Sammlung — das `<T>` ist ein Platzhalter für
+ist eine wachsende, geordnete Sammlung. Das `<T>` ist ein Platzhalter für
 "den Typ, den diese Liste enthält" (hier `Crop`), also liest sich
 `List<Crop>` als "eine Liste von Crops". `.Add(...)` hängt ein Element an,
 `.Count` sagt dir, wie viele gerade drin sind. Du kannst eine Liste auch
@@ -64,11 +64,11 @@ foreach (var crop in crops)
 
 [`foreach`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement)
 führt seinen Block einmal für jedes Element einer Sammlung aus, wobei
-`crop` bei jedem Durchlauf auf das aktuelle Element zeigt — kein manuelles
+`crop` bei jedem Durchlauf auf das aktuelle Element zeigt: kein manuelles
 Zählen, kein Risiko eines Off-by-one-Fehlers, wie es bei einer
 handgeschriebenen indexbasierten Schleife passieren kann. Lies es als "für
 jede Pflanze in crops, mach Folgendes." Zu `foreach` greifst du immer dann,
-wenn du mit *jedem* Element einer Liste etwas machen willst — das ist die
+wenn du mit *jedem* Element einer Liste etwas machen willst. Das ist die
 meiste Zeit.
 
 ## 🟢 Kern — Eine erste Version von Crop
@@ -110,12 +110,12 @@ foreach (var crop in crops)
 }
 ```
 
-Das läuft einwandfrei — aber nichts hindert einen Fehler wie
+Das läuft einwandfrei. Aber nichts hindert einen Fehler wie
 `crop.WaterLevel = -999;` oder `crop.WaterLevel = 250;` daran, irgendwo
 sonst im Programm zu passieren, und eine Pflanze in einem Zustand zu
 hinterlassen, der eigentlich gar nicht möglich sein sollte. Der
 Wasserstand einer Pflanze sollte immer zwischen 0 (staubtrocken) und 100
-(vollständig gegossen) bleiben, ganz ohne Ausnahme — und diese Regel sollte
+(vollständig gegossen) bleiben, ganz ohne Ausnahme, und diese Regel sollte
 nicht davon abhängen, dass jede einzelne Stelle im Code, die `WaterLevel`
 anfasst, daran denkt, das selbst zu prüfen.
 
@@ -156,40 +156,40 @@ public class Crop
 
 Ein paar neue Teile hier:
 
-- `private int _waterLevel;` ist ein **privates Feld** — anders als die
+- `private int _waterLevel;` ist ein **privates Feld**: anders als die
   Properties, die du bisher benutzt hast, bedeutet `private`, dass nur Code
   *innerhalb* dieser Klasse direkt darauf zugreifen kann. Der führende
   Unterstrich ist eine übliche C#-Konvention für ein privates Backing-Feld,
   damit auf einen Blick klar ist, was das Feld und was die Property ist.
-- `public string Name { get; }` hat gar kein `set` — eine **nur-lesbare
+- `public string Name { get; }` hat gar kein `set`: eine **nur-lesbare
   Property**. Sie lässt sich nur im Konstruktor zuweisen (dort siehst du
   `Name = name;`) und danach nie wieder. Nicht jede Property muss
   änderbar sein.
 - `WaterLevel` ist jetzt eine **vollständige Property**: `get => _waterLevel;`
   gibt zurück, was gerade gespeichert ist, und der `set { ... }`-Block
-  läuft *jedes Mal*, wenn jemand `crop.WaterLevel = ...` schreibt —
+  läuft *jedes Mal*, wenn jemand `crop.WaterLevel = ...` schreibt,
   auch von innerhalb `Water(...)` aus, das jetzt durch genau dieselbe Regel
   läuft wie alles andere, statt das Feld direkt anzufassen.
 
 Füll den `set`-Block selbst aus: Ist `value` (die eingehende Zahl) unter 0,
 speicher stattdessen 0; ist sie über 100, speicher stattdessen 100; sonst
 speicher `value` wie übergeben. Test es, indem du an beiden Enden
-übertreibst — `crop.Water(1000)` sollte `WaterLevel` bei genau 100
+übertreibst: `crop.Water(1000)` sollte `WaterLevel` bei genau 100
 belassen, und `crop.WaterLevel = -20;` sollte es bei genau 0 belassen.
 Falls du feststeckst, hat [`code/Crop.cs`](../code/Crop.cs) eine
 funktionierende Version.
 
 Für das, was du gerade gebaut hast, gibt es einen Namen: eine Klasse, die
 den Zugriff auf ihre eigenen Daten kontrolliert, statt darauf zu vertrauen,
-dass jeder, der sie benutzt, immer das Richtige tut, ist **Kapselung** —
-dieselbe Idee, die Kurs 2 schon eingeführt hat, jetzt mit einer echten
-Regel dahinter statt nur einem Bündel von Feldern. Mehr:
+dass jeder, der sie benutzt, immer das Richtige tut, ist **Kapselung**.
+Es ist dieselbe Idee, die Kurs 2 schon eingeführt hat, jetzt mit einer
+echten Regel dahinter statt nur einem Bündel von Feldern. Mehr:
 [Microsoft Learn – Properties](https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
 ## 🟡 Optional — Eine Property, die nur die Klasse selbst setzen darf
 
 `IsHarvestable` soll `true` werden, sobald eine Pflanze vollständig gegossen
-ist, aber das sollte kein Code von außen einfach so setzen können — niemand
+ist, aber das sollte kein Code von außen einfach so setzen können. Niemand
 sollte `crop.IsHarvestable = true;` schreiben und das Gießen komplett
 überspringen können. Ein **privater Setter** macht genau das:
 
@@ -224,7 +224,7 @@ Wend genau dasselbe Muster auf eine zweite, unabhängige Klasse an. Schreib
 eine `Animal`-Klasse mit:
 
 - Einer nur-lesbaren `Name`-Property, gesetzt im Konstruktor.
-- Einer `Happiness`-Property (`int`), validiert genauso wie `WaterLevel` —
+- Einer `Happiness`-Property (`int`), validiert genauso wie `WaterLevel`,
   begrenzt auf den Bereich 0 bis 100.
 - Einer `Pet()`-Methode, die `Happiness` um 20 erhöht.
 
@@ -242,7 +242,7 @@ funktioniert.
 - Private Felder (`private int _waterLevel;`) gegenüber öffentlichen
   Properties
 - Nur-lesbare Properties (`{ get; }`), nur im Konstruktor setzbar
-- Eine vollständige Property mit echter Validierungslogik im `set`-Block —
+- Eine vollständige Property mit echter Validierungslogik im `set`-Block:
   Kapselung, tatsächlich eingesetzt
 - Ein privater Setter (`{ get; private set; }`) für eine Property, die nur
   ihre eigene Klasse ändern können soll
