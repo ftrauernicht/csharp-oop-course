@@ -4,7 +4,7 @@
 
 # Course 7 – Reading List
 
-**Goal:** a `List<Book>` that survives closing and reopening the program —
+**Goal:** a `List<Book>` that survives closing and reopening the program:
 saved to a real file on disk, in a format any other program (or a text
 editor) can also read. By the end, you'll know how to turn a list of your
 own objects into text and back, on purpose, using the format almost every
@@ -16,8 +16,8 @@ and challenge parts, lives in [`code/`](../code/).
 
 ## 🟢 Core — The problem: everything so far has been temporary
 
-Every course before this one built objects, lists, whole little systems —
-and every single one vanished the moment the program stopped running.
+Every course before this one built objects, lists, whole little systems.
+Every single one vanished the moment the program stopped running.
 That's fine for a demo, but a real reading list needs to remember what you
 added yesterday. **Serialization** is turning an object into a format that
 can be stored (a file, sent over a network, whatever) and **deserialization**
@@ -44,7 +44,7 @@ public class Book
 }
 ```
 
-Nothing new here — the same shape Course 2 used for `Cat`.
+Nothing new here: the same shape Course 2 used for `Cat`.
 
 ## 🟢 Core — Turning objects into text
 
@@ -67,8 +67,8 @@ Console.WriteLine(json);
 [`JsonSerializer.Serialize(...)`](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializer.serialize)
 looks at an object (or, here, a whole `List<Book>`) and produces a string:
 every public property becomes a `"Name": value` pair, arrays become `[...]`,
-and objects become `{...}` — recognizable even if you've never seen C#, which
-is exactly why JSON is everywhere.
+and objects become `{...}`: recognizable even if you've never seen C#.
+That's exactly why JSON is everywhere.
 
 ## 🟢 Core — Writing and reading a file
 
@@ -83,7 +83,7 @@ string savedJson = File.ReadAllText("books.json");
 [`File.WriteAllText(path, contents)`](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.writealltext)
 creates the file if it doesn't exist yet, or replaces it entirely if it
 does. [`File.ReadAllText(path)`](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)
-reads the whole thing back as one string — both live in
+reads the whole thing back as one string. Both live in
 [`System.IO`](https://learn.microsoft.com/en-us/dotnet/api/system.io),
 automatically available via this project's `ImplicitUsings`.
 
@@ -95,17 +95,17 @@ var loadedBooks = JsonSerializer.Deserialize<List<Book>>(savedJson) ?? new List<
 
 [`JsonSerializer.Deserialize<T>(...)`](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializer.deserialize)
 does the reverse: read the JSON text, and build real `Book` objects from
-it — matching each JSON property to a constructor parameter by name
+it, matching each JSON property to a constructor parameter by name
 (case-insensitively: `"Title"` in the JSON finds `title` in `Book`'s
 constructor), then setting any remaining public property (`IsFinished`)
 from the leftover JSON afterward. These are genuine, newly-built `Book`
-objects, not the ones you started with — proof this really went through
+objects, not the ones you started with: proof this really went through
 text and back, not just a reference to the same objects in memory.
 
 `Deserialize<T>` can technically return `null` (if the JSON text was
 literally `"null"`), so its result type is `List<Book>?`, not `List<Book>`.
 [`??`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator)
-("null-coalescing") reads as "use the left side, unless it's `null` — then
+("null-coalescing") reads as "use the left side, unless it's `null`, then
 use the right side instead": here, an empty list rather than `null`, so the
 rest of your code never has to check for `null` before using the result.
 
@@ -148,7 +148,7 @@ foreach (var book in loadedBooks)
 }
 ```
 
-Run it, then check your project folder — there's a real `books.json` file
+Run it, then check your project folder. There's a real `books.json` file
 sitting next to your code now. Open it in a text editor; it's exactly the
 string you saw printed earlier. If you get stuck,
 [`code/Program.cs`](../code/Program.cs) has working versions of both
@@ -156,7 +156,7 @@ methods.
 
 ## 🟡 Optional — Readable JSON
 
-The file you just created is one long line — fine for a program to read,
+The file you just created is one long line: fine for a program to read,
 hard for a human to skim. [`JsonSerializerOptions`](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions)
 lets you ask for formatting:
 
@@ -178,9 +178,9 @@ string json = JsonSerializer.Serialize(booksToSave, options);
 Pass the same `options` to `Serialize` inside `SaveBooks`, delete your old
 `books.json`, and run again to see the difference.
 
-One more robustness note, worth knowing even though this chapter's demo
-always saves before it ever loads: a real app typically loads *first
-thing* on startup, before anything has necessarily been saved yet.
+On robustness: this chapter's demo always saves before it ever loads, but
+a real app typically loads *first thing* on startup, before anything has
+necessarily been saved yet.
 [`File.Exists(path)`](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.exists)
 lets `LoadBooks` return an empty list instead of crashing when there's no
 save file at all:
@@ -208,9 +208,9 @@ books back:
 3. Load it once more, into a third variable, and print every book's
    `IsFinished` value.
 
-Confirm the change survived the full round trip — saved, reloaded, and the
-update is still there — not just held in the variable you happened to
-modify. [`code/Program.cs`](../code/Program.cs) has one way to write it.
+Confirm the change survived the full round trip: saved, reloaded, and
+still there, not just held in the variable you happened to modify.
+[`code/Program.cs`](../code/Program.cs) has one way to write it.
 
 ## What you learned
 
@@ -229,6 +229,6 @@ modify. [`code/Program.cs`](../code/Program.cs) has one way to write it.
 ## Next
 
 Course 7 stands on its own, needing only Courses 1 and 2. This completes
-this repository's currently planned roadmap — see
+this repository's currently planned roadmap. See
 [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md) for what a future course
 might add next.

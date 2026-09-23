@@ -5,7 +5,7 @@
 # Kurs 7 – Leseliste
 
 **Ziel:** eine `List<Book>`, die das Schließen und Neustarten des Programms
-übersteht — gespeichert in einer echten Datei auf der Festplatte, in einem
+übersteht: gespeichert in einer echten Datei auf der Festplatte, in einem
 Format, das auch jedes andere Programm (oder ein Texteditor) lesen kann.
 Am Ende weißt du, wie du eine Liste deiner eigenen Objekte absichtlich in
 Text verwandelst und wieder zurück, im Format, das fast jede API und
@@ -17,8 +17,8 @@ Teile und der Herausforderung, liegt in [`code/`](../code/).
 
 ## 🟢 Kern — Das Problem: bisher war alles vorübergehend
 
-Jeder Kurs vor diesem hat Objekte, Listen, ganze kleine Systeme gebaut —
-und jedes einzelne verschwand in dem Moment, in dem das Programm aufhörte
+Jeder Kurs vor diesem hat Objekte, Listen, ganze kleine Systeme gebaut.
+Jedes einzelne verschwand in dem Moment, in dem das Programm aufhörte
 zu laufen. Für eine Demo ist das in Ordnung, aber eine echte Leseliste muss
 sich merken, was du gestern hinzugefügt hast. **Serialisierung** bedeutet,
 ein Objekt in ein Format zu verwandeln, das gespeichert werden kann (eine
@@ -46,7 +46,7 @@ public class Book
 }
 ```
 
-Nichts Neues hier — dieselbe Form, die Kurs 2 für `Cat` benutzt hat.
+Nichts Neues hier: dieselbe Form, die Kurs 2 für `Cat` benutzt hat.
 
 ## 🟢 Kern — Objekte in Text verwandeln
 
@@ -69,8 +69,8 @@ Console.WriteLine(json);
 [`JsonSerializer.Serialize(...)`](https://learn.microsoft.com/de-de/dotnet/api/system.text.json.jsonserializer.serialize)
 schaut sich ein Objekt an (oder hier eine ganze `List<Book>`) und erzeugt
 einen String: Jede öffentliche Property wird zu einem `"Name": Wert`-Paar,
-Arrays werden zu `[...]`, Objekte zu `{...}` — erkennbar, selbst wenn du nie
-C# gesehen hast, genau deshalb ist JSON überall.
+Arrays werden zu `[...]`, Objekte zu `{...}`: erkennbar, selbst wenn du nie
+C# gesehen hast. Genau deshalb ist JSON überall.
 
 ## 🟢 Kern — Eine Datei schreiben und lesen
 
@@ -85,7 +85,7 @@ string savedJson = File.ReadAllText("books.json");
 [`File.WriteAllText(path, contents)`](https://learn.microsoft.com/de-de/dotnet/api/system.io.file.writealltext)
 legt die Datei an, falls sie noch nicht existiert, oder ersetzt sie
 komplett, falls doch. [`File.ReadAllText(path)`](https://learn.microsoft.com/de-de/dotnet/api/system.io.file.readalltext)
-liest das Ganze als einen String zurück — beide leben in
+liest das Ganze als einen String zurück. Beide leben in
 [`System.IO`](https://learn.microsoft.com/de-de/dotnet/api/system.io),
 automatisch verfügbar über die `ImplicitUsings` dieses Projekts.
 
@@ -97,19 +97,19 @@ var loadedBooks = JsonSerializer.Deserialize<List<Book>>(savedJson) ?? new List<
 
 [`JsonSerializer.Deserialize<T>(...)`](https://learn.microsoft.com/de-de/dotnet/api/system.text.json.jsonserializer.deserialize)
 macht das Gegenteil: liest den JSON-Text und baut daraus echte `Book`-
-Objekte — ordnet jede JSON-Property über den Namen einem
+Objekte, ordnet jede JSON-Property über den Namen einem
 Konstruktor-Parameter zu (unabhängig von Groß-/Kleinschreibung: `"Title"`
 im JSON findet `title` in `Book`s Konstruktor), und setzt danach jede
 übrig gebliebene öffentliche Property (`IsFinished`) aus dem restlichen
 JSON. Das sind echte, neu gebaute `Book`-Objekte, nicht die, mit denen du
-angefangen hast — der Beweis, dass es wirklich durch Text und zurück ging,
+angefangen hast: der Beweis, dass es wirklich durch Text und zurück ging,
 nicht nur eine Referenz auf dieselben Objekte im Speicher.
 
 `Deserialize<T>` kann theoretisch `null` zurückgeben (falls der JSON-Text
 buchstäblich `"null"` war), sein Rückgabetyp ist also `List<Book>?`, nicht
 `List<Book>`. [`??`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/null-coalescing-operator)
 ("Null-Coalescing") liest sich als "nimm die linke Seite, außer sie ist
-`null` — dann nimm stattdessen die rechte": hier eine leere Liste statt
+`null`, dann nimm stattdessen die rechte": hier eine leere Liste statt
 `null`, sodass der restliche Code nie vor der Benutzung auf `null` prüfen
 muss.
 
@@ -152,7 +152,7 @@ foreach (var book in loadedBooks)
 }
 ```
 
-Führ es aus und schau dann in deinen Projektordner — da liegt jetzt eine
+Führ es aus und schau dann in deinen Projektordner. Da liegt jetzt eine
 echte `books.json`-Datei neben deinem Code. Öffne sie in einem Texteditor;
 es ist genau der String, den du vorhin ausgegeben gesehen hast. Falls du
 feststeckst, hat [`code/Program.cs`](../code/Program.cs) funktionierende
@@ -160,7 +160,7 @@ Versionen beider Methoden.
 
 ## 🟡 Optional — Lesbares JSON
 
-Die Datei, die du gerade erzeugt hast, ist eine einzige lange Zeile — gut
+Die Datei, die du gerade erzeugt hast, ist eine einzige lange Zeile: gut
 für ein Programm zu lesen, schwer für einen Menschen zu überfliegen.
 [`JsonSerializerOptions`](https://learn.microsoft.com/de-de/dotnet/api/system.text.json.jsonserializeroptions)
 lässt dich nach Formatierung fragen:
@@ -184,10 +184,9 @@ string json = JsonSerializer.Serialize(booksToSave, options);
 deine alte `books.json` und führ es erneut aus, um den Unterschied zu
 sehen.
 
-Noch eine Anmerkung zur Robustheit, gut zu wissen, auch wenn die Demo
-dieses Kapitels immer erst speichert, bevor sie je lädt: Eine echte App
-lädt typischerweise *als Allererstes* beim Start, bevor überhaupt schon
-etwas gespeichert wurde. [`File.Exists(path)`](https://learn.microsoft.com/de-de/dotnet/api/system.io.file.exists)
+Zur Robustheit: Die Demo dieses Kapitels speichert immer erst, bevor sie
+lädt, aber eine echte App lädt typischerweise *als Allererstes* beim
+Start, bevor überhaupt schon etwas gespeichert wurde. [`File.Exists(path)`](https://learn.microsoft.com/de-de/dotnet/api/system.io.file.exists)
 lässt `LoadBooks` eine leere Liste zurückgeben, statt abzustürzen, wenn es
 gar keine Speicherdatei gibt:
 
@@ -214,9 +213,9 @@ deine Bücher zurückgeladen hast:
 3. Lad sie noch einmal, in eine dritte Variable, und gib den `IsFinished`-
    Wert jedes Buchs aus.
 
-Bestätige, dass die Änderung den vollständigen Roundtrip übersteht —
-gespeichert, neu geladen, und die Änderung ist immer noch da — nicht nur
-in der Variable erhalten geblieben, die du zufällig geändert hast.
+Bestätige, dass die Änderung den vollständigen Roundtrip übersteht:
+gespeichert, neu geladen, und immer noch da, nicht nur in der Variable
+erhalten geblieben, die du zufällig geändert hast.
 [`code/Program.cs`](../code/Program.cs) hat einen Weg, es zu schreiben.
 
 ## Was du gelernt hast
@@ -237,6 +236,6 @@ in der Variable erhalten geblieben, die du zufällig geändert hast.
 ## Weiter
 
 Kurs 7 steht für sich allein und braucht nur Kurs 1 und 2. Damit ist die
-aktuell geplante Roadmap dieses Repositories komplett — was ein
+aktuell geplante Roadmap dieses Repositories komplett. Was ein
 zukünftiger Kurs als Nächstes bringen könnte, steht in
 [PROJECT-IDEAS.de.md](../../../PROJECT-IDEAS.de.md).
