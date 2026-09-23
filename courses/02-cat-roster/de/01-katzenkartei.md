@@ -4,8 +4,8 @@
 
 # Kurs 2 – Katzenkartei
 
-**Ziel:** dein erster echter Schritt in die objektorientierte Programmierung
-— zusammengehörige Daten und das Verhalten, das dazugehört, in einem Ding
+**Ziel:** dein erster echter Schritt in die objektorientierte Programmierung:
+zusammengehörige Daten und das Verhalten, das dazugehört, in einem Ding
 bündeln, statt einen Haufen loser Variablen zu jonglieren. Am Ende hast du
 eine Handvoll unabhängiger `Cat`-Objekte, die sich selbst vorstellen können,
 und weißt genau, was eine Klasse, ein Objekt, ein Konstruktor und eine
@@ -18,7 +18,7 @@ inklusive der Herausforderung am Ende.
 ## 🟢 Kern — Das Problem mit losen Variablen
 
 Angenommen, du willst drei Katzen mit dem verfolgen, was Kurs 1 dir gegeben
-hat — Variablen und `Console.WriteLine`:
+hat, also mit Variablen und `Console.WriteLine`:
 
 ```csharp
 string cat1Name = "Whiskers";
@@ -34,7 +34,7 @@ Console.WriteLine($"Hi, I'm {cat2Name}! Age: {cat2Age}. Favorite toy: {cat2Favor
 ```
 
 Das funktioniert, skaliert aber schlecht, und nichts hindert dich daran,
-aus Versehen `cat2Name` zu tippen, wo du `cat1Name` meintest — die
+aus Versehen `cat2Name` zu tippen, wo du `cat1Name` meintest. Die
 Verbindung "diese drei Variablen gehören zur selben Katze" existiert nur in
 den Namen, die du zufällig gewählt hast, nicht im Code selbst. Eine
 **Klasse** behebt genau das: Sie lässt dich "eine Katze hat einen Namen,
@@ -52,7 +52,7 @@ public class Cat
 }
 ```
 
-`Name`, `Age` und `FavoriteToy` sind **Properties** — das ist die normale,
+`Name`, `Age` und `FavoriteToy` sind **Properties**. Das ist die normale,
 idiomatische Art, ein Datenfeld auf einer C#-Klasse nach außen anzubieten.
 Der Teil `{ get; set; }` sieht aus, als würde er nichts mehr tun als eine
 gewöhnliche Variable, und im Moment stimmt das auch: Er ist eine
@@ -62,7 +62,7 @@ Kurzschreibweise und packt echte Logik hinein. Für jetzt reicht es, eine
 Property wie ein beschriftetes Datenfach der Klasse zu behandeln. Mehr:
 [Microsoft Learn – Properties](https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
-Diese `Cat`-Klasse für sich allein steht für keine bestimmte Katze — sie ist
+Diese `Cat`-Klasse für sich allein steht für keine bestimmte Katze. Sie ist
 ein Bauplan, genau wie ein Plätzchenausstecher kein Plätzchen ist. Gebacken
 wurde noch nichts.
 
@@ -87,7 +87,7 @@ mochi.FavoriteToy = "feather wand";
 ```
 
 `whiskers` und `mochi` sind beide `Cat`-Objekte, aus genau demselben Bauplan
-gebaut, mit völlig unabhängigen Daten — `mochi.Age` zu ändern rührt
+gebaut, mit völlig unabhängigen Daten: `mochi.Age` zu ändern rührt
 `whiskers.Age` niemals an. Dieses zeilenweise Aufsetzen funktioniert, ist
 aber umständlich, und schlimmer: nichts zwingt dich dazu, wirklich jede
 Property zu setzen, bevor du das Objekt benutzt. Die Lösung ist ein
@@ -96,8 +96,8 @@ Property zu setzen, bevor du das Objekt benutzt. Die Lösung ist ein
 ## 🟢 Kern — Der Konstruktor
 
 Ein Konstruktor ist eine besondere Methode, die automatisch in dem Moment
-läuft, in dem `new` ein Objekt baut — so kannst du ihm alles mitgeben, was
-das Objekt direkt bei der Erzeugung braucht:
+läuft, in dem `new` ein Objekt baut, sodass du ihm gleich alles mitgeben
+kannst, was das Objekt direkt bei der Erzeugung braucht:
 
 ```csharp
 public class Cat
@@ -129,7 +129,7 @@ var mochi = new Cat("Mochi", 1, "feather wand");
 `this.Name = name;` geschrieben, statt einfach `Name = name;`. Hier tun
 beide exakt dasselbe, weil der Parameter (`name`, klein geschrieben) und die
 Property (`Name`, groß geschrieben) unterschiedliche Groß-/Kleinschreibung
-haben — genau deshalb folgt echter C#-Code dieser Konvention: Sie vermeidet
+haben. Genau deshalb folgt echter C#-Code dieser Konvention: Sie vermeidet
 die Kollision von vornherein. `this` bedeutet "das Objekt, auf dem dieser
 Code gerade läuft", und es wird *notwendig*, nicht nur eine Stilfrage,
 sobald der Name eines Parameters wirklich exakt mit dem einer Property
@@ -174,7 +174,7 @@ public class Cat
 
 `Introduce` sieht aus wie die Methoden aus Kurs 1, mit einem Unterschied,
 der viel ausmacht: Sie nimmt `Name`, `Age` oder `FavoriteToy` nicht als
-Parameter entgegen — sie benutzt sie direkt, weil sie beim Aufruf auf einer
+Parameter entgegen. Sie benutzt sie direkt, weil sie beim Aufruf auf einer
 bestimmten Katze schon weiß, auf welcher sie gerade läuft:
 
 ```csharp
@@ -182,7 +182,7 @@ whiskers.Introduce(); // Hi, I'm Whiskers! Age: 3. Favorite toy: crinkly ball.
 mochi.Introduce();    // Hi, I'm Mochi! Age: 1. Favorite toy: feather wand.
 ```
 
-Dieselbe Methode, derselbe Code, zwei völlig unterschiedliche Ausgaben —
+Dieselbe Methode, derselbe Code, zwei völlig unterschiedliche Ausgaben,
 weil `whiskers` und `mochi` unterschiedliche Objekte sind, jedes mit
 eigenen Werten für diese Properties.
 
@@ -191,8 +191,8 @@ eigenen Werten für diese Properties.
 
 ## 🟡 Optional — Eine Methode, die den Zustand ändert
 
-Methoden sind nicht darauf beschränkt, Properties zu lesen und auszugeben —
-sie können den Zustand eines Objekts auch ändern:
+Methoden sind nicht darauf beschränkt, Properties zu lesen und auszugeben.
+Sie können den Zustand eines Objekts auch ändern:
 
 ```csharp
 public void HaveBirthday()
@@ -206,7 +206,7 @@ public void HaveBirthday()
 mochi.HaveBirthday(); // Mochi just turned 2!
 ```
 
-`mochi.Age` ist jetzt dauerhaft `2` — die Änderung bleibt genau wie bei
+`mochi.Age` ist jetzt dauerhaft `2`: Die Änderung bleibt genau wie bei
 jeder anderen Property-Änderung bestehen, weil eine Methode vollen Zugriff
 auf das Objekt hat, zu dem sie gehört (und es verändern kann).
 
@@ -234,7 +234,7 @@ if (tom.IsOlderThan(whiskers))
 
 Ein Tipp, falls du ihn willst: Innerhalb der Methode bezieht sich `Age` auf
 das Alter *dieser* Katze (der, auf der die Methode aufgerufen wird), und
-`other.Age` greift auf die `Cat` zu, die übergeben wurde — dieselbe
+`other.Age` greift auf die `Cat` zu, die übergeben wurde, dieselbe
 Punkt-Syntax, die du überall sonst benutzt hast, nur diesmal auf einem
 Parameter statt direkt auf `whiskers` oder `mochi`.
 
@@ -256,7 +256,7 @@ man für die Benutzung einer `Cat` nur wissen muss, was sie kann
 (`Introduce()`, `HaveBirthday()`), nicht wie ihr Innenleben funktioniert,
 nennt man **Kapselung**. Mehr:
 [Microsoft Learn – Objektorientierte Programmierung (C#)](https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/object-oriented/).
-Du begegnest ihr in Kurs 3 wieder, ganz bewusst — diesmal mit Properties,
+Du begegnest ihr in Kurs 3 wieder, ganz bewusst, diesmal mit Properties,
 die tatsächlich Regeln über die Daten durchsetzen, die sie halten.
 
 ## Weiter

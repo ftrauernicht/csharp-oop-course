@@ -4,7 +4,7 @@
 
 # Course 2 – Cat Roster
 
-**Goal:** your first real step into object-oriented programming — grouping
+**Goal:** your first real step into object-oriented programming: grouping
 related data and the behavior that belongs to it into one thing, instead of
 juggling a pile of separate variables. By the end, you'll have a handful of
 independent `Cat` objects that can introduce themselves, and you'll know
@@ -16,8 +16,8 @@ including the challenge at the end.
 
 ## 🟢 Core — The problem loose variables run into
 
-Say you wanted to track three cats with everything Course 1 gave you —
-variables and `Console.WriteLine`:
+Say you wanted to track three cats using nothing but what Course 1 gave
+you, plain variables and `Console.WriteLine`:
 
 ```csharp
 string cat1Name = "Whiskers";
@@ -33,7 +33,7 @@ Console.WriteLine($"Hi, I'm {cat2Name}! Age: {cat2Age}. Favorite toy: {cat2Favor
 ```
 
 This works, but it scales badly, and nothing stops you from typing
-`cat2Name` where you meant `cat1Name` — the connection between "these three
+`cat2Name` where you meant `cat1Name`. The connection between "these three
 variables belong to the same cat" exists only in the names you happened to
 pick, not in the code itself. A **class** fixes exactly this: it lets you
 define "a cat has a name, an age, and a favorite toy" *once*, as a
@@ -50,7 +50,7 @@ public class Cat
 }
 ```
 
-`Name`, `Age`, and `FavoriteToy` are **properties** — this is the normal,
+`Name`, `Age`, and `FavoriteToy` are **properties**. This is the normal,
 idiomatic way to expose a piece of data on a C# class. The `{ get; set; }`
 part looks like it's doing nothing beyond what a plain variable would, and
 right now, it is: it's a shorthand that quietly creates a hidden field
@@ -59,7 +59,7 @@ opens that shorthand up and puts real logic inside it. For now, treat a
 property exactly like a labeled slot of data belonging to the class. More:
 [Microsoft Learn – Properties](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties).
 
-This `Cat` class by itself doesn't represent any particular cat — it's a
+This `Cat` class by itself doesn't represent any particular cat. It's a
 blueprint, the same way a cookie cutter isn't a cookie. Nothing has actually
 been baked yet.
 
@@ -84,7 +84,7 @@ mochi.FavoriteToy = "feather wand";
 ```
 
 `whiskers` and `mochi` are both `Cat`s, built from the exact same blueprint,
-holding completely independent data — changing `mochi.Age` never touches
+holding completely independent data: changing `mochi.Age` never touches
 `whiskers.Age`. This line-by-line setup works, but it's clunky and, worse,
 nothing forces you to actually set every property before using the object.
 The fix is a **constructor**.
@@ -123,7 +123,7 @@ var mochi = new Cat("Mochi", 1, "feather wand");
 **A note on `this`:** you'll often see constructors written with
 `this.Name = name;` instead of plain `Name = name;`. Here, both do exactly
 the same thing, because the parameter (`name`, lowercase) and the property
-(`Name`, capitalized) have different casing — this is precisely why real C#
+(`Name`, capitalized) have different casing. This is precisely why real C#
 code follows that casing convention: it avoids the collision in the first
 place. `this` means "the object this code is currently running on", and it
 becomes *necessary*, not just a style choice, the moment a parameter's name
@@ -167,7 +167,7 @@ public class Cat
 
 `Introduce` looks like the methods from Course 1, with one difference that
 matters a lot: it doesn't take `Name`, `Age`, or `FavoriteToy` as
-parameters — it just uses them directly, because when you call it on a
+parameters. It just uses them directly, because when you call it on a
 specific cat, it already knows which one it's running on:
 
 ```csharp
@@ -175,7 +175,7 @@ whiskers.Introduce(); // Hi, I'm Whiskers! Age: 3. Favorite toy: crinkly ball.
 mochi.Introduce();    // Hi, I'm Mochi! Age: 1. Favorite toy: feather wand.
 ```
 
-Same method, same code, two completely different outputs — because
+Same method, same code, two completely different outputs, because
 `whiskers` and `mochi` are different objects, each with their own values for
 those properties.
 
@@ -184,7 +184,7 @@ it into the constructor, and add it to `Introduce`'s output.
 
 ## 🟡 Optional — A method that changes state
 
-Methods aren't limited to reading properties and printing them — they can
+Methods aren't limited to reading properties and printing them. They can
 change an object's own state too:
 
 ```csharp
@@ -199,7 +199,7 @@ public void HaveBirthday()
 mochi.HaveBirthday(); // Mochi just turned 2!
 ```
 
-`mochi.Age` is now permanently `2` — the change sticks around exactly like
+`mochi.Age` is now permanently `2`: the change sticks around exactly like
 any other property update, because a method has full access to (and can
 modify) the object it belongs to.
 
@@ -227,7 +227,7 @@ if (tom.IsOlderThan(whiskers))
 
 A hint, if you want one: inside the method, `Age` refers to *this* cat's
 age (the one the method is called on), and `other.Age` reaches into the
-`Cat` that got passed in — the same dot syntax you've used everywhere else,
+`Cat` that got passed in, the same dot syntax you've used everywhere else,
 just on a parameter instead of on `whiskers` or `mochi` directly.
 
 ## What you learned
@@ -246,7 +246,7 @@ with the behavior that operates on it, so that using a `Cat` only requires
 knowing what it can do (`Introduce()`, `HaveBirthday()`) and not how its
 insides work, is called **encapsulation**. More:
 [Microsoft Learn – Object-oriented programming (C#)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/).
-You'll meet it again, on purpose, in Course 3 — this time with properties
+You'll meet it again, on purpose, in Course 3, this time with properties
 that actually enforce rules about the data they hold.
 
 ## Next
