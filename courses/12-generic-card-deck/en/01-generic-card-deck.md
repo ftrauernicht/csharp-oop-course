@@ -61,7 +61,7 @@ public class Deck<T>
 for whatever type you use this class with, filled in when you actually
 write `Deck<Card>` or `Deck<int>`. Every `T` in the class body then means
 "whatever type this particular deck was created with." This is exactly the
-same mechanism `List<T>` itself uses — you've been *using* a generic class
+same mechanism `List<T>` itself uses. You've been *using* a generic class
 since Course 3; `Deck<T>` is you *writing* one. More:
 [Microsoft Learn – Generic classes](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics).
 
@@ -97,7 +97,7 @@ Console.WriteLine(FindHighest(numbers)); // 9
 ```
 
 Write `FindHighest`, a generic method that finds the largest item in any
-`List<T>` — as long as `T` actually supports comparison:
+`List<T>`, as long as `T` actually supports comparison:
 
 ```csharp
 T FindHighest<T>(List<T> items) where T : IComparable<T>
@@ -118,7 +118,7 @@ one. `int` already implements `IComparable<int>`, which is exactly why
 `FindHighest(numbers)` above just works. If you get stuck,
 [`code/Program.cs`](../code/Program.cs) has a working version.
 
-Try calling `FindHighest` with a `List<Card>` instead — it refuses to
+Try calling `FindHighest` with a `List<Card>` instead. It refuses to
 compile: `error CS0311: The type 'Card' cannot be used as type parameter
 'T'... There is no implicit reference conversion from 'Card' to
 'System.IComparable<Card>'`. `Card` (from this chapter) never implemented
@@ -138,7 +138,7 @@ T2 CreateDefault<T2>() where T2 : new()
 implementing a specific interface, just having a public **parameterless
 constructor** — so that `new T2()` inside the method is guaranteed to be
 legal, whatever `T2` turns out to be. Try `CreateDefault<List<int>>()` (a
-fresh, empty list) — and then try `CreateDefault<Card>()`, which refuses
+fresh, empty list). Then try `CreateDefault<Card>()`, which refuses
 to compile, because `Card`'s only constructor requires a `rank` and a
 `suit`: `error CS0310: 'Card' must be a non-abstract type with a public
 parameterless constructor`. [`code/Program.cs`](../code/Program.cs) has a
@@ -151,7 +151,7 @@ working version of the whole chapter.
 - Generic methods (`T FindHighest<T>(...)`), separate from generic classes
 - Type constraints: `where T : IComparable<T>` (must implement an
   interface) and `where T2 : new()` (must have a parameterless
-  constructor) — and that violating either is a compile-time error, not a
+  constructor); violating either is a compile-time error, not a
   runtime surprise
 
 ## Next

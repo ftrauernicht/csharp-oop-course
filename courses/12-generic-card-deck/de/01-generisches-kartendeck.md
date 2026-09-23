@@ -62,9 +62,9 @@ public class Deck<T>
 Platzhalter für den Typ, mit dem du diese Klasse benutzt, ausgefüllt, wenn
 du tatsächlich `Deck<Card>` oder `Deck<int>` schreibst. Jedes `T` im
 Klassenkörper bedeutet dann "der Typ, mit dem dieses konkrete Deck erzeugt
-wurde." Das ist genau derselbe Mechanismus, den `List<T>` selbst benutzt —
-du *benutzt* eine generische Klasse schon seit Kurs 3; `Deck<T>` ist, eine
-selbst zu *schreiben*. Mehr:
+wurde." Das ist genau derselbe Mechanismus, den `List<T>` selbst benutzt.
+Eine generische Klasse *benutzt* du schon seit Kurs 3; mit `Deck<T>`
+*schreibst* du jetzt selbst eine. Mehr:
 [Microsoft Learn – Generische Klassen](https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/types/generics).
 
 ```csharp
@@ -82,7 +82,7 @@ Dieselbe Klasse, zwei völlig unverwandte Elementtypen, null Änderungen an
 
 `Shuffle` nutzt echten Zufall (der Fisher-Yates-Shuffle, falls du das
 Memory-Spiel des Geschwister-Kurses in JavaScript gemacht hast — derselbe
-Algorithmus), welche Karte also am Ende zuerst dran ist, unterscheidet sich
+Algorithmus). Welche Karte also am Ende zuerst dran ist, unterscheidet sich
 wirklich bei jedem Durchlauf. Nur dass `Count` gleich bleibt, ist
 garantiert:
 
@@ -100,7 +100,7 @@ Console.WriteLine(FindHighest(numbers)); // 9
 ```
 
 Schreib `FindHighest`, eine generische Methode, die das größte Element in
-einer beliebigen `List<T>` findet — solange `T` überhaupt vergleichbar
+einer beliebigen `List<T>` findet, solange `T` überhaupt vergleichbar
 ist:
 
 ```csharp
@@ -123,7 +123,7 @@ eine hat. `int` implementiert bereits `IComparable<int>`, genau deshalb
 funktioniert `FindHighest(numbers)` oben einfach so. Falls du feststeckst,
 hat [`code/Program.cs`](../code/Program.cs) eine funktionierende Version.
 
-Probier, `FindHighest` stattdessen mit einer `List<Card>` aufzurufen — es
+Probier, `FindHighest` stattdessen mit einer `List<Card>` aufzurufen. Es
 weigert sich zu kompilieren: `error CS0311: The type 'Card' cannot be
 used as type parameter 'T'... There is no implicit reference conversion
 from 'Card' to 'System.IComparable<Card>'`. `Card` (aus diesem Kapitel)
@@ -143,7 +143,7 @@ T2 CreateDefault<T2>() where T2 : new()
 ein bestimmtes Interface zu implementieren, sondern nur einen öffentlichen
 **parameterlosen Konstruktor** zu haben — sodass `new T2()` innerhalb der
 Methode garantiert erlaubt ist, egal was `T2` am Ende ist. Probier
-`CreateDefault<List<int>>()` (eine frische, leere Liste) — und dann
+`CreateDefault<List<int>>()` (eine frische, leere Liste). Probier danach
 `CreateDefault<Card>()`, das sich weigert zu kompilieren, weil `Card`s
 einziger Konstruktor einen `rank` und einen `suit` verlangt:
 `error CS0310: 'Card' must be a non-abstract type with a public
@@ -159,8 +159,8 @@ eine funktionierende Version des ganzen Kapitels.
   Klassen
 - Type Constraints: `where T : IComparable<T>` (muss ein Interface
   implementieren) und `where T2 : new()` (muss einen parameterlosen
-  Konstruktor haben) — und dass ein Verstoß gegen beide ein
-  Kompilierzeit-Fehler ist, keine Laufzeit-Überraschung
+  Konstruktor haben); ein Verstoß gegen beide ist ein
+  Kompilierzeit-Fehler, keine Laufzeit-Überraschung
 
 ## Weiter
 
