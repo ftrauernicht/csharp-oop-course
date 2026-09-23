@@ -5,9 +5,9 @@
 # Course 9 – General Store
 
 **Goal:** make "you don't have enough money" a real, impossible-to-ignore
-failure instead of a bug waiting to happen — a purchase that can't succeed
-either stops the program with useful information, or gets handled on
-purpose, never silently does nothing. By the end, you'll know how to
+failure instead of a bug waiting to happen. A purchase that can't succeed
+either stops the program with useful information or gets handled on
+purpose, but it never silently does nothing. By the end, you'll know how to
 define your own exception type and when that beats reusing one .NET
 already gives you.
 
@@ -25,7 +25,7 @@ public void Withdraw(int amount)
 ```
 
 Nothing stops `Balance` from going negative here. You could add an `if`
-that just... does nothing when there isn't enough money — but then calling
+that just... does nothing when there isn't enough money. But then calling
 code has no way to know the withdrawal silently failed, and might
 confidently report "purchase complete" when nothing actually happened.
 [`throw`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/exception-handling-statements#the-throw-statement)ing
@@ -50,13 +50,13 @@ public class InsufficientFundsException : Exception
 }
 ```
 
-`: Exception` — this is inheritance again, exactly like Course 4's
+`: Exception` here is inheritance again, exactly like Course 4's
 `Machine` subclasses, just inheriting from a class .NET provides instead
 of one you wrote. `: base(message)` calls
 [`Exception`](https://learn.microsoft.com/en-us/dotnet/api/system.exception)'s
 own constructor with a human-readable message (available afterward as
 `.Message`), and `Requested`/`Available` are ordinary properties, exactly
-like any class you've written since Course 2 — nothing about `Exception`
+like any class you've written since Course 2. Nothing about `Exception`
 stops you from adding your own data to it.
 
 ## 🟢 Core — Throwing and catching
@@ -74,10 +74,10 @@ catch (InsufficientFundsException ex)
 
 [`try`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/exception-handling-statements#the-try-statement)
 wraps code that might throw; `catch (SomeException ex)` runs only if that
-exact exception type (or one of its subclasses — exceptions can form
+exact exception type (or one of its subclasses; exceptions can form
 hierarchies too) is thrown inside the `try` block, with `ex` giving you
 access to everything on it, including your own custom properties. Code
-after the `catch` block keeps running normally — the exception didn't
+after the `catch` block keeps running normally. The exception didn't
 crash the program, it got handled.
 
 ## 🟢 Core exercise — Write Withdraw yourself
@@ -97,8 +97,8 @@ public void Deposit(int amount)
 ```
 
 Write `Withdraw` with **two** checks: the same negative-amount guard as
-`Deposit`, and a check for whether `amount` exceeds the current `Balance`
-— throwing `InsufficientFundsException` if it does.
+`Deposit`, and a check for whether `amount` exceeds the current `Balance`,
+throwing `InsufficientFundsException` if it does.
 
 ```csharp
 public void Withdraw(int amount)
@@ -136,7 +136,7 @@ didn't. It's the right place for cleanup that has to happen either way.
 
 ## 🔴 Optional, genuine challenge — Catching more than one exception type
 
-`ArgumentException` is a **built-in** .NET exception — not every mistake
+`ArgumentException` is a **built-in** .NET exception. Not every mistake
 needs a brand-new exception class of your own; reach for one .NET already
 provides when it genuinely fits. Try to trigger both kinds of failure and
 catch them separately:
@@ -156,11 +156,11 @@ catch (InsufficientFundsException ex)
 }
 ```
 
-Multiple `catch` blocks are checked top to bottom, same as `if`/`else if`
-— the first one whose type matches (or is a base type of) the thrown
+Multiple `catch` blocks are checked top to bottom, same as `if`/`else if`:
+the first one whose type matches (or is a base type of) the thrown
 exception runs, and the rest are skipped. Confirm that swapping the two
 `catch` blocks' order still works here (these two exception types are
-unrelated to each other, so order doesn't matter) — then look up what
+unrelated to each other, so order doesn't matter). Then look up what
 would happen if you `catch (Exception ex)` first instead, before the more
 specific types. [`code/Program.cs`](../code/Program.cs) has a working
 version of the whole chapter.

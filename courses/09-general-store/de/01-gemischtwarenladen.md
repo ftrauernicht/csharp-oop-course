@@ -6,7 +6,7 @@
 
 **Ziel:** "du hast nicht genug Geld" zu einem echten, unmöglich zu
 übersehenden Fehlerfall machen, statt zu einem Bug, der nur darauf
-wartet zu passieren — ein Kauf, der nicht klappen kann, stoppt entweder
+wartet zu passieren. Ein Kauf, der nicht klappen kann, stoppt entweder
 das Programm mit nützlicher Information, oder wird absichtlich behandelt,
 aber macht nie einfach still gar nichts. Am Ende weißt du, wie du deinen
 eigenen Exception-Typ definierst und wann das besser ist, als einen zu
@@ -26,8 +26,8 @@ public void Withdraw(int amount)
 ```
 
 Nichts hindert `Balance` hier daran, negativ zu werden. Du könntest ein
-`if` hinzufügen, das einfach... nichts tut, wenn nicht genug Geld da ist —
-aber dann hat aufrufender Code keine Möglichkeit zu wissen, dass die
+`if` hinzufügen, das einfach... nichts tut, wenn nicht genug Geld da ist.
+Aber dann hat aufrufender Code keine Möglichkeit zu wissen, dass die
 Abhebung still fehlgeschlagen ist, und könnte selbstbewusst "Kauf
 abgeschlossen" melden, obwohl nichts passiert ist. Stattdessen eine
 **Exception** zu [`throw`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/statements/exception-handling-statements#the-throw-statement)en
@@ -52,14 +52,14 @@ public class InsufficientFundsException : Exception
 }
 ```
 
-`: Exception` — das ist wieder Vererbung, genau wie bei Kurs 4s
+Auch `: Exception` ist wieder Vererbung, genau wie bei Kurs 4s
 `Machine`-Subklassen, nur diesmal von einer Klasse geerbt, die .NET
 mitbringt, statt von einer, die du selbst geschrieben hast. `: base(message)`
 ruft [`Exception`](https://learn.microsoft.com/de-de/dotnet/api/system.exception)s
 eigenen Konstruktor mit einer menschenlesbaren Nachricht auf (danach
 verfügbar über `.Message`), und `Requested`/`Available` sind gewöhnliche
 Properties, genau wie bei jeder Klasse, die du seit Kurs 2 geschrieben
-hast — nichts an `Exception` hindert dich daran, eigene Daten dranzuhängen.
+hast. Nichts an `Exception` hindert dich daran, eigene Daten dranzuhängen.
 
 ## 🟢 Kern — Werfen und fangen
 
@@ -77,10 +77,10 @@ catch (InsufficientFundsException ex)
 [`try`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/statements/exception-handling-statements#the-try-statement)
 umschließt Code, der eine Exception werfen könnte; `catch (SomeException ex)`
 läuft nur, wenn genau dieser Exception-Typ (oder einer seiner abgeleiteten
-Typen — auch Exceptions können Hierarchien bilden) innerhalb des
+Typen; auch Exceptions können Hierarchien bilden) innerhalb des
 `try`-Blocks geworfen wird, wobei `ex` dir Zugriff auf alles darauf gibt,
 inklusive deiner eigenen Properties. Code nach dem `catch`-Block läuft
-normal weiter — die Exception hat das Programm nicht zum Absturz gebracht,
+normal weiter. Die Exception hat das Programm nicht zum Absturz gebracht,
 sie wurde behandelt.
 
 ## 🟢 Kernübung — Schreib Withdraw selbst
@@ -102,7 +102,7 @@ public void Deposit(int amount)
 
 Schreib `Withdraw` mit **zwei** Prüfungen: derselbe Schutz vor einem
 negativen Betrag wie bei `Deposit`, und eine Prüfung, ob `amount` das
-aktuelle `Balance` übersteigt — wirf in dem Fall
+aktuelle `Balance` übersteigt, wirf in dem Fall
 `InsufficientFundsException`.
 
 ```csharp
@@ -143,7 +143,7 @@ oder so passieren müssen.
 
 ## 🔴 Optional, echte Herausforderung — Mehr als einen Exception-Typ fangen
 
-`ArgumentException` ist eine **eingebaute** .NET-Exception — nicht jeder
+`ArgumentException` ist eine **eingebaute** .NET-Exception. Nicht jeder
 Fehlerfall braucht eine brandneue eigene Exception-Klasse; greif zu einer,
 die .NET schon mitbringt, wenn sie wirklich passt. Versuch, beide Arten
 von Fehlschlag auszulösen und sie getrennt zu fangen:
@@ -164,11 +164,11 @@ catch (InsufficientFundsException ex)
 ```
 
 Mehrere `catch`-Blöcke werden von oben nach unten geprüft, genau wie
-`if`/`else if` — der erste, dessen Typ zur geworfenen Exception passt (oder
+`if`/`else if`: der erste, dessen Typ zur geworfenen Exception passt (oder
 ein Basistyp davon ist), läuft, der Rest wird übersprungen. Bestätige, dass
 ein Vertauschen der beiden `catch`-Blöcke hier immer noch funktioniert
 (diese beiden Exception-Typen sind nicht miteinander verwandt, die
-Reihenfolge spielt also keine Rolle) — schau dann nach, was passieren
+Reihenfolge spielt also keine Rolle). Schau dann nach, was passieren
 würde, wenn du stattdessen zuerst `catch (Exception ex)` hättest, vor den
 spezifischeren Typen. [`code/Program.cs`](../code/Program.cs) hat eine
 funktionierende Version des ganzen Kapitels.
