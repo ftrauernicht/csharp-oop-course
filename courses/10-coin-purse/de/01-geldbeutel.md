@@ -34,13 +34,13 @@ var naive2 = new NaiveCoin(5);
 Console.WriteLine(naive1 == naive2); // False
 ```
 
-`False` — obwohl beide "5 Cent" darstellen. Bei einer einfachen Klasse
+`False`, obwohl beide "5 Cent" darstellen. Bei einer einfachen Klasse
 vergleichen `==` und das geerbte
 [`Equals`](https://learn.microsoft.com/de-de/dotnet/api/system.object.equals)
 *Referenzgleichheit*: "ist das buchstäblich dasselbe Objekt im Speicher",
 nicht "stellen diese beiden Objekte denselben Wert dar". `int` und `string`
 fühlen sich an, als würden sie Werte vergleichen, weil .NET dieses
-Verhalten für sie schon überschrieben hat — eine selbst geschriebene Klasse
+Verhalten für sie schon überschrieben hat. Eine selbst geschriebene Klasse
 bekommt das nicht geschenkt.
 
 ## 🟢 Kern — Equals und GetHashCode, zusammen
@@ -64,9 +64,9 @@ public override int GetHashCode()
 
 `obj is not Coin other` kombiniert Kurs 6s Pattern-Matching-`is` mit `not`
 — `false`, falls `obj` gar keine `Coin` ist, sonst ist `other` einsatzbereit,
-schon als `Coin` typisiert. **Diese beiden Overrides sind ein
-zusammengehöriges Paar, per Vertrag**: Wenn `Equals` sagt, zwei Objekte
-seien gleich, **muss** `GetHashCode` für beide denselben Wert liefern,
+schon als `Coin` typisiert. Diese beiden Overrides sind ein
+zusammengehöriges Paar, per Vertrag: Wenn `Equals` sagt, zwei Objekte
+seien gleich, *muss* `GetHashCode` für beide denselben Wert liefern,
 sonst verhalten sich Collection-Typen, die auf Hashing beruhen
 (`HashSet<T>`, `Dictionary<TKey, TValue>`), auf eine Art fehlerhaft, die
 sich wirklich schwer debuggen lässt. Hier hängen beide komplett von
@@ -93,7 +93,7 @@ public static bool operator !=(Coin? left, Coin? right)
 ```
 
 `Equals` allein zu überschreiben ändert nicht, was der `==`-*Operator*
-tut — das sind zwei getrennte Dinge, die meistens übereinstimmen. `static
+tut. Das sind zwei getrennte Dinge, die meistens übereinstimmen. `static
 bool operator ==(...)` ist
 [**Operator-Overloading**](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/operator-overloading):
 festlegen, was `==` für deinen Typ überhaupt bedeutet. C# verlangt, `==`
@@ -147,7 +147,7 @@ public class Coin : IComparable<Coin>
 [`IComparable<T>`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/builtin-types/reference-types#the-icomparable-interfaces)
 ist das, was
 [`List<T>.Sort()`](https://learn.microsoft.com/de-de/dotnet/api/system.collections.generic.list-1.sort)
-intern tatsächlich aufruft, um die Reihenfolge zu entscheiden. Du musst
+intern aufruft, um die Reihenfolge zu entscheiden. Du musst
 die Vergleichslogik nicht von Hand schreiben — `int` hat schon
 `.CompareTo(...)`, und `Denomination` ist ein `int`, also ist das eine
 Zeile, die es weiterreicht. Test es:
@@ -207,7 +207,7 @@ Version.
 
 - Warum `==`/`Equals` bei einer selbst geschriebenen Klasse standardmäßig
   Referenzen vergleichen, nicht Werte
-- `Equals` und `GetHashCode` zusammen überschreiben — und warum sie
+- `Equals` und `GetHashCode` zusammen überschreiben, und warum sie
   übereinstimmen müssen
 - `==`/`!=` als Operatoren überladen, getrennt vom Überschreiben von
   `Equals`

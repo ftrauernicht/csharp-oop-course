@@ -33,12 +33,12 @@ var naive2 = new NaiveCoin(5);
 Console.WriteLine(naive1 == naive2); // False
 ```
 
-`False` — even though both represent "5 cents". For a plain class, `==`
+`False`, even though both represent "5 cents". For a plain class, `==`
 and the inherited [`Equals`](https://learn.microsoft.com/en-us/dotnet/api/system.object.equals)
 compare *reference equality*: "is this literally the same object in
 memory," not "do these two objects represent the same value." `int` and
 `string` feel like they compare values because .NET already overrides
-this behavior for them — a class you write doesn't get that for free.
+this behavior for them. A class you write doesn't get that for free.
 
 ## 🟢 Core — Equals and GetHashCode, together
 
@@ -61,9 +61,9 @@ public override int GetHashCode()
 
 `obj is not Coin other` combines Course 6's pattern-matching `is` with
 `not` — `false` if `obj` isn't a `Coin` at all, otherwise `other` is ready
-to use, already typed as `Coin`. **These two overrides are a matched
-pair, by contract**: if `Equals` says two objects are equal, `GetHashCode`
-**must** return the same value for both, or collection types that rely on
+to use, already typed as `Coin`. These two overrides are a matched
+pair, by contract: if `Equals` says two objects are equal, `GetHashCode`
+*must* return the same value for both, or collection types that rely on
 hashing (`HashSet<T>`, `Dictionary<TKey, TValue>`) will misbehave in ways
 that are genuinely hard to debug. Here, both are entirely driven by
 `Denomination`, so the contract holds automatically. More:
@@ -88,8 +88,8 @@ public static bool operator !=(Coin? left, Coin? right)
 }
 ```
 
-Overriding `Equals` alone doesn't change what the `==` *operator* does —
-they're two separate things that happen to usually agree. `static bool
+Overriding `Equals` alone doesn't change what the `==` *operator* does.
+They're two separate things that happen to usually agree. `static bool
 operator ==(...)` is
 [**operator overloading**](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading):
 defining what `==` itself means for your type. C# requires `==` and `!=`
@@ -141,7 +141,7 @@ public class Coin : IComparable<Coin>
 [`IComparable<T>`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-icomparable-interfaces)
 is what
 [`List<T>.Sort()`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort)
-actually calls, internally, to decide ordering. You don't have to write
+calls internally to decide ordering. You don't have to write
 the comparison logic by hand — `int` already has `.CompareTo(...)`, and
 `Denomination` is an `int`, so this is one line delegating to it. Test it:
 
@@ -198,7 +198,7 @@ is `true`. [`code/Coin.cs`](../code/Coin.cs) has a working version.
 
 - Why `==`/`Equals` compare references by default for a class you write,
   not values
-- Overriding `Equals` and `GetHashCode` together — and why they must agree
+- Overriding `Equals` and `GetHashCode` together, and why they must agree
 - Overloading `==`/`!=` as operators, separately from overriding `Equals`
 - Why `HashSet<T>` deduplication depends entirely on a correct
   `Equals`/`GetHashCode` pair
