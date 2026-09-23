@@ -5,15 +5,15 @@
 # Kurs 5 – Maschinen-Showdown
 
 **Ziel:** jeden verschiedenen Maschinentyp in eine einzige Liste packen und
-genau dieselbe Schleife über alle laufen lassen — jede greift trotzdem auf
+genau dieselbe Schleife über alle laufen lassen. Jede greift trotzdem auf
 ihre eigene Art an, obwohl die Schleife selbst gar nicht weiß, welche
 konkrete Maschine sie bei jedem Durchlauf gerade vor sich hat. Das ist
 **Polymorphie**: die Auszahlung für alles, was Kurs 4 im Stillen
 vorbereitet hat.
 
 *(Falls du [Kurs 4](../../04-machine-hunter/de/01-maschinenjaeger.md)
-gemacht hast, werden dir die Klassenformen unten sehr bekannt vorkommen —
-überflieg die Wiederholung und spring zu "Die Auszahlung".)*
+gemacht hast, werden dir die Klassenformen unten sehr bekannt vorkommen.
+Überflieg die Wiederholung und spring zu "Die Auszahlung".)*
 
 ## 🟢 Kern — Die Maschinen-Hierarchie neu aufbauen
 
@@ -90,7 +90,7 @@ public class Thunderjaw : Machine
 ## 🟢 Kern — abstract: den Vertrag wasserdicht machen
 
 Kurs 4 hat einen `protected`en Konstruktor benutzt, um eine reine `Machine`
-zu *erschweren* — aber nichts hat eine abgeleitete Klasse daran gehindert,
+zu *erschweren*, aber nichts hat eine abgeleitete Klasse daran gehindert,
 `Attack()` einfach gar nicht zu überschreiben (genau das hat Kurs 4s
 `Grazer` absichtlich gemacht, um zu zeigen, dass `virtual` optional ist).
 Für eine Basisklasse, die *niemals* für sich allein existieren sollte, und
@@ -110,11 +110,11 @@ public abstract class Machine
 Zwei Änderungen, beide tragend:
 
 - `abstract class Machine` bedeutet, dass `new Machine(...)` *niemals*
-  erlaubt ist, überall, aus keinem Grund — nicht nur erschwert wie bei
+  erlaubt ist, überall, aus keinem Grund, nicht nur erschwert wie bei
   `protected`. Probier es, und der Compiler sagt
   `error CS0144: Cannot create an instance of the abstract type or
   interface 'Machine'`.
-- `public abstract void Attack();` hat **überhaupt keinen Rumpf** — nur
+- `public abstract void Attack();` hat **überhaupt keinen Rumpf**: nur
   eine Signatur und ein Semikolon. Jede nicht-abstrakte Klasse, die von
   `Machine` erbt, muss jetzt *zwingend* ein `Attack()`-Override liefern,
   sonst kompiliert sie auch nicht. Es gibt keine generische
@@ -122,7 +122,7 @@ Zwei Änderungen, beide tragend:
   überspringen, wie es `Grazer` getan hat.
 
 (Der Konstruktor bleibt `protected`, obwohl `abstract` allein die direkte
-Instanziierung schon verhindert — das ist trotzdem die korrekte,
+Instanziierung schon verhindert; das ist trotzdem die korrekte,
 idiomatische Art, einen Konstruktor zu schreiben, der nur über das
 `base(...)` einer abgeleiteten Klasse laufen soll.) Mehr:
 [Microsoft Learn – Abstrakte Klassen](https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/object-oriented/inheritance#abstract-base-classes).
@@ -149,7 +149,7 @@ Thunderjaw fires a devastating chest cannon for 40 damage!
 
 Schau dir dieses `foreach` genau an: Es sagt genau einmal
 `machine.Attack()`, ohne ein `if`, das prüft, welche Art von Maschine es
-gerade vor sich hat — und trotzdem geben `Watcher` und `Thunderjaw` jeweils
+gerade vor sich hat. Trotzdem geben `Watcher` und `Thunderjaw` jeweils
 etwas völlig anderes aus. Die Liste ist als `List<Machine>` typisiert, zur
 Kompilierzeit "weiß" die Schleife also nur, dass jedes Element *irgendeine*
 `Machine` ist. Welches `Attack()` tatsächlich läuft, entscheidet sich erst
@@ -158,7 +158,7 @@ zur *Laufzeit*, anhand des echten Typs des Objekts. Das ist **Polymorphie**
 er tatsächlich aufgerufen wird, eine andere Form an. Mehr:
 [Microsoft Learn – Polymorphie](https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/object-oriented/polymorphism).
 
-Auf Teile davon hast du dich technisch schon seit Kurs 4 verlassen —
+Auf Teile davon hast du dich technisch schon seit Kurs 4 verlassen:
 `watcher.Attack()` lief immer `Watcher`s Version, nie `Machine`s
 generische. Neu hier ist die praktische Superkraft: Die Schleife, und
 jeder Code wie sie, muss sich nie ändern, wenn ein neuer Maschinentyp
@@ -177,7 +177,7 @@ public class Strider : Machine
 }
 ```
 
-Füg `new Strider()` zur `machines`-Liste hinzu. Führ es erneut aus — die
+Füg `new Strider()` zur `machines`-Liste hinzu. Führ es erneut aus. Die
 `foreach`-Schleife oben braucht **null Änderungen**, um es korrekt zu
 handhaben. Das ist der eigentliche Punkt dieser Übung: überprüf es selbst,
 statt es einfach zu glauben. Falls du feststeckst, hat
@@ -207,7 +207,7 @@ echtem Einsatz.
 
 Polymorphie handhabt "jede Maschine greift an" elegant, aber manchmal
 brauchst du wirklich eine einzelne, bestimmte Art für etwas, das gar nicht
-Teil des geteilten Vertrags ist — sagen wir, eine Warnung speziell für die
+Teil des geteilten Vertrags ist, etwa eine Warnung speziell für die
 größte Maschine. Der
 [`is`](https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/type-testing-and-cast#the-is-operator)-Operator
 prüft den tatsächlichen Laufzeit-Typ eines Objekts:
@@ -228,7 +228,7 @@ Füg das zu deiner Schleife hinzu und bestätige, dass die Warnung
 ausschließlich für den `Thunderjaw` erscheint. Sparsam eingesetzt ist `is`
 ein vertretbares Schlupfloch; für *alles* eingesetzt (`if (machine is
 Watcher) ... else if (machine is Thunderjaw) ... else if ...`) hebelt es
-den ganzen Sinn von Polymorphie aus — diese Grenze lohnt sich zu bemerken.
+den ganzen Sinn von Polymorphie aus. Diese Grenze lohnt sich zu bemerken.
 
 ## Was du gelernt hast
 
@@ -242,7 +242,7 @@ den ganzen Sinn von Polymorphie aus — diese Grenze lohnt sich zu bemerken.
   Basis-/abstrakten Typs) mit neuen abgeleiteten Klassen mitwächst, ohne
   dass sich der Code, der die Liste nutzt, je ändern muss
 - Der `is`-Operator für den seltenen Fall, dass du den konkreten Typ eines
-  Objekts wirklich kennen musst — und warum, sich überall darauf zu
+  Objekts wirklich kennen musst, und warum, sich überall darauf zu
   verlassen, den Sinn von Polymorphie zunichtemacht
 
 ## Weiter

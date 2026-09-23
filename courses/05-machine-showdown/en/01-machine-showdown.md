@@ -5,13 +5,13 @@
 # Course 5 – Machine Showdown
 
 **Goal:** put every different machine type into one single list, and run
-the exact same loop over all of them — each one still attacks its own way,
+the exact same loop over all of them. Each one still attacks its own way,
 even though the loop itself has no idea which specific machine it's looking
 at each time. This is **polymorphism**: the payoff for everything Course 4
 quietly set up.
 
 *(If you've done [Course 4](../../04-machine-hunter/en/01-machine-hunter.md),
-the class shapes below will look very familiar — skim the recap and jump to
+the class shapes below will look very familiar. Skim the recap and jump to
 "The payoff.")*
 
 ## 🟢 Core — Rebuilding the machine hierarchy
@@ -89,7 +89,7 @@ public class Thunderjaw : Machine
 ## 🟢 Core — abstract: making the contract airtight
 
 Course 4 used a `protected` constructor to *discourage* creating a bare
-`Machine` — but nothing stopped a subclass from simply not overriding
+`Machine`, but nothing stopped a subclass from simply not overriding
 `Attack()` at all (that's exactly what Course 4's `Grazer` did, on
 purpose, to show `virtual` is optional). For a base class that should
 *never* exist on its own, and whose every subclass *must* define its own
@@ -108,18 +108,18 @@ public abstract class Machine
 Two changes, both load-bearing:
 
 - `abstract class Machine` means `new Machine(...)` is *never* legal,
-  anywhere, for any reason — not just discouraged like `protected` was.
+  anywhere, for any reason: not just discouraged like `protected` was.
   Try it, and the compiler says
   `error CS0144: Cannot create an instance of the abstract type or
   interface 'Machine'`.
-- `public abstract void Attack();` has **no body at all** — just a
+- `public abstract void Attack();` has **no body at all**: just a
   signature and a semicolon. Every non-abstract class that inherits from
   `Machine` is now *required* to provide an `Attack()` override, or it
   won't compile either. There's no generic fallback message anymore, and
   no way to accidentally skip it the way `Grazer` did.
 
 (The constructor stays `protected`, even though `abstract` alone already
-blocks direct instantiation — that's still the correct, idiomatic way to
+blocks direct instantiation; that's still the correct, idiomatic way to
 write a constructor that only ever runs via a subclass's `base(...)`.)
 More: [Microsoft Learn – Abstract classes](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/inheritance#abstract-base-classes).
 
@@ -144,7 +144,7 @@ Thunderjaw fires a devastating chest cannon for 40 damage!
 ```
 
 Look closely at that `foreach`: it says `machine.Attack()` exactly once,
-with no `if` checking what kind of machine it's looking at — and yet
+with no `if` checking what kind of machine it's looking at, and yet
 `Watcher` and `Thunderjaw` each print something completely different. The
 list is typed `List<Machine>`, so at compile time all the loop "knows" is
 that every item is *some* `Machine`. Which `Attack()` actually runs is
@@ -153,7 +153,7 @@ decided at *runtime*, based on the object's real type. That's
 different shape depending on what it's actually called on. More:
 [Microsoft Learn – Polymorphism](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/polymorphism).
 
-You've technically been relying on pieces of this since Course 4 —
+You've technically been relying on pieces of this since Course 4:
 `watcher.Attack()` always ran `Watcher`'s version, never `Machine`'s
 generic one. What's new here is the practical superpower: the loop, and
 any code like it, never needs to change when a new machine type shows up.
@@ -170,7 +170,7 @@ public class Strider : Machine
 }
 ```
 
-Add `new Strider()` to the `machines` list. Run it again — the `foreach`
+Add `new Strider()` to the `machines` list. Run it again. The `foreach`
 loop above needs **zero changes** to handle it correctly. That's the
 actual point of this exercise: verify it for yourself, rather than take it
 on faith. If you get stuck, [`code/Strider.cs`](../code/Strider.cs) has a
@@ -200,7 +200,7 @@ actual stakes.
 
 Polymorphism handles "every machine attacks" elegantly, but sometimes you
 genuinely need to single out one specific type for something that isn't
-part of the shared contract at all — say, a warning specifically for the
+part of the shared contract at all, say, a warning specifically for the
 biggest machine. The [`is`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast#the-is-operator)
 operator checks an object's actual runtime type:
 
@@ -219,8 +219,8 @@ foreach (var machine in machines)
 Add this to your loop and confirm the warning only ever prints for the
 `Thunderjaw`. Used sparingly, `is` is a reasonable escape hatch; used for
 *everything* (`if (machine is Watcher) ... else if (machine is
-Thunderjaw) ... else if ...`), it defeats the entire point of polymorphism
-— that's the line worth noticing.
+Thunderjaw) ... else if ...`), it defeats the entire point of polymorphism.
+That's the line worth noticing.
 
 ## What you learned
 
@@ -233,7 +233,7 @@ Thunderjaw) ... else if ...`), it defeats the entire point of polymorphism
   scales to new subclasses without the code that uses the list ever
   changing
 - The `is` operator, for the rare case where you genuinely need to know an
-  object's specific type — and why leaning on it everywhere defeats the
+  object's specific type, and why leaning on it everywhere defeats the
   purpose of polymorphism
 
 ## Next
