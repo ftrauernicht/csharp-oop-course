@@ -83,7 +83,7 @@ is the same idea, reversed.
 int totalDuration = songs.Sum(s => s.DurationSeconds);
 ```
 
-[`Sum`](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/aggregation-operations)
+[`Sum`](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum)
 adds up whatever the lambda returns for every item. `Count()`, `Average()`,
 `Max()`, and `Min()` all follow the same shape: no loop, no running total
 variable to manage yourself.

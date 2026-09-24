@@ -87,7 +87,7 @@ ist dieselbe Idee, umgekehrt.
 int totalDuration = songs.Sum(s => s.DurationSeconds);
 ```
 
-[`Sum`](https://learn.microsoft.com/de-de/dotnet/csharp/linq/standard-query-operators/aggregation-operations)
+[`Sum`](https://learn.microsoft.com/de-de/dotnet/api/system.linq.enumerable.sum)
 addiert das, was die Lambda für jedes Element zurückgibt. `Count()`,
 `Average()`, `Max()` und `Min()` folgen alle derselben Form: keine
 Schleife, keine Laufsumme-Variable, die du selbst verwalten musst.
