@@ -60,7 +60,7 @@ public class BankAccountTests
 [`[Fact]`](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test)
 marks a method as a test xUnit should actually run — without it, this
 would just be an ordinary, never-called method.
-[`Assert.Equal(expected, actual)`](https://learn.microsoft.com/en-us/dotnet/api/xunit.assert.equal)
+[`Assert.Equal(expected, actual)`](https://xunit.net/docs/getting-started/v3/getting-started)
 fails the test (with a clear message showing both values) if they don't
 match. The three comments — **Arrange** (set up what you need), **Act**
 (do the one thing you're testing), **Assert** (check the result) — are a
@@ -86,7 +86,7 @@ public void Withdraw_ThrowsInsufficientFundsException_WhenBalanceTooLow()
 }
 ```
 
-[`Assert.Throws<TException>(() => ...)`](https://learn.microsoft.com/en-us/dotnet/api/xunit.assert.throws)
+[`Assert.Throws<TException>(() => ...)`](https://xunit.net/xunit.analyzers/rules/xUnit2015)
 takes a lambda (Course 11's `=>` syntax, used here for something other
 than LINQ) containing the one line expected to throw, and fails the test
 if it *doesn't* — the opposite of `try`/`catch` from Course 9, which reacts

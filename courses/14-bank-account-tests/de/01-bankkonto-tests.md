@@ -64,7 +64,7 @@ public class BankAccountTests
 [`[Fact]`](https://learn.microsoft.com/de-de/dotnet/core/testing/unit-testing-with-dotnet-test)
 markiert eine Methode als Test, den xUnit tatsächlich ausführt — ohne das
 wäre das nur eine gewöhnliche, nie aufgerufene Methode.
-[`Assert.Equal(expected, actual)`](https://learn.microsoft.com/de-de/dotnet/api/xunit.assert.equal)
+[`Assert.Equal(expected, actual)`](https://xunit.net/docs/getting-started/v3/getting-started)
 lässt den Test fehlschlagen (mit einer klaren Nachricht, die beide Werte
 zeigt), falls sie nicht übereinstimmen. Die drei Kommentare — **Arrange**
 (aufsetzen, was du brauchst), **Act** (die eine Sache tun, die du testest),
@@ -91,7 +91,7 @@ public void Withdraw_ThrowsInsufficientFundsException_WhenBalanceTooLow()
 }
 ```
 
-[`Assert.Throws<TException>(() => ...)`](https://learn.microsoft.com/de-de/dotnet/api/xunit.assert.throws)
+[`Assert.Throws<TException>(() => ...)`](https://xunit.net/xunit.analyzers/rules/xUnit2015)
 nimmt eine Lambda (Kurs 11s `=>`-Syntax, hier für etwas anderes als LINQ
 benutzt) mit der einen Zeile, die werfen sollte, und lässt den Test
 fehlschlagen, falls sie es *nicht* tut — das Gegenteil von `try`/`catch`
