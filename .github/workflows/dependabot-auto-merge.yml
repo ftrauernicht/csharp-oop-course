@@ -66,5 +66,21 @@ jobs:
             exit 0
           fi
 
-          gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
-          echo "Merged #$number."
+          if gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --squash --delete-branch; then
+            echo "Merged #$number."
+            exit 0
+          fi
+
+          # A refused merge on a green pull request almost always means the branch no
+          # longer contains the head of main, because a branch protection asks for that.
+          # Bring it forward: the checks run again, this workflow fires again, and that
+          # run merges it.
+          if gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/$number/update-branch" --silent; then
+            echo "Brought #$number up to date. The next green run merges it."
+            exit 0
+          fi
+
+          # Out of date and conflicting. Only Dependabot can rebuild a lock file, so ask
+          # it to, and let the recreated pull request come back through the same path.
+          gh pr comment "$number" --repo "$GITHUB_REPOSITORY" --body "@dependabot recreate"
+          echo "#$number conflicts with the base branch. Asked Dependabot to recreate it."
