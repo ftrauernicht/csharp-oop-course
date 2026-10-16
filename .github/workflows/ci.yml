@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
 
+# Least privilege: every job here only reads the repository. The repository default
+# is write, so that the auto-merge workflow can merge; pinning it here keeps this
+# workflow at what it actually needs.
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build course code

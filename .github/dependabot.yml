@@ -9,3 +9,10 @@ updates:
       interval: monthly
     commit-message:
       prefix: ci
+    # Patch and minor updates travel as one pull request instead of one each. The
+    # group name ends up in the branch, and dependabot-auto-merge.yml merges a branch
+    # carrying that name once every check on it is green. A major belongs to no group,
+    # so it arrives on its own and waits for a human.
+    groups:
+      safe:
+        update-types: ["minor", "patch"]

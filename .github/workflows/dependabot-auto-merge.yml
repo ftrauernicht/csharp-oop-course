@@ -1,0 +1,70 @@
+name: Dependabot auto-merge
+
+# Dependabot opens the pull requests; this closes the ones that carry no decision. A
+# grouped patch-or-minor update whose every check is green gets merged here, so the
+# only Dependabot pull request that survives to be read by a person is one that is
+# either a major version or not green. Those two are where somebody has to think.
+#
+# The trigger is workflow_run and not pull_request, and that is the whole trick: a
+# workflow started by Dependabot runs with a read-only token that cannot merge
+# anything. workflow_run runs afterwards, in the context of the default branch, with
+# the repository's own token.
+
+on:
+  workflow_run:
+    # This list is not optional. Leaving it out makes the file invalid, and an invalid
+    # workflow fails quietly: Actions shows the file path instead of the name above and
+    # never fires the trigger at all.
+    workflows: [CI]
+    types: [completed]
+
+# Least privilege: merging a pull request needs these two and nothing else.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    name: Merge
+    # The branch name carries the decision. Patch and minor updates travel together in
+    # the group named "safe" in dependabot.yml, and Dependabot puts that group name into
+    # the branch. A major update belongs to no group, so its branch never matches this
+    # and the pull request stays open.
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      startsWith(github.event.workflow_run.head_branch, 'dependabot/') &&
+      contains(github.event.workflow_run.head_branch, '/safe-')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge once every check on the commit has passed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+
+          # One workflow finishing says nothing about the others. Count everything on
+          # this commit that is still running or did not pass, ignoring this job itself.
+          open=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA/check-runs" \
+            --jq '[.check_runs[]
+                   | select(.name != "Merge")
+                   | select(.status != "completed"
+                            or (.conclusion != "success"
+                                and .conclusion != "neutral"
+                                and .conclusion != "skipped"))] | length')
+          if [ "$open" -ne 0 ]; then
+            echo "$open check(s) still open or failed on $SHA. Leaving it alone."
+            exit 0
+          fi
+
+          number=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" \
+                     --state open --json number --jq '.[0].number // empty')
+          if [ -z "$number" ]; then
+            echo "No open pull request for $BRANCH."
+            exit 0
+          fi
+
+          gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
+          echo "Merged #$number."
