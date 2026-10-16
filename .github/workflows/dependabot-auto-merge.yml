@@ -73,10 +73,15 @@ jobs:
 
           # A refused merge on a green pull request almost always means the branch no
           # longer contains the head of main, because a branch protection asks for that.
-          # Bring it forward: the checks run again, this workflow fires again, and that
-          # run merges it.
+          #
+          # Hand the finish to GitHub rather than to this workflow. Auto-merge lands the
+          # pull request the moment the refreshed checks pass, and it does not depend on
+          # workflow_run firing a second time -- which it does not always do, for
+          # instance when the refreshed runs had to be approved first.
+          gh pr merge "$number" --repo "$GITHUB_REPOSITORY" --squash --delete-branch --auto || true
+
           if gh api -X PUT "repos/$GITHUB_REPOSITORY/pulls/$number/update-branch" --silent; then
-            echo "Brought #$number up to date. The next green run merges it."
+            echo "Brought #$number up to date. Auto-merge lands it when the checks pass."
             exit 0
           fi
 
