@@ -1,0 +1,11 @@
+# Without this the workflow actions quietly fall behind: the pinned major
+# versions keep working for years while the Node runtime underneath them is
+# deprecated, and the only sign is a warning on a green run.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
