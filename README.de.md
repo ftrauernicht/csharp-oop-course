@@ -78,6 +78,29 @@ machen. Kurs 3 und alle weiteren sind dann jeweils unabhängige,
 eigenständige Projekte, die nur Kurs 1 und 2 voraussetzen — wähl, was dich
 mehr interessiert, in beliebiger Reihenfolge.
 
+### Auf einen Blick
+
+Die Zeitangaben sind grob. Ein Abend meint zwei bis drei Stunden, in denen du alles
+selbst tippst. Wer nur liest, ist deutlich schneller und lernt deutlich weniger.
+
+| # | Kurs | Was dazukommt | Setzt voraus | Dauer |
+|---|---|---|---|---|
+| 1 | Basics | Prozedurales C# ohne Klassen, mit Absicht | nichts | drei Abende |
+| 2 | Katzenkartei | Die ersten Objekte, jedes mit eigenen Daten | Kurs 1 | zwei Abende |
+| 3 | Hof-Inventar | Objekte, die ihre eigenen Regeln durchsetzen | Kurse 1 und 2 | zwei Abende |
+| 4 | Maschinenjäger | Eine Basisklasse und Typen, die es jeweils anders machen | Kurse 1 und 2 | zwei Abende |
+| 5 | Maschinen-Showdown | Eine Liste, eine Schleife, und jeder Typ bleibt er selbst | Kurse 1 und 2 | zwei Abende |
+| 6 | Werkbank | Zwei unabhängige Fähigkeiten über Interfaces | Kurse 1 und 2 | zwei Abende |
+| 7 | Leseliste | Zustand, der das Schließen überlebt, als JSON auf der Platte | Kurse 1 und 2 | zwei Abende |
+| 8 | Persönliche Bibliothek | Warum eine herausgereichte interne Liste die Kapselung bricht | Kurse 1 und 2 | ein Abend |
+| 9 | Gemischtwarenladen | Scheitern als benannter Fehler statt als stiller | Kurse 1 und 2 | ein Abend |
+| 10 | Geldbeutel | Vergleichen, sortieren und entdoppeln nach Wert statt nach Identität | Kurse 1 und 2 | zwei Abende |
+| 11 | Playlist-Abfragen | Filtern und auswerten deklarativ statt mit Schleife | Kurse 1 und 2 | ein Abend |
+| 12 | Generisches Kartendeck | Einen generischen Typ selbst schreiben, nicht nur benutzen | Kurse 1 und 2 | ein Abend |
+| 13 | Thermostat-Events | Ein Objekt meldet Änderungen, ohne zu wissen, wer zuhört | Kurse 1 und 2 | ein Abend |
+| 14 | Bankkonto-Tests | Automatisierte Tests für Prüfungen und die Ausnahmen, die sie werfen | Kurse 1 und 2 | ein Abend |
+| 15 | Rabatt-Strategien | Austauschbare Objekte statt einer Kette aus `if`/`else if` | Kurse 1 und 2 | ein Abend |
+
 ### Kurs 1 – Basics (`courses/01-basics/`)
 
 An kein bestimmtes Projekt gebunden — einfaches, prozedurales C#: noch keine

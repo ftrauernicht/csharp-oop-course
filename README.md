@@ -72,6 +72,29 @@ instead of making every single course independent. Course 3 onward are each
 independent, standalone projects that only assume Courses 1 and 2 — pick
 whichever sounds more interesting, in whatever order you like.
 
+### At a glance
+
+The times are rough. An evening means two to three hours in which you type everything
+yourself; reading a course without typing is a lot faster and teaches a lot less.
+
+| # | Course | What it adds | Requires | Time |
+|---|---|---|---|---|
+| 1 | Basics | Procedural C# without classes, on purpose | nothing | three evenings |
+| 2 | Cat Roster | Your first objects, each carrying its own data | Course 1 | two evenings |
+| 3 | Homestead Inventory | Objects that enforce their own rules | Courses 1 and 2 | two evenings |
+| 4 | Machine Hunter | A base class and types that each do it their own way | Courses 1 and 2 | two evenings |
+| 5 | Machine Showdown | One list, one loop, every type still behaving as itself | Courses 1 and 2 | two evenings |
+| 6 | Crafting Bench | Two independent capabilities through interfaces | Courses 1 and 2 | two evenings |
+| 7 | Reading List | State that survives closing the program, as JSON on disk | Courses 1 and 2 | two evenings |
+| 8 | Personal Library | Why handing out an internal list breaks encapsulation | Courses 1 and 2 | an evening |
+| 9 | General Store | Failure as something named and thrown, not a silent bug | Courses 1 and 2 | an evening |
+| 10 | Coin Purse | Comparing, sorting and deduplicating by value rather than identity | Courses 1 and 2 | two evenings |
+| 11 | Playlist Queries | Filtering and summarising declaratively instead of by loop | Courses 1 and 2 | an evening |
+| 12 | Generic Card Deck | Writing a generic type rather than only using one | Courses 1 and 2 | an evening |
+| 13 | Thermostat Events | An object announcing changes without knowing who listens | Courses 1 and 2 | an evening |
+| 14 | Bank Account Tests | Automated tests for validation and the exceptions it throws | Courses 1 and 2 | an evening |
+| 15 | Discount Strategies | Swappable objects in place of a chain of `if`/`else if` | Courses 1 and 2 | an evening |
+
 ### Course 1 – Basics (`courses/01-basics/`)
 
 Not tied to any one project — plain, procedural C#: no classes yet, on
